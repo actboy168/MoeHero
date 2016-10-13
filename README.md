@@ -6,6 +6,7 @@
 
 * [ydwe](https://github.com/actboy168/YDWE)
 * [w3x2txt](https://github.com/syj2010syj/w3x2txt)
+* [lni](https://github.com/actboy168/lni)
 
 ## 作者
 
