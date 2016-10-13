@@ -1,0 +1,3 @@
+[MapExtraInfo]
+TimeOfDay=4
+
