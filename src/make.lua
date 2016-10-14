@@ -14,12 +14,14 @@ local map_name = 'MoeHero.w3x'
 local function main()
     w3x2txt:init(w3x2txt_dir)
     local mode = arg[2]
+    
+    local map_dir = root_dir / 'map'
+    local script_dir = root_dir / 'script'
+    local resource_dir = root_dir / 'resource'
+
 	if arg[3] then
         local path_path = fs.path(uni.a2u(arg[3]))
 		local map_file = w3x2txt:create_map()
-        local map_dir = root_dir / 'map'
-        local script_dir = root_dir / 'script'
-        local resource_dir = root_dir / 'resource'
 		map_file:add_input(path_path)
 		map_file:save(_, function(name)
             if name == 'war3map.imp' then
@@ -41,11 +43,15 @@ local function main()
 		end)
     else
         local map_file = w3x2txt:create_map()
-		map_file:add_input(root_dir / 'map')
+		map_file:add_input(map_dir)
+		map_file:add_input(resource_dir)
         if mode == 'release' then
-		    map_file:add_input(root_dir / 'script')
+		    map_file:add_input(script_dir)
         end
-		map_file:save(root_dir / map_name, function(name, file)
+		map_file:save(root_dir / map_name, function(name, file, dir)
+            if dir == script_dir then
+                name = 'script\\' .. name
+            end
 			return name, file
 		end)
 	end
