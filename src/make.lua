@@ -22,8 +22,11 @@ local function main()
         local resource_dir = root_dir / 'resource'
 		map_file:add_input(path_path)
 		map_file:save(_, function(name)
+            if name == 'war3map.imp' then
+                return
+            end
             if name:match '^script[/\\]' then
-                return name:sub(8), script_dir
+                return
             end
             local extension = name:match '^.*(%..-)$'
             if extension == '.blp' or 
