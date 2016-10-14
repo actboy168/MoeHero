@@ -1,5 +1,4 @@
-*.blp
-*.mdx
-*.mp3
-*.mdl
-*.tga
+/map/
+/resource/
+*.w3x
+.vscode/
