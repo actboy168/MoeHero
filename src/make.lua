@@ -23,7 +23,7 @@ local function main()
 		map_file:add_input(path_path)
 		map_file:save(_, function(name)
             if name:match '^script[/\\]' then
-                return script_dir
+                return name:sub(8), script_dir
             end
             local extension = name:match '^.*(%..-)$'
             if extension == '.blp' or 
@@ -32,9 +32,9 @@ local function main()
                extension == '.mdl' or
                extension == '.tga'
             then
-                return resource_dir
+                return name, resource_dir
             end
-			return map_dir
+			return name, map_dir
 		end)
     else
         local map_file = w3x2txt:create_map()
