@@ -1,5 +1,7 @@
-package.path = package.path .. ';' .. arg[1] .. '\\w3x2txt\\src\\?.lua'
-package.cpath = package.cpath .. ';' .. arg[1] .. '\\w3x2txt\\build\\?.dll'
+(function()
+	local exepath = package.cpath:sub(1, package.cpath:find(';')-6)
+	package.path = package.path .. ';' .. exepath .. '..\\src\\?.lua'
+end)()
 
 require 'luabind'
 require 'filesystem'
@@ -7,22 +9,15 @@ require 'utility'
 local uni      = require 'unicode'
 local w3x2txt  = require 'w3x2txt'
 
-local root_dir = fs.path(uni.a2u(arg[1]))
-local w3x2txt_dir = root_dir / 'w3x2txt'
 local map_name = 'MoeHero.w3x'
 
 local function main()
-    w3x2txt:init(w3x2txt_dir)
-    local mode = arg[2]
-    
-    local map_dir = root_dir / 'map'
-    local script_dir = root_dir / 'script'
-    local resource_dir = root_dir / 'resource'
-
-	if arg[3] then
-        local path_path = fs.path(uni.a2u(arg[3]))
+    w3x2txt:init()
+    local mode = arg[1]
+    local input_path = fs.path(uni.a2u(arg[2]))
+	if not fs.is_directory(input_path) then
 		local map_file = w3x2txt:create_map()
-		map_file:add_input(path_path)
+		map_file:add_input(input_path)
 		map_file:save(_, function(name)
             if name == 'war3map.imp' then
                 return
@@ -42,13 +37,16 @@ local function main()
 			return name, map_dir
 		end)
     else
+        local map_dir = input_path / 'map'
+        local script_dir = input_path / 'script'
+        local resource_dir = input_path / 'resource'
         local map_file = w3x2txt:create_map()
 		map_file:add_input(map_dir)
 		map_file:add_input(resource_dir)
         if mode == 'release' then
 		    map_file:add_input(script_dir)
         end
-		map_file:save(root_dir / map_name, function(name, file, dir)
+		map_file:save(input_path / map_name, function(name, file, dir)
             if dir == script_dir then
                 name = 'script\\' .. name
             end

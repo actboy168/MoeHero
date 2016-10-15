@@ -1,5 +1,12 @@
 @echo off
+if "%1" == "" goto default
+set userinput=%1
+goto start
+:default
+ set userinput=%~dp0\
+:start
+
 del "%~dp0\map\lua\currentpath.lua"
-"%~dp0w3x2txt\build\lua.exe" "%~dp0src\make.lua" "%~dp0\" "release" %1
+"%~dp0tools\w3x2txt\build\lua.exe" "%~dp0tools\make.lua" "release" "%userinput%"
 del "%~dp0\map\lua\currentpath.lua"
 pause
