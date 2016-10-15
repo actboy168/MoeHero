@@ -12,18 +12,18 @@
     "suppressTaskName": true,
     "tasks": [
         {
-            "taskName": "run",
+            "taskName": "运行",
             "args": [
                 "\"${workspaceRoot}/tools/bin/lua.exe\"",
-                ".\\tools\\run.lua"
+                ".\\tools\\运行.lua"
             ],
             "isBuildCommand": true
         },
         {
-            "taskName": "config",
+            "taskName": "配置",
             "args": [
                 "\"${workspaceRoot}/tools/bin/lua.exe\"",
-                ".\\tools\\config.lua"
+                ".\\tools\\配置.lua"
             ]
         }
     ]
