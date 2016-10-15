@@ -21,7 +21,7 @@ local function main()
         local resource_dir = input_path:parent_path() / 'resource'
 		local map_file = w3x2txt:create_map()
 		map_file:add_input(input_path)
-		map_file:save(_, function(name)
+        function map_file:on_save(name)
             if name == 'war3map.imp' then
                 return
             end
@@ -38,7 +38,8 @@ local function main()
                 return name, resource_dir
             end
 			return name, map_dir
-		end)
+        end
+		map_file:save(map_dir)
     else
         local map_dir = input_path / 'map'
         local script_dir = input_path / 'script'
@@ -49,12 +50,13 @@ local function main()
         if mode == 'release' then
 		    map_file:add_input(script_dir)
         end
-		map_file:save(input_path / map_name, function(name, file, dir)
+        function map_file:on_save(name, file, dir)
             if dir == script_dir then
                 name = 'script\\' .. name
             end
 			return name, file
-		end)
+        end
+		map_file:save(input_path / map_name)
 	end
 	
 	print('[完毕]: 用时 ' .. os.clock() .. ' 秒') 
