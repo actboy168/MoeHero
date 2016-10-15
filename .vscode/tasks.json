@@ -25,6 +25,25 @@
                 "\"${workspaceRoot}/tools/bin/lua.exe\"",
                 ".\\tools\\配置.lua"
             ]
+        },
+        {
+            "taskName": "语法检查",
+            "args": [
+                "\"${workspaceRoot}/tools/bin/lua.exe\"",
+                ".\\tools\\语法检查.lua",
+                ".\\script"
+            ], 
+            "problemMatcher": {
+                "owner": "lua",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "message": 3
+                }
+            },
+            "isTestCommand": true
         }
     ]
 }
