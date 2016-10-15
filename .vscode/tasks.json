@@ -10,9 +10,16 @@
     "tasks": [
         {
             "taskName": "run",
-            "args": [".\\tools\\run.lua"],
-            "isBuildCommand": true,
-            "isWatching": false
+            "args": [
+                ".\\tools\\run.lua"
+            ],
+            "isBuildCommand": true
+        },
+        {
+            "taskName": "config",
+            "args": [
+                ".\\tools\\config.lua"
+            ]
         }
     ]
 }
