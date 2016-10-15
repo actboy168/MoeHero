@@ -1,0 +1,14 @@
+{
+    "version": "0.0.1",
+    "debugServer": 4278,
+    "configurations": [
+        {
+            "name": "attach",
+            "type": "lua",
+            "program": "",
+            "request": "attach",
+            "stopOnEntry": false,
+            "cwd": "${workspaceRoot}/script"
+        }
+    ]
+}
