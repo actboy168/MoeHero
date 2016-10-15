@@ -90,7 +90,7 @@ function mt:on_cast_channel()
 		end
 
 		dummy:event '单位-移除'(function()
-			ac.effect(dummy:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke体.mdl]]):remove()
+			ac.effect(dummy:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke.mdl]]):remove()
 		end)
 		
 		hero:wait(self.duration*1000,function()
@@ -102,7 +102,7 @@ function mt:on_cast_channel()
 
 	for k,v in pairs(group) do
 		v:blink((point - {angel + 120*k, 120}):findMoveablePoint(300))
-		v:add_effect('origin',[[modeldekan\ability\DEKAN_Naturo_Smoke体.mdl]])
+		v:add_effect('origin',[[modeldekan\ability\DEKAN_Naturo_Smoke.mdl]])
 	end
 end
 

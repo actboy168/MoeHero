@@ -172,7 +172,7 @@ function mt:on_remove()
 	if self.dummy_group then
 		self.dummy_group[dummy.handle] = nil
 	end
-	dummy:get_point():add_effect([[war3mapImported\A15_lei体.mdx]]):remove()
+	dummy:get_point():add_effect([[war3mapImported\A15_lei.mdx]]):remove()
 	if life < self.start_life then
 		local dmg = (self.start_life - life) * self.damage_rate
 		hero:damage

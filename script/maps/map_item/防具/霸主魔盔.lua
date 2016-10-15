@@ -45,7 +45,7 @@ function mt:on_add()
 		self.changed_attack = attack
 	end)
 
-	self.eff = hero:add_effect('weapon', [[war3mapimported\purgebufftarget体.mdl]])
+	self.eff = hero:add_effect('weapon', [[war3mapimported\purgebufftarget.mdl]])
 end
 
 function mt:on_remove()

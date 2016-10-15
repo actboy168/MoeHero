@@ -49,7 +49,7 @@ mt{
 function mt:on_add()
 	local hero = self.owner
 	if hero:is_illusion() then
-		hero:add_effect('origin', [[energyshield_l体.mdl]])
+		hero:add_effect('origin', [[energyshield_l.mdl]])
 	end
 end
 
@@ -79,7 +79,7 @@ function mt:on_add()
 	local skill_cost = self.skill_cost
 	local aoe_reduce = self.aoe_reduce / 100
 	local army_rate = self.army_rate
-	self.eff = hero:add_effect('origin', [[energyshield_l体.mdl]])
+	self.eff = hero:add_effect('origin', [[energyshield_l.mdl]])
 
 	self.block = hero:create_block
 	{

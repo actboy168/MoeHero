@@ -57,7 +57,7 @@ function mt:on_cast_channel()
 	local target = self.target
 	local skill = self
 
-	self.eff = hero:add_effect("origin",[[marisastars体.mdx]])
+	self.eff = hero:add_effect("origin",[[marisastars.mdx]])
 	hero:set_animation(7)
 
 	local mvr = ac.mover.line

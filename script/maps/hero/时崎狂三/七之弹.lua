@@ -91,7 +91,7 @@ function mt:on_cast_shot()
 			skill = self,
 			target = target,
 			speed = self.speed,
-			model = [[model\kurumi\ball_big体.mdl]],
+			model = [[model\kurumi\ball_big.mdl]],
 			high = 220,
 			size = 2,
 		}
@@ -103,7 +103,7 @@ function mt:on_cast_shot()
 			skill = self,
 			target = target,
 			speed = self.speed,
-			model = [[model\kurumi\ball体.mdl]],
+			model = [[model\kurumi\ball.mdl]],
 			size = 2,
 		}
 	end
@@ -113,7 +113,7 @@ function mt:on_cast_shot()
 	end
 
 	local function deal_damage(u)
-		u:add_effect('chest', [[model\kurumi\ball体.mdl]]):remove()
+		u:add_effect('chest', [[model\kurumi\ball.mdl]]):remove()
 		u:damage
 		{
 			source = hero,

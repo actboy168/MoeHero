@@ -77,7 +77,7 @@ function mt:on_add()
 	hero:add('破甲', self.pene)
 	hero:replace_skill('风王结界', '风王结界-解放')
 
-	self.eff = hero:add_effect('origin',[[modeldekan\ability\DEKAN_Saber_Q_WindBuff2体.mdl]])
+	self.eff = hero:add_effect('origin',[[modeldekan\ability\DEKAN_Saber_Q_WindBuff2.mdl]])
 
 end
 

@@ -60,7 +60,7 @@ local mt = ac.buff['虚空赋予']
 
 function mt:on_add()
 	local hero = self.target
-	self.eff = hero:add_effect('chest', [[modeldekan\ability\DEKAN_Inori_E_Buff体.mdl]])
+	self.eff = hero:add_effect('chest', [[modeldekan\ability\DEKAN_Inori_E_Buff.mdl]])
 	hero:add('移动速度%', self.move_rate)
 	hero:add('攻击', self.attack_damage)
 end

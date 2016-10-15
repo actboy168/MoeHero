@@ -93,7 +93,7 @@ function mt:on_cast_channel()
 		source = hero,
 		angle = angle,
 		distance = -distance,
-		model = [[reimu04体.mdl]],
+		model = [[reimu04.mdl]],
 		skill = self,
 		size = 0.2
 	}

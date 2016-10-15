@@ -92,7 +92,7 @@ function mt:on_cast_channel()
 		{
 			source = hero,
 			start = start,
-			model = [[fu体.mdl]],
+			model = [[fu.mdl]],
 			speed = speed,
 			angle = start / p,
 			distance = start * p,
@@ -107,7 +107,7 @@ function mt:on_cast_channel()
 		{
 			source = hero,
 			start = start,
-			model = [[fu体.mdl]],
+			model = [[fu.mdl]],
 			speed = speed,
 			angle = start / p,
 			distance = start * p,

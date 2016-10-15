@@ -69,7 +69,7 @@ function buff:on_add()
 	local eff_dir = ''
 	local value = self.value / 100.0
 	if source:get_owner():isSelf() then
-		eff_dir = [[snipe target体.mdl]]
+		eff_dir = [[snipe target.mdl]]
 	end
 	self.eff = hero:add_effect('overhead', eff_dir)
 	self.trg1 = hero:event '造成伤害' (function(trg, damage)

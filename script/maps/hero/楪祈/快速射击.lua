@@ -81,7 +81,7 @@ function mt:on_cast_shot()
 			start = start,
 			target = u,
 			speed = 3500,
-			model = [[modeldekan\ability\DEKAN_Inori_Q_Missile体.mdl]],
+			model = [[modeldekan\ability\DEKAN_Inori_Q_Missile.mdl]],
 			skill = self,
 			high = 75,
 			height = 25,

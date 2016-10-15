@@ -111,13 +111,13 @@ function mt:on_cast_channel()
 		end
 
 		hero:blink(point)
-		point:add_effect([[chaosexplosion体.mdl]]):remove()
+		point:add_effect([[chaosexplosion.mdl]]):remove()
 
 		local damage =  self.damage + self.damage_plus
 		if self.blend then
 			damage = damage * (1 + self.damage_rate / 100)
 			for i = 1, 12 do
-				local eff = (point - {i * 30, self.area}):add_effect([[crimsonwake体.mdl]])
+				local eff = (point - {i * 30, self.area}):add_effect([[crimsonwake.mdl]])
 				eff:remove()
 			end
 		end

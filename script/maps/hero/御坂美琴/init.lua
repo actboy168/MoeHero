@@ -47,7 +47,7 @@ return ac.hero.create '御坂美琴'
 	},
 
 	weapon = {
-		['弹道模型'] = [[war3mapimported\C9_toushewu体.mdl]],
+		['弹道模型'] = [[war3mapimported\C9_toushewu.mdl]],
 		['弹道速度'] = 2000,
 		['弹道弧度'] = 0.15,
 		['弹道出手'] = {15, 0, 66},

@@ -187,7 +187,7 @@ function self.createBox()
 			angle = math.random(1, 360),
 			distance = math.random(200, 600),
 			speed = 500,
-			model = [[ball_red_weak体.mdl]],
+			model = [[ball_red_weak.mdl]],
 			height = 200,
 			skill = false,
 			high = 50,

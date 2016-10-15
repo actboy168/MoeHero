@@ -68,7 +68,7 @@ function mt:on_cast_channel()
 			{
 				source = hero,
 				time = self.time,
-				model = [[war3mapImported\Burning_Cage_1体.mdx]],
+				model = [[war3mapImported\Burning_Cage_1.mdx]],
 			}
 			u:damage
 			{

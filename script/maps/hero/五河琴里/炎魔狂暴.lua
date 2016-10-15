@@ -68,7 +68,7 @@ mt.pulse = 0.5
 function mt:on_add()
 	local hero = self.target
 	self.count = 0
-	hero:get_point():add_effect([[firenova2体.mdl]]):remove()
+	hero:get_point():add_effect([[firenova2.mdl]]):remove()
 	hero:addDamageRate(self.damage_rate)
 	local skl = hero:find_skill '不灭之焰'
 	if skl then
@@ -110,7 +110,7 @@ local mt = ac.orb_buff['炎魔狂暴-法球']
 
 mt.keep = true
 mt.orb_count = 1
-mt.model = [[war3mapImported\magicreceive_red体.mdx]]
+mt.model = [[war3mapImported\magicreceive_red.mdx]]
 mt.ref = 'weapon'
 
 function mt:on_hit(damage)
@@ -140,7 +140,7 @@ function mt:on_hit(damage)
 			skill = skill,
 		}
 	end
-	damage.target:get_point():add_effect([[slam体.mdl]]):remove()
+	damage.target:get_point():add_effect([[slam.mdl]]):remove()
 end
 
 function mt:on_remove()
@@ -188,7 +188,7 @@ function mt:on_cast_channel()
 	local angle = poi / self.target
 	hero:replace_skill('灼烂歼鬼·炮', '炎魔狂暴')
 
-	local eff = ac.effect(poi, [[exshexian体.mdl]], angle, 0.3)
+	local eff = ac.effect(poi, [[exshexian.mdl]], angle, 0.3)
 	eff.unit:set_high(100)
 	eff:remove()
 

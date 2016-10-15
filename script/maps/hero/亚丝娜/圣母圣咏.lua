@@ -71,7 +71,7 @@ function mt:on_cast_channel()
 		dummy:set_animation_speed(5)
 		dummy:set('生命上限', hero:get '生命上限')
 		dummy:set('生命', hero:get '生命')
-		dummy.eff = dummy:add_effect('weapon',[[model\asuna\r_sprintribbon体.mdl]])
+		dummy.eff = dummy:add_effect('weapon',[[model\asuna\r_sprintribbon.mdl]])
 		hero:wait(100, function()
 			dummy:set_animation_speed(0.4)
 		end)
@@ -116,7 +116,7 @@ function mt:on_cast_channel()
 					aoe = true,
 				}
 			end
-			u:add_effect('chest', [[model\asuna\r_hit体.mdl]]):remove()
+			u:add_effect('chest', [[model\asuna\r_hit.mdl]]):remove()
 		end
 		function mvr:on_move()
 			hero:setPoint(dummy:get_point())

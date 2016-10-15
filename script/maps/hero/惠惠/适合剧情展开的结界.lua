@@ -52,7 +52,7 @@ function mt:on_add()
 	if animation > 10 then animation = 10 end
 	self.eff = hero:effect
 	{
-		model = [[model\megumin\effect_e体.mdl]],
+		model = [[model\megumin\effect_e.mdl]],
 		animation = animation,
 	}
 	self.block = hero:create_block { area = self.area }

@@ -65,7 +65,7 @@ function mt:on_add()
 			move_speed_rate = self.move_speed_rate,
 			time = self.buff_time,
 			ref = 'weapon',
-			model = [[modeldekan\ability\DEKAN_Saber_E_Weapon_Effect体.mdl]],
+			model = [[modeldekan\ability\DEKAN_Saber_E_Weapon_Effect.mdl]],
 			skill = self.skill,
 		}
 		self:remove()
@@ -83,7 +83,7 @@ function mt:on_add()
 		return true
 	end)
 
-	self.eff = hero:add_effect('origin', [[modeldekan\ability\DEKAN_Saber_E_Buff体.mdl]])
+	self.eff = hero:add_effect('origin', [[modeldekan\ability\DEKAN_Saber_E_Buff.mdl]])
 	self.skill:show_buff(self)
 end
 

@@ -281,7 +281,7 @@ local function on_splash(self)
 		}
 	end
 	--在地上创建特效
-	target:get_point():add_effect([[ModelDEKAN\Weapon\Dekan_Weapon_Sputtering体.mdl]]):remove()
+	target:get_point():add_effect([[ModelDEKAN\Weapon\Dekan_Weapon_Sputtering.mdl]]):remove()
 end
 
 --攻击溅射(直接加深AOE伤害)
@@ -295,7 +295,7 @@ local function on_splash_aoe(self)
 		return
 	end
 	self:mul(splash / 1000)
-	target:get_point():add_effect([[ModelDEKAN\Weapon\Dekan_Weapon_Sputtering体.mdl]]):remove()
+	target:get_point():add_effect([[ModelDEKAN\Weapon\Dekan_Weapon_Sputtering.mdl]]):remove()
 end
 
 --伤害音效

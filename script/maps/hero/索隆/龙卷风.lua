@@ -58,7 +58,7 @@ function mt:on_cast_channel()
 		: sort_nearest_hero(hero)
 		: get()
 	local damage = self.damage + self.damage_plus
-	hero:get_point():add_effect([[modeldekan\ability\DEKAN_Zoro_Q_Tornado_Tag体.mdx]]):remove()
+	hero:get_point():add_effect([[modeldekan\ability\DEKAN_Zoro_Q_Tornado_Tag.mdx]]):remove()
 	for i=1,self.target_count do
 		if #group > 0 then
 			local u = table.remove(group, math.random(#group))
@@ -130,7 +130,7 @@ function mt:on_add()
 	local hero = self.source
 	local u = self.target
 	--吹起
-	self.eff = u:get_point():add_effect([[modeldekan\ability\DEKAN_Zoro_Q_Tornado体.mdl]])
+	self.eff = u:get_point():add_effect([[modeldekan\ability\DEKAN_Zoro_Q_Tornado.mdl]])
 	self.buff = u:add_buff '高度'
 	{
 		time = 1,
@@ -142,7 +142,7 @@ function mt:on_add()
 		move_speed_rate = self.slow_rate,
 		attack_speed = 200,
 		time = self.time,
-		--model = [[modeldekan\ability\DEKAN_Zoro_Q_Tornado体.mdl]],
+		--model = [[modeldekan\ability\DEKAN_Zoro_Q_Tornado.mdl]],
 		skill = self.skill,
 	}
 	--u:set_high(300)
@@ -232,7 +232,7 @@ function bff:fresh()
 	end
 	
 	if count >= self.max_stack then
-		target:get_point():add_effect([[ModelDEKAN\Ability\DEKAN_Zoro_Q_Tornado_Death体.mdl]]):remove()
+		target:get_point():add_effect([[ModelDEKAN\Ability\DEKAN_Zoro_Q_Tornado_Death.mdl]]):remove()
 		--减速
 		target:add_buff '减速'
 		{

@@ -53,7 +53,7 @@ function mt:on_cast_channel()
 			attack = true,
 		}
 		if target:is_hero() then
-			target:add_effect('origin', [[war3mapimported\explosion体.mdl]]):remove()
+			target:add_effect('origin', [[war3mapimported\explosion.mdl]]):remove()
 			return true
 		end
 	end

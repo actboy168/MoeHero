@@ -95,7 +95,7 @@ function mt:on_cast_channel()
 	local function cast_animation()
 		self.target_mark = self.target:effect
 		{
-			model = [[model\dantalian\target_mark体.mdl]], 
+			model = [[model\dantalian\target_mark.mdl]], 
 			size = self.area / 400,
 			height = 50,
 		}
@@ -121,13 +121,13 @@ function mt:on_cast_channel()
 		self.eff1 = hero:effect
 		{
 			socket = 'origin', 
-			model = [[model\megumin\explosion体.mdl]],
+			model = [[model\megumin\explosion.mdl]],
 		}
 		self.animation_timer = hero:wait(500, function()
 			hero:set_animation_speed(1)
 			self.eff2 = (hero:get_point() - {hero:get_facing(), 270}):effect
 			{
-				model = [[model\megumin\explosion体.mdl]],
+				model = [[model\megumin\explosion.mdl]],
 				angle = {hero:get_facing(), 90},
 				size = 0.7,
 				height = 140,
@@ -135,42 +135,42 @@ function mt:on_cast_channel()
 			
 			self.eff3 = self.target:effect
 			{
-				model = [[model\megumin\explosion体.mdl]],
+				model = [[model\megumin\explosion.mdl]],
 				size = 1.8 * self.area / 400,
 				height = 500,
 				alpha = 50,
 			}
 			self.eff4 = self.target:effect
 			{
-				model = [[model\megumin\explosion体.mdl]],
+				model = [[model\megumin\explosion.mdl]],
 				size = 0.4 * self.area / 400,
 				height = 400,
 				alpha = 50,
 			}
 			self.eff5 = self.target:effect
 			{
-				model = [[model\megumin\explosion体.mdl]],
+				model = [[model\megumin\explosion.mdl]],
 				size = 1.0 * self.area / 400,
 				height = 300,
 				alpha = 50,
 			}
 			self.eff6 = self.target:effect
 			{
-				model = [[model\megumin\explosion体.mdl]],
+				model = [[model\megumin\explosion.mdl]],
 				size = 1.6 * self.area / 400,
 				height = 200,
 				alpha = 50,
 			}
 			self.eff7 = self.target:effect
 			{
-				model = [[model\megumin\explosion体.mdl]],
+				model = [[model\megumin\explosion.mdl]],
 				size = 1.0 * self.area / 400,
 				height = 100,
 				alpha = 50,
 			}
 			self.eff8 = self.target:effect
 			{
-				model = [[model\megumin\explosion体.mdl]],
+				model = [[model\megumin\explosion.mdl]],
 				size = 0.4 * self.area / 400,
 				height = 0,
 				alpha = 50,
@@ -257,7 +257,7 @@ function mt:on_cast_shot()
 	-- 爆炸特效
 	local effect = self.target:effect
 	{
-		model = [[model\megumin\explosion_bomb体.mdl]],
+		model = [[model\megumin\explosion_bomb.mdl]],
 		height = 30,
 		size = self.area * 0.002,
 		speed = 40,

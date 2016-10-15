@@ -61,7 +61,7 @@ function mt:on_cast_channel_a()
 	local angle = hero:get_point() / target
 	local distance = hero:get_point() * target
 	local damage = self.damage
-	local eff = hero:add_effect('origin', [[distorsionnewsfxbydeckai_nodeath体.mdl]])
+	local eff = hero:add_effect('origin', [[distorsionnewsfxbydeckai_nodeath.mdl]])
 	hero:set_facing(angle)
 	local mover = ac.mover.target
 	{
@@ -117,7 +117,7 @@ function mt:on_cast_channel_a()
 		local damage = self.damage
 		local angle = dummy:get_point() / target
 		local distance = dummy:get_point() * target
-		local eff = dummy:add_effect('origin', [[distorsionnewsfxbydeckai_nodeath体.mdl]])
+		local eff = dummy:add_effect('origin', [[distorsionnewsfxbydeckai_nodeath.mdl]])
 		
 		dummy:set_animation 'spell'
 		dummy:add_animation 'stand'
@@ -173,7 +173,7 @@ function mt:on_cast_channel_b()
 	local damage = self.damage
 	local angle = dummy:get_point() / self.target
 	local distance = dummy:get_point() * self.target
-	local eff = dummy:add_effect('origin', [[distorsionnewsfxbydeckai_nodeath体.mdl]])
+	local eff = dummy:add_effect('origin', [[distorsionnewsfxbydeckai_nodeath.mdl]])
 	
 	dummy:set_animation 'spell'
 	dummy:add_animation 'stand'
@@ -217,7 +217,7 @@ function mt:on_cast_channel_b()
 	if self['绝对切断'] then
 		hero:wait(200, function()
 			local damage = self.damage
-			local eff = hero:add_effect('origin', [[distorsionnewsfxbydeckai_nodeath体.mdl]])
+			local eff = hero:add_effect('origin', [[distorsionnewsfxbydeckai_nodeath.mdl]])
 			hero:set_facing(angle)
 			local mover = ac.mover.line
 			{

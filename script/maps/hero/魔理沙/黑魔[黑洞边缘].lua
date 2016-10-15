@@ -60,9 +60,9 @@ mt{
 }
 
 local star = {
-	[[marisastarm_1b体.mdx]],
-	[[marisastarm_1g体.mdx]],
-	[[marisastarm_1y体.mdx]],
+	[[marisastarm_1b.mdx]],
+	[[marisastarm_1g.mdx]],
+	[[marisastarm_1y.mdx]],
 }
 
 function mt:on_cast_channel()

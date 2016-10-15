@@ -155,7 +155,7 @@ function mt:on_cast_channel()
 	local stun = self.stun
 
 	function mover:on_finish()
-		self.mover:get_point():add_effect [[model\tina\newdirtexnofire体.mdl]] :remove()
+		self.mover:get_point():add_effect [[model\tina\newdirtexnofire.mdl]] :remove()
 		for _, u in ac.selector()
 			: in_range(self.mover, area)
 			: is_enemy(hero)

@@ -139,7 +139,7 @@ function mt:on_cast_channel()
 	local mvr = ac.mover.line
 	{
 		source = hero,
-		model = [[redchongji_large体.mdl]],
+		model = [[redchongji_large.mdl]],
 		angle = angle,
 		distance = self.distance,
 		speed = self.speed,

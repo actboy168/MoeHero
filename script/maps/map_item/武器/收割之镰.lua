@@ -71,7 +71,7 @@ function mt:on_add()
 		[self.record_target] = {
 			target = self.record_target,
 			damage = self.record_damage,
-			effect = self.record_target:add_effect('overhead', [[model\item\attack16体.mdx]]),
+			effect = self.record_target:add_effect('overhead', [[model\item\attack16.mdx]]),
 		},
 	}
 	self.skill_list = { }
@@ -104,7 +104,7 @@ function mt:on_cover(new)
 		self.target_list[new.record_target] = {
 			target = new.record_target,
 			damage = new.record_damage,
-			effect = new.record_target:add_effect('overhead', [[model\item\attack16体.mdx]]),
+			effect = new.record_target:add_effect('overhead', [[model\item\attack16.mdx]]),
 		}
 	end
 

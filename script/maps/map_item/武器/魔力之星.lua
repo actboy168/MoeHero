@@ -44,7 +44,7 @@ function mt:on_add()
 		size = 0.1,
 		high = 150,
 		hit_area = 100,
-		model = [[model\item\attack17体.mdl]],
+		model = [[model\item\attack17.mdl]],
 	}
 	if not self.mvr then
 		return
@@ -65,7 +65,7 @@ function mt:on_add()
 			value = self.damage_rate,
 			skill = self,
 		}
-		self.mvr.mover:add_effect('origin', [[model\item\attack17体.mdl]]):remove()
+		self.mvr.mover:add_effect('origin', [[model\item\attack17.mdl]]):remove()
 	end)
 	self.trg3 = hero:event '造成伤害'(function (_, damage)
 		if not damage.skill then

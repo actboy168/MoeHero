@@ -1011,9 +1011,9 @@ function mt:add_enemy_tag()
 	--敌我识别特效
 	local str
 	if self:is_ally(player.self) then
-		str = [[modeldekan\ui\DEKAN_Tag_Ally体.mdl]]
+		str = [[modeldekan\ui\DEKAN_Tag_Ally.mdl]]
 	else
-		str = [[modeldekan\ui\DEKAN_Tag_Enmy体.mdl]]
+		str = [[modeldekan\ui\DEKAN_Tag_Enmy.mdl]]
 	end
 	self.enemy_tag = self:add_effect('origin', str)
 end

@@ -78,12 +78,12 @@ mt.bff2 = nil
 function mt:on_cast_finish()
 	local hero = self.owner
 	local angle = hero:get_point() / self.target
-	ac.effect(hero:get_point(),[[modeldekan\ability\Dekan_MisakaMikoto_R_Missile_start体.mdl]], angle):remove()
+	ac.effect(hero:get_point(),[[modeldekan\ability\Dekan_MisakaMikoto_R_Missile_start.mdl]], angle):remove()
 	hero:get_owner():play_sound [[response\御坂美琴\skill\R.mp3]]
 	local mvr = ac.mover.line
 	{
 		source = hero,
-		model = [[modeldekan\ability\Dekan_MisakaMikoto_R_Missile_rotation体.mdl]],
+		model = [[modeldekan\ability\Dekan_MisakaMikoto_R_Missile_rotation.mdl]],
 		distance = self.distance,
 		speed = 5000,
 		angle = angle,
@@ -95,7 +95,7 @@ function mt:on_cast_finish()
 		return
 	end
 	function mvr:on_move()
-		ac.effect(self.mover:get_point(),[[modeldekan\ability\Dekan_MisakaMikoto_R_Missile_dust体.mdl]], self.angle):remove()
+		ac.effect(self.mover:get_point(),[[modeldekan\ability\Dekan_MisakaMikoto_R_Missile_dust.mdl]], self.angle):remove()
 	end
 	local first = true
 	function mvr:on_hit(dest)

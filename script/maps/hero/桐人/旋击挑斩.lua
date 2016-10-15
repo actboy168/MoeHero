@@ -80,7 +80,7 @@ function mt:on_cast_channel()
 		end)
 		: ipairs()
 	do
-		u:add_effect('chest', [[modeldekan\ability\dekan_kirito_w_ribbon体.mdl]]):remove()
+		u:add_effect('chest', [[modeldekan\ability\dekan_kirito_w_ribbon.mdl]]):remove()
 		
 		u:damage
 		{

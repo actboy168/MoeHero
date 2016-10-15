@@ -52,7 +52,7 @@ function mt:on_add()
 		self:update_art(now)
 	end)
 	if hero:get_owner():isSelf() then
-		self.range_eff = hero:add_effect('origin', [[model\amiella\range体.mdx]])
+		self.range_eff = hero:add_effect('origin', [[model\amiella\range.mdx]])
 	else
 		self.range_eff = hero:add_effect('origin', [[]])
 	end

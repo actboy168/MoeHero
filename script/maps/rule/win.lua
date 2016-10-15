@@ -49,13 +49,13 @@ ac.game:event '单位-死亡' (function(trg, u, source)
 	poi.game_over = true
 
 	local dummy = player[16]:create_dummy('e003', u)
-	local eff = dummy:add_effect('origin', [[blackholespell体.mdl]])
+	local eff = dummy:add_effect('origin', [[blackholespell.mdl]])
 	local dummy2 = player[16]:create_dummy('e003', u)
-	local eff2 = dummy2:add_effect('origin', [[void体.mdl]])
+	local eff2 = dummy2:add_effect('origin', [[void.mdl]])
 	local dummy3 = player[16]:create_dummy('e003', u)
-	local eff3 = dummy3:add_effect('origin', [[shadowwell体.mdl]])
+	local eff3 = dummy3:add_effect('origin', [[shadowwell.mdl]])
 	local dummy4 = player[16]:create_dummy('e003', u)
-	local eff4 = dummy4:add_effect('origin', [[shadowwell体.mdl]])
+	local eff4 = dummy4:add_effect('origin', [[shadowwell.mdl]])
 	local time =0.3
 	dummy:add_buff '缩放'
 	{

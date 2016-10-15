@@ -64,7 +64,7 @@ local mt = ac.dot_buff['不灭之焰-燃烧']
 mt.buff = true
 
 function mt:on_add()
-	self.eff = self.target:add_effect('origin', [[war3mapimported\flame aura体.mdl]])
+	self.eff = self.target:add_effect('origin', [[war3mapimported\flame aura.mdl]])
 end
 
 function mt:on_remove()

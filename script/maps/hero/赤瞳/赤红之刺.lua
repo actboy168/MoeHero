@@ -142,7 +142,7 @@ function mt:on_cast_channel()
 						skill = skill,
 						attack = true,
 					}
-					target:add_effect("origin",[[bloodex-special-2 (4)体.mdl]]):remove()
+					target:add_effect("origin",[[bloodex-special-2 (4).mdl]]):remove()
 				end
 				hero:set_animation_speed(1)
 				hero:issue_order('attack',target)
@@ -167,7 +167,7 @@ mt.defence = 0
 mt.defence_rate = 0
 
 function mt:on_add()
-	self.eff = self.target:add_effect('head', [[modeldekan\ability\dekan_Akame_E_buff体.mdl]])
+	self.eff = self.target:add_effect('head', [[modeldekan\ability\dekan_Akame_E_buff.mdl]])
 	self.target:add('护甲', - self.defence)
 	self.target:add('护甲%', - self.defence_rate)
 end

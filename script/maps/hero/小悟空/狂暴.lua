@@ -93,7 +93,7 @@ function mt:on_add()
 	local hero = self.target
 
 	--特效
-	hero:get_point():add_effect([[modeldekan\ability\dekan_goku_r_effect_add体.mdl]]):remove()
+	hero:get_point():add_effect([[modeldekan\ability\dekan_goku_r_effect_add.mdl]]):remove()
 	
 	self.origin_id = hero:get_type_id()
 
@@ -143,7 +143,7 @@ function mt:on_remove()
 	local hero = self.target
 	
 	--特效x
-	hero:get_point():add_effect([[modeldekan\ability\dekan_goku_r_effect_remove体.mdl]]):remove()
+	hero:get_point():add_effect([[modeldekan\ability\dekan_goku_r_effect_remove.mdl]]):remove()
 			
 	--变回去
 	hero:transform(self.origin_id)

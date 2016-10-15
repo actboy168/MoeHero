@@ -9,7 +9,7 @@ buff.q_passive = false
 
 function buff:on_add()
 	local hero = self.target
-	self.eff = hero:add_effect('origin', [[222体.mdl]])
+	self.eff = hero:add_effect('origin', [[222.mdl]])
 	self.trg1 = hero:event '单位-发动攻击' (function(trg, damage)
 		local skl = hero:find_skill(1, '英雄')
 		if not skl then

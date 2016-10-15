@@ -19,4 +19,4 @@ require 'rule.积分'
 
 local jass = require 'jass.common'
 
-jass.SetSkyModel([[Environment\Sky\LordaeronSummerSky\LordaeronSummerSky体.mdx]])
+jass.SetSkyModel([[Environment\Sky\LordaeronSummerSky\LordaeronSummerSky.mdx]])

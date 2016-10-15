@@ -75,7 +75,7 @@ function mt:on_cast_channel()
 			end)
 			damage2 = damage2 * 0.1
 		end
-		ac.effect(hero:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke体.mdl]]):remove()
+		ac.effect(hero:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke.mdl]]):remove()
 		local mover = ac.mover.target
 		{
 			true_hero = true_hero,
@@ -89,7 +89,7 @@ function mt:on_cast_channel()
 			speed = self.speed,
 			on_remove = function(self)
 				-- 第一弹，鸣人攻击
-				target:add_effect('chest',[[modeldekan\ability\DEKAN_Naturo_E_Hit体.mdl]]):remove()
+				target:add_effect('chest',[[modeldekan\ability\DEKAN_Naturo_E_Hit.mdl]]):remove()
 				target:damage
 				{
 					source = true_hero,
@@ -185,7 +185,7 @@ function bff:on_pulse()
 		dummy:set_class '马甲'
 		dummy:setPoint(point)
 		dummy:set_animation(13)	
-		ac.effect(dummy:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke体.mdl]]):remove()
+		ac.effect(dummy:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke.mdl]]):remove()
 		local mover = ac.mover.target
 		{
 			source = dummy,
@@ -198,7 +198,7 @@ function bff:on_pulse()
 			true_hero = self.true_hero,
 			damage2 = self.damage2,
 			on_remove = function(self)
-				target:add_effect('chest',[[modeldekan\ability\DEKAN_Naturo_E_Hit体.mdl]])
+				target:add_effect('chest',[[modeldekan\ability\DEKAN_Naturo_E_Hit.mdl]])
 				--print(self.true_hero)
 				local t_high = 300
 				local t_distance = 200
@@ -231,7 +231,7 @@ function bff:on_pulse()
 					time = 1,
 				}
 				hero:wait(400,function()
-					local eff = ac.effect(dummy:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke体.mdl]])
+					local eff = ac.effect(dummy:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke.mdl]])
 					eff.unit:set_high(30)
 					eff:remove()
 					dummy:remove()

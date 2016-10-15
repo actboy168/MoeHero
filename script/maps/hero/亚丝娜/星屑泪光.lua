@@ -39,7 +39,7 @@ function mt:on_cast_channel()
 		dummy:add_restriction '缴械'
 		dummy:set_animation('attack')
 		dummy:set_animation_speed(5)
-		dummy.eff = dummy:add_effect('chest',[[model\asuna\e_sprintribbon体.mdl]])
+		dummy.eff = dummy:add_effect('chest',[[model\asuna\e_sprintribbon.mdl]])
 		hero:wait(100, function()
 			dummy:set_animation_speed(0.4)
 		end)
@@ -75,7 +75,7 @@ function mt:on_cast_channel()
 				attack = true,
 				aoe = true,
 			}
-			u:add_effect('chest', [[model\asuna\r_hit体.mdl]]):remove()
+			u:add_effect('chest', [[model\asuna\r_hit.mdl]]):remove()
 		end
 		function mvr:on_remove()
 			dummy.eff:remove()
@@ -111,7 +111,7 @@ function mt:on_cast_shot()
 		ac.wait(500, function()
 			fog:remove()
 		end)
-		ac.effect(loc, [[model\asuna\q_effect体.mdl]], angle):remove()
+		ac.effect(loc, [[model\asuna\q_effect.mdl]], angle):remove()
 		angle = angle + 144
 		from_loc = to_loc
 	end

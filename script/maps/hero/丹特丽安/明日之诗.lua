@@ -54,7 +54,7 @@ end
 
 function mt:on_cast_channel()
 	local hero = self.owner
-	self.effect = hero:add_effect('origin', [[model\dantalian\channel_red体.mdl]])
+	self.effect = hero:add_effect('origin', [[model\dantalian\channel_red.mdl]])
 	self.trigger = hero:event '单位-发布指令' (function(_, _, order)
 		if order == 'stop' then
 			self:stop()
@@ -62,7 +62,7 @@ function mt:on_cast_channel()
 	end)
 	local target_mark
 	if hero:get_owner() == ac.player.self then
-		target_mark = [[model\dantalian\target_mark体.mdl]]
+		target_mark = [[model\dantalian\target_mark.mdl]]
 	else
 		target_mark = ''
 	end
@@ -89,7 +89,7 @@ end
 function mt:on_cast_finish()
 	local hero = self.owner
 	local damage = self.damage_base + self.damage_plus
-	hero:get_point():add_effect [[model\dantalian\foly_fire_slam体.mdl]] :remove()
+	hero:get_point():add_effect [[model\dantalian\foly_fire_slam.mdl]] :remove()
 	for _, u in ac.selector()
 		: in_range(hero, self.area)
 		: is_enemy(hero)
@@ -116,7 +116,7 @@ function mt:on_add()
 		if not self:is_cooling() then
 			local self = self:create_cast()
 			self:active_cd()
-			hero:add_effect('origin', [[batdietbattuyet体.mdl]]):remove()
+			hero:add_effect('origin', [[batdietbattuyet.mdl]]):remove()
 			hero:add_restriction '无敌'
 			hero:add_restriction '硬直'
 			hero:wait(self.god_time * 1000, function()
@@ -144,7 +144,7 @@ local mt = ac.buff['明日之诗']
 
 function mt:on_add()
 	local hero = self.target
-	self.eff = hero:add_effect('origin', [[model\dantalian\speicl_red体.mdx]])
+	self.eff = hero:add_effect('origin', [[model\dantalian\speicl_red.mdx]])
 	self.mark = {}
 	for _, name in ipairs {'妖精之书', '雷神之书', '冥界之书'} do
 		local skill = hero:find_skill(name, '英雄', true)

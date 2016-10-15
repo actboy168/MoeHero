@@ -40,7 +40,7 @@ function mt:on_add()
 	local attack_clock = self.dummy:clock()
 	self.timer = hero:loop(5000, function()
 		if self.dummy:get_point() * hero:get_point() > 500 then
-			self.dummy:get_point():add_effect([[model\shimakaze\multiple_gun_003体.mdl]]):remove()
+			self.dummy:get_point():add_effect([[model\shimakaze\multiple_gun_003.mdl]]):remove()
 			self.dummy:setPoint(hero:get_point() - {self.dummy:get_point() / hero:get_point(), 200})
 			self.dummy:set_animation('birth')
 			self.dummy:add_animation('stand')
@@ -108,7 +108,7 @@ function mt:on_cast_channel()
 			source = hero,
 			distance = 1200,
 			start = start,
-			model = [[model\shimakaze\multiple_gun_missile体.mdx]],
+			model = [[model\shimakaze\multiple_gun_missile.mdx]],
 			speed = 2000,
 			angle = facing,
 			missile = true,

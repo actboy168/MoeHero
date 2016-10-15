@@ -84,7 +84,7 @@ function mt:on_cast_finish_a()
 				next_target = u
 			end
 		end
-		p:add_effect [[epipulse_3_4体.mdl]] :remove()
+		p:add_effect [[epipulse_3_4.mdl]] :remove()
 	end
 
 	function mover:on_remove()
@@ -129,7 +129,7 @@ function mt:on_cast_finish_a()
 					next_target = u
 				end
 			end
-			p:add_effect [[epipulse_3_4体.mdl]] :remove()
+			p:add_effect [[epipulse_3_4.mdl]] :remove()
 		end
 	end
 	if next_target then
@@ -166,7 +166,7 @@ function mt:on_cast_finish_b()
 			target = u
 		end
 	end
-	p:add_effect [[epipulse_3_4体.mdl]] :remove()
+	p:add_effect [[epipulse_3_4.mdl]] :remove()
 
 	if self['绝对切断'] then
 		hero:wait(500, function()
@@ -189,7 +189,7 @@ function mt:on_cast_finish_b()
 					target = u
 				end
 			end
-			p:add_effect [[epipulse_3_4体.mdl]] :remove()
+			p:add_effect [[epipulse_3_4.mdl]] :remove()
 		end)
 	end
 	if target then

@@ -32,7 +32,7 @@ function bff:on_pulse()
 			end
 		else
 			if u:get_type_id() ~= 'e00D' then
-				u:add_effect('origin', [[!orbitalray2!体.mdl]]):remove()
+				u:add_effect('origin', [[!orbitalray2!.mdl]]):remove()
 				u:damage
 				{
 					source = unit,

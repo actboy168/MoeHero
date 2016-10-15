@@ -19,7 +19,7 @@ mt{
 function mt:shimakazeCast(target)
 	local target_mark = target:effect
 	{
-		model = [[model\dantalian\target_mark体.mdl]], 
+		model = [[model\dantalian\target_mark.mdl]], 
 		size = self.area / 400,
 		speed = 3 / self.time,
 		height = 50,

@@ -53,7 +53,7 @@ end
 function mt:on_hit(damage)
 	local hero = self.target
 	local target = damage.target
-	hero:add_effect('origin', [[basicstrike01体.mdl]]):remove()
+	hero:add_effect('origin', [[basicstrike01.mdl]]):remove()
 	local damage = self.skill.damage
 	if self.moved < self.skill.max_range then
 		damage = damage * (1 + self.moved / self.skill.max_range) / 2
@@ -82,9 +82,9 @@ function mt:on_add()
 	hero:add_restriction '飞行'
 	hero:issue_order('attack', self.skill_target)
 	hero:add_animation_properties('defend')
-	hero:add_effect('chest',[[ModelDEKAN\Ability\DEKAN_Kirito_Q_SprintWind体.mdl]]):remove()
+	hero:add_effect('chest',[[ModelDEKAN\Ability\DEKAN_Kirito_Q_SprintWind.mdl]]):remove()
 	if hero:find_buff '二刀流' then
-		hero:add_effect('chest', [[ModelDEKAN\Ability\DEKAN_Kirito_Q_SprintWind_blue体.mdl]]):remove()
+		hero:add_effect('chest', [[ModelDEKAN\Ability\DEKAN_Kirito_Q_SprintWind_blue.mdl]]):remove()
 	end
 	self.trg1 = hero:event '单位-发布指令' (function(_, _, order, target)
 		if (order ~= 'smart' and order ~= 'attack') or self.skill_target ~= target then

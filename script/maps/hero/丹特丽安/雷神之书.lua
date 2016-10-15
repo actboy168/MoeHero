@@ -48,7 +48,7 @@ end
 function mt:on_cast_channel()
 	local hero = self.owner
 	self.clock = hero:clock()
-	self.effect = hero:add_effect('origin', [[model\dantalian\channel_blue体.mdl]])
+	self.effect = hero:add_effect('origin', [[model\dantalian\channel_blue.mdl]])
 	self.timer = hero:wait(self.channel_time * 1000, function()
 		hero:add_buff '雷神之书'
 		{
@@ -63,7 +63,7 @@ function mt:on_cast_channel()
 	end)
 	local target_mark
 	if hero:get_owner() == ac.player.self then
-		target_mark = [[model\dantalian\target_mark体.mdl]]
+		target_mark = [[model\dantalian\target_mark.mdl]]
 	else
 		target_mark = ''
 	end
@@ -129,7 +129,7 @@ local mt = ac.buff['雷神之书']
 function mt:on_add()
 	local hero = self.target
 	local rate = 1 + self.rate / 100
-	self.eff = hero:add_effect('origin', [[model\dantalian\speicl_blue体.mdx]])
+	self.eff = hero:add_effect('origin', [[model\dantalian\speicl_blue.mdx]])
 	self.trg = hero:event '技能-施法开始' (function(_, _, skill)
 		if skill:get_type() == '英雄' then
 			self:remove()

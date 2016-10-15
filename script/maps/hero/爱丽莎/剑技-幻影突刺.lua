@@ -95,7 +95,7 @@ function mt:sword_on_cast_channel()
 		return
 	end
 	function mvr:on_move()
-		hero:get_point():add_effect([[model\amiella\sword_e_effect体.mdx]]):remove()
+		hero:get_point():add_effect([[model\amiella\sword_e_effect.mdx]]):remove()
 	end
 	function mvr:on_remove()
 		self.skill:finish()
@@ -127,7 +127,7 @@ end
 function mt:sword_on_cast_shot()
 	local hero = self.owner
 	local target = self.target
-	ac.effect(hero:get_point() - {self.cast_angle, 50}, [[model\amiella\sword_q_effect体.mdx]], self.cast_angle, 3):remove()
+	ac.effect(hero:get_point() - {self.cast_angle, 50}, [[model\amiella\sword_q_effect.mdx]], self.cast_angle, 3):remove()
 	for _, u in ac.selector()
 		: in_sector(hero, self.sword_range, self.cast_angle, 120)
 		: is_enemy(hero)
@@ -170,8 +170,8 @@ function mt:gun_on_cast_channel()
 end
 
 local missile = {
-	[[model\amiella\gun_e_missile_a体.mdx]],
-	[[model\amiella\gun_e_missile_b体.mdx]],
+	[[model\amiella\gun_e_missile_a.mdx]],
+	[[model\amiella\gun_e_missile_b.mdx]],
 }
 
 function mt:gun_on_cast_shot()

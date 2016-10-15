@@ -15,7 +15,7 @@ local function cast_q(self, target)
 	{
 		source = hero,
 		speed = self.speed,
-		model = [[s_arcanerocket projectile体.mdx]],
+		model = [[s_arcanerocket projectile.mdx]],
 		skill = self,
 		high = 120,
 		size = 0.6,
@@ -244,7 +244,7 @@ function mt:on_add()
 	local u = self.target
 	local skill = self.skill
 
-	self.eff = u:add_effect('origin', [[war3mapimported\A12_fen体.mdl]])
+	self.eff = u:add_effect('origin', [[war3mapimported\A12_fen.mdl]])
 
 	--伤害加深
 	local damage_rate = self.damage_rate

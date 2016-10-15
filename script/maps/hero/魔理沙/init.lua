@@ -48,7 +48,7 @@ return ac.hero.create '魔理沙'
 	},
 
 	weapon = {
-		['弹道模型'] = [[marisastarm_1b体.mdl]],
+		['弹道模型'] = [[marisastarm_1b.mdl]],
 		['弹道速度'] = 900,
 		['弹道弧度'] = 0,
 		['弹道出手'] = {15, 0, 66},

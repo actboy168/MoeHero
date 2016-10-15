@@ -42,7 +42,7 @@ function mt:on_add()
 		end
 		dmg = dmg + damage:get_current_damage()
 		if dmg > maxdmg then
-			hero:get_point():add_effect([[modeldekan\weapon\dekan_weapon_rebound体.mdl]]):remove()
+			hero:get_point():add_effect([[modeldekan\weapon\dekan_weapon_rebound.mdl]]):remove()
 			dmg = dmg - maxdmg
 			for _, u in ac.selector()
 				: in_range(hero, area)

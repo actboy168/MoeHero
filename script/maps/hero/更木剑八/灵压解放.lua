@@ -57,7 +57,7 @@ mt{
 function mt:on_cast_channel()
 	local hero = self.owner
 
-	hero:get_point():add_effect([[devilslam_large体.mdl]]):remove()
+	hero:get_point():add_effect([[devilslam_large.mdl]]):remove()
 
 	--对附近单位减速
 	for _, u in ac.selector()
@@ -96,7 +96,7 @@ mt.eff = nil
 function mt:on_add()
 	local hero = self.target
 
-	self.eff = hero:add_effect('weapon', [[war3mapimported\108体.mdl]])
+	self.eff = hero:add_effect('weapon', [[war3mapimported\108.mdl]])
 	--提高攻击距离
 	hero:add('攻击范围', self.range)
 
@@ -105,7 +105,7 @@ function mt:on_add()
 		
 		--瞬移到目标面前
 		data.source:set_position(data.target:get_point() - {data.target:get_facing(), 150}, true)
-		hero:get_point():add_effect([[devilslam体.mdl]]):remove()
+		hero:get_point():add_effect([[devilslam.mdl]]):remove()
 		
 		--击晕目标
 		data.target:add_buff '晕眩'

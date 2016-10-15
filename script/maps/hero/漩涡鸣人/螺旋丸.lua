@@ -79,8 +79,8 @@ function mt:on_cast_channel()
 	if (target:get_point() * hero:get_point()) <= self.min_range then
 		self.immediately = true
 		self.cast_channel_2_time = 0.05
-		ac.effect(hero:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke体.mdl]]):remove()
-		self.hand_eff = hero:add_effect('hand', [[modeldekan\ability\DEKAN_Naturo_Q_LXW体.mdl]])
+		ac.effect(hero:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke.mdl]]):remove()
+		self.hand_eff = hero:add_effect('hand', [[modeldekan\ability\DEKAN_Naturo_Q_LXW.mdl]])
 	else
 		self.immediately = false
 		self.dummy = hero:create_dummy(nil, point, target:get_point() / hero:get_point() - 20)
@@ -88,8 +88,8 @@ function mt:on_cast_channel()
 		self.dummy:add_restriction '缴械'
 		self.dummy:set_class '马甲'
 		self.dummy:set_animation(5)
-		ac.effect(self.dummy:get_point(), [[modeldekan\ability\DEKAN_Naturo_Smoke体.mdl]]):remove()
-		self.hand_eff = hero:add_effect('hand', [[modeldekan\ability\DEKAN_Naturo_Q_LXW_Birth体.mdl]])
+		ac.effect(self.dummy:get_point(), [[modeldekan\ability\DEKAN_Naturo_Smoke.mdl]]):remove()
+		self.hand_eff = hero:add_effect('hand', [[modeldekan\ability\DEKAN_Naturo_Q_LXW_Birth.mdl]])
 	end
 
 	self.cast_channel_2_timer = hero:wait(self.cast_channel_2_time*1000, function()
@@ -106,7 +106,7 @@ function mt:on_cast_channel_2()
 	hero:set_animation(12)
 
 	if not self.immediately then
-		ac.effect(self.dummy:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke体.mdl]]):remove()
+		ac.effect(self.dummy:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke.mdl]]):remove()
 		self.dummy:remove()
 		self.dummy = nil
 	end
@@ -126,8 +126,8 @@ function mt:on_cast_channel_2()
 	function mvr:on_remove()
 		local skill = self.skill
 		local angle = hero:get_point() / target:get_point()
-		ac.effect(target:get_point(), [[modeldekan\ability\DEKAN_Naturo_Q_Blust体.mdl]], angle):remove()
-		target:add_effect('chest', [[modeldekan\ability\DEKAN_Naturo_Q_Effect体.mdl]]):remove()
+		ac.effect(target:get_point(), [[modeldekan\ability\DEKAN_Naturo_Q_Blust.mdl]], angle):remove()
+		target:add_effect('chest', [[modeldekan\ability\DEKAN_Naturo_Q_Effect.mdl]]):remove()
 		target:add_buff '击退'
 		{
 			angle = angle,

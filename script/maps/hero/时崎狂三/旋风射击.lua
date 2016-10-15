@@ -87,14 +87,14 @@ function mt:on_cast_shot()
 		if power1 then
 			local effect = target:effect
 			{
-				model = [[model\Kurumi\W体.mdl]],
+				model = [[model\Kurumi\W.mdl]],
 				size = 1.8,
 			}
 			effect:kill()
 		else
 			local effect = target:effect
 			{
-				model = [[model\Kurumi\W体.mdl]],
+				model = [[model\Kurumi\W.mdl]],
 				size = 1.2,
 			}
 			effect:kill()

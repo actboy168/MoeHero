@@ -81,8 +81,8 @@ function mt:sword_on_cast_channel()
 	local hero = self.owner
 	local angle = hero:get_point() / self.target
 	hero:add_restriction '无敌'
-	self.eff = hero:add_effect('origin', [[model\amiella\sword_r_effect体.mdx]])
-	ac.effect(hero:get_point() - {angle, 50}, [[model\amiella\sword_q_effect体.mdx]], angle, 3):remove()
+	self.eff = hero:add_effect('origin', [[model\amiella\sword_r_effect.mdx]])
+	ac.effect(hero:get_point() - {angle, 50}, [[model\amiella\sword_q_effect.mdx]], angle, 3):remove()
 	for _, u in ac.selector()
 		: in_sector(hero:get_point(), self.sword_range, angle, 120)
 		: is_enemy(hero)
@@ -194,7 +194,7 @@ function mt:gun_on_cast_channel()
 			source = hero,
 			distance = 1000,
 			start = start,
-			model = [[model\amiella\gun_r_missile体.mdx]],
+			model = [[model\amiella\gun_r_missile.mdx]],
 			speed = 2000,
 			angle = facing,
 			missile = true,
@@ -226,7 +226,7 @@ function mt:gun_on_cast_channel()
 			return true
 		end
 		function mvr:on_remove()
-			ac.effect(self.mover:get_point(),[[model\amiella\gun_r_effect体.mdx]],self.angle):remove()
+			ac.effect(self.mover:get_point(),[[model\amiella\gun_r_effect.mdx]],self.angle):remove()
 		end
 	end)
 	self.timer:on_timer()

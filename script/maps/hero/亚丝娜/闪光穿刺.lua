@@ -36,11 +36,11 @@ function mt:on_cast_channel()
 	local angle = hero:get_point() / self.target
 	local w_skill = hero:find_skill '狂暴补师'
 	hero:set_animation_speed(0.01)
-	hero:add_effect('chest', [[model\asuna\e_sprintwind体.mdx]]):remove()
-	self.eff1 = hero:add_effect('weapon',[[model\asuna\e_sprintribbon体.mdl]])
-	self.eff2 = hero:add_effect('chest',[[model\asuna\e_sprintribbon体.mdl]])
-	self.eff3 = hero:add_effect('foot left',[[model\asuna\e_sprintribbon体.mdl]])
-	self.eff4 = hero:add_effect('origin', [[model\asuna\e_starparticle体.mdl]])
+	hero:add_effect('chest', [[model\asuna\e_sprintwind.mdx]]):remove()
+	self.eff1 = hero:add_effect('weapon',[[model\asuna\e_sprintribbon.mdl]])
+	self.eff2 = hero:add_effect('chest',[[model\asuna\e_sprintribbon.mdl]])
+	self.eff3 = hero:add_effect('foot left',[[model\asuna\e_sprintribbon.mdl]])
+	self.eff4 = hero:add_effect('origin', [[model\asuna\e_starparticle.mdl]])
 	local mvr = ac.mover.line
 	{
 		source = hero,
@@ -82,7 +82,7 @@ function mt:on_cast_channel()
 		hero:set_facing(hero:get_point() / self.target)
 		hero:set_animation('spell one')
 		hero:set_animation_speed(1.3)
-		--hero:add_effect('origin', [[model\asuna\e_weaponeffect体.mdl]]):remove()
+		--hero:add_effect('origin', [[model\asuna\e_weaponeffect.mdl]]):remove()
 	end
 end
 

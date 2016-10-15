@@ -54,7 +54,7 @@ function mt:on_cast_channel()
 		}
 	end
 
-	local eff = ac.effect(hero:get_point(), [[lava crack体.mdl]], 0, 0.8)
+	local eff = ac.effect(hero:get_point(), [[lava crack.mdl]], 0, 0.8)
 	hero:wait(800, function()
 		eff:remove()
 	end)
@@ -80,7 +80,7 @@ function mt:on_cast_channel()
 				attack = true,
 			}
 		end
-		ac.effect(hero:get_point(), [[superbigexplosion体.mdl]], 0, 2):remove()
+		ac.effect(hero:get_point(), [[superbigexplosion.mdl]], 0, 2):remove()
 		hero:get_point():add_effect([[Abilities\Spells\Other\Doom\DoomDeath.mdl]]):remove()
 	end)
 end

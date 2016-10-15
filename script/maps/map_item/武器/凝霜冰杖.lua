@@ -51,7 +51,7 @@ local function add_mover(self, index)
 		distance = 100,
 		size = 0.1,
 		high = 100,
-		model = [[FrostWyrmMissile体.mdx]],
+		model = [[FrostWyrmMissile.mdx]],
 		angle_speed = 166,
 	}
 	if not mvr then

@@ -95,7 +95,7 @@ function mt:enable_block()
 	{
 		source = hero,
 		skill = self,
-		model = [[war3mapimported\barrier体.mdx]],
+		model = [[war3mapimported\barrier.mdx]],
 	}
 	self.blend = self:add_blend('2', '边框', 2)
 end

@@ -81,7 +81,7 @@ function mt:on_cast(damage)
 	--激活技能冷却
 	self.skill:active_cd()
 	self:remove()
-	ac.effect(damage.target, [[war3mapimported\288体.mdl]], 0.5):remove()
+	ac.effect(damage.target, [[war3mapimported\288.mdl]], 0.5):remove()
 	damage:mul(self.damage_rate - 1)
 end
 
@@ -89,7 +89,7 @@ function mt:on_add()
 	local hero = self.target
 	local bff = self
 	
-	self.eff = hero:add_effect('chest',[[modeldekan\ability\dekan_goku_goldencudgel体.mdl]])
+	self.eff = hero:add_effect('chest',[[modeldekan\ability\dekan_goku_goldencudgel.mdl]])
 	
 	--增加攻击距离
 	hero:add('攻击范围', self.attack_range)

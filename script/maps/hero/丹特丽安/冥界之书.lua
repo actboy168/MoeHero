@@ -76,7 +76,7 @@ function mt:on_cast_channel()
 			skill = self,
 		}
 	end)
-	self.effect = hero:add_effect('origin', [[model\dantalian\channel_yellow体.mdl]])
+	self.effect = hero:add_effect('origin', [[model\dantalian\channel_yellow.mdl]])
 end
 
 function mt:on_cast_stop()
@@ -97,7 +97,7 @@ local mt = ac.buff['冥界之书-护盾']
 function mt:on_add()
 	local hero = self.target
 	local damage_rate = self.damage_rate / 100
-	self.eff = hero:add_effect('origin', [[chaosrunicaura体.mdl]])
+	self.eff = hero:add_effect('origin', [[chaosrunicaura.mdl]])
 	self.trg1 = hero:event '受到伤害' (function(_, damage)
 		damage:div(damage_rate)
 	end)
@@ -120,7 +120,7 @@ local mt = ac.buff['冥界之书']
 
 function mt:on_add()
 	local hero = self.target
-	self.eff = hero:add_effect('origin', [[model\dantalian\speicl_yellow体.mdx]])
+	self.eff = hero:add_effect('origin', [[model\dantalian\speicl_yellow.mdx]])
 	self.trg = hero:event '技能-施法引导' (function(_, _, skill)
 		if skill:get_type() == '英雄' and not skill._has_cast_finish then
 			local buff = hero:find_buff '明日之诗'

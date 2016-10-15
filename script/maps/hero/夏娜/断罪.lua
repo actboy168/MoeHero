@@ -64,7 +64,7 @@ function mt:on_cast_channel()
 			local mvr = ac.mover.line
 			{
 				source = hero,
-				model = [[redchongji_large体.mdl]],
+				model = [[redchongji_large.mdl]],
 				angle = i * 30 + angle,
 				distance = self.distance,
 				speed = self.speed,
@@ -108,7 +108,7 @@ local buff = ac.buff['断罪-标记']
 buff.cover_type = 1
 
 function buff:on_add()
-	self.eff = self.target:add_effect('overhead', [[huoyan体.mdl]])
+	self.eff = self.target:add_effect('overhead', [[huoyan.mdl]])
 end
 
 function buff:on_remove()

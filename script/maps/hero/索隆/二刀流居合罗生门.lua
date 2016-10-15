@@ -46,7 +46,7 @@ function mt:on_cast_start()
 	if self.eff then
 		self.eff:remove()
 	end
-	self.eff = hero:add_effect('chest',[[modeldekan\ability\DEKAN_Zoro_W_Ribbon体.mdl]])
+	self.eff = hero:add_effect('chest',[[modeldekan\ability\DEKAN_Zoro_W_Ribbon.mdl]])
 end
 
 function mt:on_cast_break()
@@ -72,11 +72,11 @@ function mt:on_cast_channel()
 	local c_angle = 0
 	local c_pt = target - {c_angle, distance}
 	local size = distance / 250
-	ac.effect(target,[[DEKAN_Zoro_R_Circle体.mdx]],0,size,'origin'):remove()
+	ac.effect(target,[[DEKAN_Zoro_R_Circle.mdx]],0,size,'origin'):remove()
 	hero:wait(3, function(t)
 		c_angle = c_angle + 10
 		c_pt = target - {c_angle, distance}
-		c_pt:add_effect([[modeldekan\ability\DEKAN_Zoro_W_CircleDeath体.mdx]]):remove()
+		c_pt:add_effect([[modeldekan\ability\DEKAN_Zoro_W_CircleDeath.mdx]]):remove()
 		if c_angle >= 360 then
 			t:remove()
 		end
@@ -88,7 +88,7 @@ function mt:on_cast_channel()
 	dummy:add_restriction '硬直'
 	dummy:setColor(0,0,0)
 	dummy:setAlpha(80)
-	--dummy:add_effect('origin',[[modeldekan\ability\DEKAN_Zoro_R_DarkFire体.mdl]])
+	--dummy:add_effect('origin',[[modeldekan\ability\DEKAN_Zoro_R_DarkFire.mdl]])
 	hero:setAlpha(40)
 	
 	hero:wait(0, function()

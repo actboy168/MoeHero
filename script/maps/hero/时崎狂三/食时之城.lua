@@ -88,13 +88,13 @@ function mt:on_add()
 	self:on_pulse()
 	self.eff1 = self.cent:effect
 	{
-		model = [[model\Kurumi\r_effect_block_1体.mdx]], 
+		model = [[model\Kurumi\r_effect_block_1.mdx]], 
 		angle = -90,
 		size = 2,
 	}
 	self.eff2 = self.cent:effect
 	{
-		model = [[model\Kurumi\clockwisetimer体.mdx]], 
+		model = [[model\Kurumi\clockwisetimer.mdx]], 
 		angle = -90,
 		size = 5,
 	}
@@ -147,7 +147,7 @@ function mt:power()
 	self.eff1:remove()
 	self.eff1 = self.cent:effect
 	{
-		model = [[model\Kurumi\r_effect_block_2体.mdx]],
+		model = [[model\Kurumi\r_effect_block_2.mdx]],
 		angle = -90,
 		size = 2,
 	}

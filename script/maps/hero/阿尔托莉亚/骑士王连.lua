@@ -117,8 +117,8 @@ function mt:on_cast_channel()
 			attack = true,
 		}
 
-		ac.effect(dest, [[modeldekan\ability\DEKAN_Saber_W_Flash体.mdx]], math.random(0, 360), 0.3):remove()
-		ac.effect(dest, [[modeldekan\ability\DEKAN_Saber_W_Flash体.mdx]], math.random(0, 360), 0.3):remove()
+		ac.effect(dest, [[modeldekan\ability\DEKAN_Saber_W_Flash.mdx]], math.random(0, 360), 0.3):remove()
+		ac.effect(dest, [[modeldekan\ability\DEKAN_Saber_W_Flash.mdx]], math.random(0, 360), 0.3):remove()
 	end
 
 	function mvr:on_remove()

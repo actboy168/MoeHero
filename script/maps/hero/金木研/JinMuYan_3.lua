@@ -59,7 +59,7 @@ function mt:on_cast_channel()
 	local speed = self.speed
 	local dodge_chance = self.dodge_chance
 
-	hero:get_point():add_effect([[war3mapimported\redshockwave体.mdl]]):remove()
+	hero:get_point():add_effect([[war3mapimported\redshockwave.mdl]]):remove()
 
 	--获得状态
 	hero:add_buff 'JinMuYan_3_Buff'

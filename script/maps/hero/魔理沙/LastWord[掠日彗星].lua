@@ -131,9 +131,9 @@ end
 local mt = ac.buff['LastWord[掠日彗星]']
 
 local star = {
-	[[marisastarm_1b体.mdx]],
-	[[marisastarm_1g体.mdx]],
-	[[marisastarm_1y体.mdx]],
+	[[marisastarm_1b.mdx]],
+	[[marisastarm_1g.mdx]],
+	[[marisastarm_1y.mdx]],
 }
 
 function mt:on_add()

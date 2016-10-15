@@ -116,7 +116,7 @@ function mt:on_cast_finish()
 		target = target,
 		target_high = 100,
 		speed = self.speed,
-		model = [[model\kurumi\ball体.mdl]],
+		model = [[model\kurumi\ball.mdl]],
 		size = 2,
 		hit_area = self.hit_area,
 	}

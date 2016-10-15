@@ -72,7 +72,7 @@ function mt:on_cast_channel()
 	end)
 	dummy:setColor(0,0,0)
 	--dummy:setAlpha(80)
-	dummy:add_effect('origin',[[modeldekan\ability\DEKAN_Zoro_R_DarkFire体.mdl]])
+	dummy:add_effect('origin',[[modeldekan\ability\DEKAN_Zoro_R_DarkFire.mdl]])
 	dummy:set_animation(8)
 	--dummy:set_animation_speed(5)
 
@@ -134,7 +134,7 @@ function mt:on_cast_channel()
 	local damage = self.damage + self.damage_plus
 
 	hero:add_restriction '硬直'
-	local eff = hero:add_effect('chest',[[modeldekan\ability\DEKAN_Zoro_R_Missile体.mdl]])
+	local eff = hero:add_effect('chest',[[modeldekan\ability\DEKAN_Zoro_R_Missile.mdl]])
 	hero:setAlpha(1)
 	hero:add_restriction '无敌'
 	local mvr = ac.mover.target

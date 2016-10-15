@@ -99,7 +99,7 @@ function mt:on_cast_channel_er()
 				source = hero,
 				target = u,
 				speed = 2500,
-				model = [[modeldekan\ability\DEKAN_Inori_R_Missile体.mdl]],
+				model = [[modeldekan\ability\DEKAN_Inori_R_Missile.mdl]],
 				skill = self,
 				high = 75,
 				height = 25,
@@ -166,7 +166,7 @@ mt.child_buff = '净化之歌'
 function mt:on_add()
 	local hero = self.target
 	hero:set_animation 'spell channel two'
-	self.eff = hero:add_effect('origin', [[modeldekan\ability\DEKAN_Inori_R_Music体.mdl]])
+	self.eff = hero:add_effect('origin', [[modeldekan\ability\DEKAN_Inori_R_Music.mdl]])
 end
 
 function mt:on_remove()
@@ -186,7 +186,7 @@ function mt:on_add()
 	local u = self.target
 	if u:is_enemy(hero) then
 		u:add_restriction '缴械'
-		self.eff = u:add_effect('origin', [[modeldekan\ability\DEKAN_Inori_R_Buff_Enemy体.mdl]])
+		self.eff = u:add_effect('origin', [[modeldekan\ability\DEKAN_Inori_R_Buff_Enemy.mdl]])
 	end
 end
 
@@ -215,7 +215,7 @@ function mt:on_pulse()
 			skill = self.skill,
 		}
 		if u ~= hero then
-			u:add_effect('chest', [[modeldekan\ability\DEKAN_Inori_R_Buff_Ally体.mdl]]):remove()
+			u:add_effect('chest', [[modeldekan\ability\DEKAN_Inori_R_Buff_Ally.mdl]]):remove()
 		end
 	end
 end

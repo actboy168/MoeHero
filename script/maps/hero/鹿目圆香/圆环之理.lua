@@ -95,7 +95,7 @@ function mt:on_cast_channel()
 				local dummy2 = hero:create_dummy('e001', p)
 				dummy2:set_size(2.5)
 				dummy2:set_high(700)
-				local eff2 = dummy2:add_effect('origin', [[dtpink体.mdx]])
+				local eff2 = dummy2:add_effect('origin', [[dtpink.mdx]])
 				self:remove()
 				dummy:remove()
 				local t = hero:timer(1500, 1, function()
@@ -243,7 +243,7 @@ function mt:on_add()
 	self.mana = mana
 	hero:add('魔法恢复', - self.recover)
 
-	self.eff = hero:add_effect('origin', [[gate keeper体.mdl]])
+	self.eff = hero:add_effect('origin', [[gate keeper.mdl]])
 end
 
 function mt:on_remove()

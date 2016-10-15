@@ -67,8 +67,8 @@ function mt:on_cast_channel()
 		time = self.attack_buff_time,
 		skill = self,
 	}
-	hero:get_point():add_effect([[modeldekan\ability\DEKAN_Saber_Q_Effect体.mdx]]):remove()
-	--hero:get_point():add_effect([[epipulse_9_12体.mdx]]):remove()
+	hero:get_point():add_effect([[modeldekan\ability\DEKAN_Saber_Q_Effect.mdx]]):remove()
+	--hero:get_point():add_effect([[epipulse_9_12.mdx]]):remove()
 end
 
 local mt = ac.orb_buff['风王结界-解放']
@@ -81,7 +81,7 @@ mt.orb = nil
 function mt:on_add()
 	local hero = self.target
 
-	self.eff = hero:add_effect('weapon', [[modeldekan\ability\DEKAN_Saber_Q_HandEffect体.mdx]])
+	self.eff = hero:add_effect('weapon', [[modeldekan\ability\DEKAN_Saber_Q_HandEffect.mdx]])
 end
 
 function mt:on_remove()

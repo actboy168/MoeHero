@@ -121,7 +121,7 @@ function mt:on_cast_channel()
 					skill = self.skill,
 					attack = true,
 				}
-				u:add_effect('origin', [[war3mapimported\blinknew2体.mdl]]):remove()
+				u:add_effect('origin', [[war3mapimported\blinknew2.mdl]]):remove()
 			end
 
 			function mvr:on_remove()
@@ -182,7 +182,7 @@ local mt = ac.orb_buff['音速穿刺']
 
 mt.keep = true
 mt.orb_count = 1
-mt.model = [[war3mapimported\djs_weak体.mdl]]
+mt.model = [[war3mapimported\djs_weak.mdl]]
 
 function mt:on_add()
 	local hero = self.target
@@ -196,7 +196,7 @@ function mt:on_hit(damage)
 		damage = self.damage,
 		skill = self.skill,
 	}
-	damage.target:add_effect('origin', [[war3mapimported\blinknew2体.mdl]]):remove()
+	damage.target:add_effect('origin', [[war3mapimported\blinknew2.mdl]]):remove()
 end
 
 function mt:on_remove()

@@ -59,7 +59,7 @@ function mt:on_cast_shot()
 	local mover = ac.mover.line
 	{
 		source = hero,
-		model = [[model\tina\TN_Q_missile体.mdl]],
+		model = [[model\tina\TN_Q_missile.mdl]],
 		angle = angle,
 		distance = self.range,
 		speed = self.speed,

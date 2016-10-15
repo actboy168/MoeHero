@@ -36,7 +36,7 @@ function mt:on_cast_channel()
 		end
 	end)
 	
-	hero:get_point():add_effect([[distorsionnewsfxbydeckai_nodeath体.mdl]]):remove()
+	hero:get_point():add_effect([[distorsionnewsfxbydeckai_nodeath.mdl]]):remove()
 	
 	local follower = {}
 	local mvr = ac.mover.line
@@ -66,7 +66,7 @@ function mt:on_cast_channel()
 		dummy:add_restriction '硬直'
 		dummy:add_restriction '缴械'
 		dummy:set_class '马甲'
-		dummy:get_point():add_effect([[distorsionnewsfxbydeckai_nodeath体.mdl]]):remove()
+		dummy:get_point():add_effect([[distorsionnewsfxbydeckai_nodeath.mdl]]):remove()
 		dummy:set_animation(3)
 	end
 	
@@ -96,7 +96,7 @@ function mt:on_cast_channel()
 			end
 			hero:set_facing(hero:get_point() / dest:get_point())
 			hero:issue_order('attack', dest)
-			dest:add_effect('origin', [[war3mapimported\blinknew2体.mdl]]):remove()
+			dest:add_effect('origin', [[war3mapimported\blinknew2.mdl]]):remove()
 		end
 	end
 

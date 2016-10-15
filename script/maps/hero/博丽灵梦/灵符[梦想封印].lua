@@ -108,9 +108,9 @@ function mt:on_cast_channel()
 
 	--创建光玉
 	local models = {}
-	models[1] = [[ball_red体.mdl]]
-	models[2] = [[ball_blue体.mdl]]
-	models[3] = [[ball_green体.mdl]]
+	models[1] = [[ball_red.mdl]]
+	models[2] = [[ball_blue.mdl]]
+	models[3] = [[ball_green.mdl]]
 	
 	function createBall(i, start)
 		local mvr = ac.mover.line

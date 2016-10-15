@@ -127,12 +127,12 @@ function mt:on_cast_channel()
 		speed = 100,
 		size = 1,
 		skill = self,
-		model = [[modeldekan\ability\DEKAN_Saber_R_Missile体.mdl]],
+		model = [[modeldekan\ability\DEKAN_Saber_R_Missile.mdl]],
 	}
 	
 	for i=1,10 do
 		local point = p - {angle, distance/10 * i}
-		point:add_effect([[modeldekan\ability\DEKAN_Saber_R_Blust体.mdl]]):remove()
+		point:add_effect([[modeldekan\ability\DEKAN_Saber_R_Blust.mdl]]):remove()
 	end
 end
 
@@ -140,7 +140,7 @@ function mt:on_cast_start()
 	local hero = self.owner
 	local angle = hero:get_point() / self.target
 
-	self.eff = hero:get_point():add_effect([[modeldekan\ability\DEKAN_Saber_R_Light体.mdl]])
+	self.eff = hero:get_point():add_effect([[modeldekan\ability\DEKAN_Saber_R_Light.mdl]])
 
 	hero:get_owner():play_sound [[response\阿尔托莉亚\skill\R.mp3]]
 end
@@ -171,7 +171,7 @@ function mt:on_add()
 		end
 	end)
 	
-	self.eff = hero:add_effect('origin', [[modeldekan\ability\DEKAN_Saber_R_Buff体.mdl]])
+	self.eff = hero:add_effect('origin', [[modeldekan\ability\DEKAN_Saber_R_Buff.mdl]])
 end
 
 function mt:on_remove()

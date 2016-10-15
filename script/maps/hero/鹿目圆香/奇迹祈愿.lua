@@ -93,7 +93,7 @@ mt.trg = nil
 function mt:on_add()
 	local source, target = self.source, self.target
 
-	self.eff = target:add_effect('origin', [[war3mapimported\crippletarget2体.mdl]])
+	self.eff = target:add_effect('origin', [[war3mapimported\crippletarget2.mdl]])
 
 	--增加生命恢复速度
 	target:add('生命恢复', self.recover)

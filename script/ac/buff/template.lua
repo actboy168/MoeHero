@@ -182,7 +182,7 @@ mt.cover_type = 0
 mt.cover_global = 1
 function mt:on_add()
 	self.count = 1
-	self.shield_eff = self.target:add_effect('chest', [[model\common\shield体.mdx]])
+	self.shield_eff = self.target:add_effect('chest', [[model\common\shield.mdx]])
 end
 function mt:on_remove()
 	if self.shield_eff then self.shield_eff:remove() end

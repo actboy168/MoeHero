@@ -97,7 +97,7 @@ function mt:on_add()
 	self.origin_id = hero:get_type_id()
 	hero:transform(self.unit_type_id)
 
-	self.eff = hero:add_effect('origin', [[model\Wukong\Mr.War3_JDY体.mdl]])
+	self.eff = hero:add_effect('origin', [[model\Wukong\Mr.War3_JDY.mdl]])
 
 	--设置层数
 	self:set_stack(math.ceil(self.life))

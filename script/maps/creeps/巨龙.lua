@@ -56,7 +56,7 @@ function buff:on_add()
 	local hero = self.target
 	local rate = self.rate
 
-	self.eff = hero:add_effect('origin', [[ceiling rays体.mdl]])
+	self.eff = hero:add_effect('origin', [[ceiling rays.mdl]])
 
 	--加全属性
 	hero:add('生命上限%', rate)

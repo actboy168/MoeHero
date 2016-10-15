@@ -40,7 +40,7 @@ local function cast_spell_q(hero, target, skill, damage, do_damage)
 		local mvr = ac.mover.line
 		{
 			source = hero,
-			model = [[fu体.mdl]],
+			model = [[fu.mdl]],
 			speed = skill.speed,
 			angle = angle,
 			distance = skill.distance,

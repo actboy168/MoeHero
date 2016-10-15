@@ -114,7 +114,7 @@ out_reg:event '区域-进入' (function(trg, hero)
 		--附近找个地方
 		local p = hero:get_point() - {hero:get_facing() + math.random(-60, 60), math.random(800, 1000)}
 		--创建一个黑洞
-		local eff = ac.effect(p, [[cosmic field_65体.mdl]])
+		local eff = ac.effect(p, [[cosmic field_65.mdl]])
 		eff.unit:set_size(1)
 		eff.unit:shareVisible(hero:get_owner())
 		eff.unit:addSight(400)
@@ -161,7 +161,7 @@ out_reg:event '区域-进入' (function(trg, hero)
 				hero:set_high(135-3*count)
 				hero:blink(p,true,true)
 				if count == 15 then
-					ac.effect(p, [[shadowexplosion体.mdl]]):remove()
+					ac.effect(p, [[shadowexplosion.mdl]]):remove()
 				end
 				if count > 15 then
 					eff.unit:set_size(1.9-0.02*count)

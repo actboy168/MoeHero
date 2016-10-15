@@ -128,7 +128,7 @@ function mt:on_cast_channel()
 
 		hero:issue_order('attack', self.target)
 
-		hero:add_effect('origin', [[basicstrike01体.mdl]]):remove()
+		hero:add_effect('origin', [[basicstrike01.mdl]]):remove()
 	end
 
 	function mover:on_remove()

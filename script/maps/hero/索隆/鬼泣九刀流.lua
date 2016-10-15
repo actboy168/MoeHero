@@ -51,9 +51,9 @@ bff.eff3 = nil
 
 function bff:on_add()
 	local hero = self.target
-	self.eff1 = hero:add_effect('chest',[[modeldekan\ability\DEKAN_Zoro_E_Buff体.mdx]])
-	self.eff2 = hero:add_effect('hand left',[[modeldekan\ability\DEKAN_Zoro_E_Buff_Hand体.mdx]])
-	self.eff3 = hero:add_effect('hand right',[[modeldekan\ability\DEKAN_Zoro_E_Buff_Hand体.mdx]])
+	self.eff1 = hero:add_effect('chest',[[modeldekan\ability\DEKAN_Zoro_E_Buff.mdx]])
+	self.eff2 = hero:add_effect('hand left',[[modeldekan\ability\DEKAN_Zoro_E_Buff_Hand.mdx]])
+	self.eff3 = hero:add_effect('hand right',[[modeldekan\ability\DEKAN_Zoro_E_Buff_Hand.mdx]])
 	
 	self.target:add('攻击速度', self.attack_speed)
 	self.target:add('移动速度%', self.move_speed_rate)

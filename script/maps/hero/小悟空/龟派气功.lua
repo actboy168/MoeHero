@@ -63,7 +63,7 @@ mt.start_time = 0
 function mt:on_cast_channel()
 	local hero = self.owner
 	self.start_time = hero:clock()
-	self.ability01_effect = self.owner:add_effect('hand right',[[ModelDEKAN\Ability\DEKAN_Goku_Kamehameha_Channel体.mdl]])
+	self.ability01_effect = self.owner:add_effect('hand right',[[ModelDEKAN\Ability\DEKAN_Goku_Kamehameha_Channel.mdl]])
 	hero:add_buff '龟派气功'
 	{
 		skill = self,
@@ -104,7 +104,7 @@ function mt:on_cast_stop()
 	{
 		source = hero,
 		target = self.target,
-		model = [[modeldekan\ability\Dekan_Goku_kamehameha_missile体.mdl]],
+		model = [[modeldekan\ability\Dekan_Goku_kamehameha_missile.mdl]],
 		distance = self.distance,
 		speed = self.speed,
 		damage = damage,

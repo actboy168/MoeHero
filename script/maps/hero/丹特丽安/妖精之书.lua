@@ -51,7 +51,7 @@ end
 function mt:on_cast_channel()
 	local hero = self.owner
 	hero:replace_skill('妖精之书', '妖精之书-发动')
-	self.effect = hero:add_effect('origin', [[model\dantalian\channel_green体.mdl]])
+	self.effect = hero:add_effect('origin', [[model\dantalian\channel_green.mdl]])
 	self.clock = hero:clock()
 	self.timer = hero:wait(self.channel_time * 1000, function()
 		hero:add_buff '妖精之书'
@@ -62,7 +62,7 @@ function mt:on_cast_channel()
 	local clock = hero:clock()
 	local target_mark
 	if hero:get_owner() == ac.player.self then
-		target_mark = [[model\dantalian\target_mark体.mdl]]
+		target_mark = [[model\dantalian\target_mark.mdl]]
 	else
 		target_mark = ''
 	end
@@ -148,7 +148,7 @@ local mt = ac.buff['妖精之书']
 
 function mt:on_add()
 	local hero = self.target
-	self.eff = hero:add_effect('origin', [[model\dantalian\speicl_green体.mdx]])
+	self.eff = hero:add_effect('origin', [[model\dantalian\speicl_green.mdx]])
 end
 
 function mt:on_remove()

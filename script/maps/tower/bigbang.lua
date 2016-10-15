@@ -7,9 +7,9 @@ local function create_jiecao(hero, source, team, where)
 	local model
 	local team = team or hero:get_owner():get_team()
 	if team == 1 then
-		model = [[ball_blue体.mdl]]
+		model = [[ball_blue.mdl]]
 	else
-		model = [[ball_yellow_weak体.mdl]]
+		model = [[ball_yellow_weak.mdl]]
 	end
 
 	local source = source and source:get_owner().hero

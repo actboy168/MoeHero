@@ -51,7 +51,7 @@ function mt:on_add()
 			self.skills[name] = skill:add_blend('2', '边框', 2)
 		end
 	end
-	self.eff = hero:add_effect('origin', [[modeldekan\ability\DEKAN_Inori_W_Effect体.mdl]])
+	self.eff = hero:add_effect('origin', [[modeldekan\ability\DEKAN_Inori_W_Effect.mdl]])
 	self.trg1 = hero:event '技能-施法开始' (function(_, _, skill)
 		local name = skill.title or skill.name
 		if not self.skills[name] then

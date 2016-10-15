@@ -70,7 +70,7 @@ function mt:on_upgrade()
 	local hero = self.owner
 	local skill = self
 	--武器上创建特效
-	self.eff = hero:add_effect('weapon', [[war3mapImported\magicreceive_red体.mdx]])
+	self.eff = hero:add_effect('weapon', [[war3mapImported\magicreceive_red.mdx]])
 	--监听伤害事件
 	self.buff = hero:add_buff '飞焰'
 	{
@@ -111,7 +111,7 @@ function mt:on_cast_channel()
 		local mvr = ac.mover.line
 		{
 			source = hero,
-			model = [[tx9体.mdl]],
+			model = [[tx9.mdl]],
 			angle = angle,
 			distance = self.distance,
 			speed = self.speed,

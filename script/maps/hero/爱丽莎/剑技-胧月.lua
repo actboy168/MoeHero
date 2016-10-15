@@ -203,7 +203,7 @@ function mt:gun_on_hit(hit, damage)
 		source = hero,
 		target = hero,
 		start = damage.target:get_point(),
-		model = [[ball_green_weak体.mdl]],
+		model = [[ball_green_weak.mdl]],
 		speed = 1000,
 		missile = true,
 		skill = self,

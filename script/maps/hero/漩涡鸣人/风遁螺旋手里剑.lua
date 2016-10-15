@@ -77,7 +77,7 @@ function mt:on_cast_channel()
 	hero:set_animation(self.cast_animation)
 	hero:add_restriction '硬直'
 	--创建马甲
-	ac.effect(hero:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke体.mdl]],270,2):remove()
+	ac.effect(hero:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke.mdl]],270,2):remove()
 	local dummy = {}
 	local point = hero:get_point() - {(hero:get_point()/target:get_point())-70,100}
 	dummy[1] = hero:create_dummy(nil,point,point/hero:get_point())
@@ -85,7 +85,7 @@ function mt:on_cast_channel()
 	dummy[1]:set_class '马甲'
 	dummy[1]:setPoint(point)
 	dummy[1]:set_animation(5)
-	ac.effect(dummy[1]:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke体.mdl]],270,1.2):remove()
+	ac.effect(dummy[1]:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke.mdl]],270,1.2):remove()
 
 	point = hero:get_point() - {(hero:get_point()/target:get_point())+70,100}
 	dummy[2] = hero:create_dummy(nil,point,point/hero:get_point())
@@ -93,7 +93,7 @@ function mt:on_cast_channel()
 	dummy[2]:set_class '马甲'
 	dummy[2]:setPoint(point)
 	dummy[2]:set_animation(5)
-	ac.effect(dummy[2]:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke体.mdl]],270,1.2):remove()
+	ac.effect(dummy[2]:get_point(),[[modeldekan\ability\DEKAN_Naturo_Smoke.mdl]],270,1.2):remove()
 	--创建手里剑
 	local unit = hero:create_dummy('e001',hero:get_point(),hero:get_facing())
 	unit:set_high(150)
@@ -117,7 +117,7 @@ function mt:on_cast_channel()
 					attack = true,
 					aoe = true,
 				}
-				u:add_effect('chest',[[modeldekan\ability\DEKAN_Naturo_R_Damage体.mdl]]):remove()
+				u:add_effect('chest',[[modeldekan\ability\DEKAN_Naturo_R_Damage.mdl]]):remove()
 			end
 		end)
 	end
@@ -140,11 +140,11 @@ function mt:on_cast_channel()
 		if br then
 			return
 		end
-		local eff = hero:add_effect('hand',[[DEKAN_Naturo_R_FDSLJ体.mdl]]) 
-		hero:get_point():add_effect([[modeldekan\ability\DEKAN_Naturo_R_Start体.mdl]]):remove()
+		local eff = hero:add_effect('hand',[[DEKAN_Naturo_R_FDSLJ.mdl]]) 
+		hero:get_point():add_effect([[modeldekan\ability\DEKAN_Naturo_R_Start.mdl]]):remove()
 		--删除马甲
 		for i,v in ipairs(dummy) do
-			v:get_point():add_effect([[modeldekan\ability\DEKAN_Naturo_Smoke体.mdl]]):remove()
+			v:get_point():add_effect([[modeldekan\ability\DEKAN_Naturo_Smoke.mdl]]):remove()
 			v:remove()
 		end
 		hero:set_animation(7)
@@ -182,7 +182,7 @@ function mt:on_cast_channel()
 							}
 						end
 						DealDamage()
-						unit.eff2 = unit:add_effect('origin',[[modeldekan\ability\DEKAN_Naturo_R_Tornado体.mdl]])
+						unit.eff2 = unit:add_effect('origin',[[modeldekan\ability\DEKAN_Naturo_R_Tornado.mdl]])
 						hero:wait(skill.duration*1000, function()
 							unit:kill()
 							unit.eff1:remove()
@@ -199,8 +199,8 @@ function mt:on_cast_channel()
 				hero:remove_restriction '硬直'
 				hero:set_animation_speed(1)
 				eff:remove()
-				unit.eff1 = unit:add_effect('origin',[[DEKAN_Naturo_R_FDSLJ_NoBith体.mdl]])
-				ac.effect(unit:get_point() - {hero:get_facing(),100},[[modeldekan\ability\DEKAN_Naturo_R_Launch体.mdl]],270,1):remove()
+				unit.eff1 = unit:add_effect('origin',[[DEKAN_Naturo_R_FDSLJ_NoBith.mdl]])
+				ac.effect(unit:get_point() - {hero:get_facing(),100},[[modeldekan\ability\DEKAN_Naturo_R_Launch.mdl]],270,1):remove()
 				
 			end)
 		end)

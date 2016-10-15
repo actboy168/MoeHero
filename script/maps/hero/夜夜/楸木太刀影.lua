@@ -36,15 +36,15 @@ mt.orb_count = 1
 
 function mt:on_add()
 	local hero = self.target
-	self.eff1 = hero:add_effect("origin", [[model\asuna\e_starparticle体.mdl]])
-	self.eff2 = hero:add_effect("hand right", [[ModelDEKAN\Ability\DEKAN_Asuna_W_Blust体.mdl]])
-	self.eff3 = hero:add_effect("origin", [[model\asuna\e_starparticle体.mdl]])
+	self.eff1 = hero:add_effect("origin", [[model\asuna\e_starparticle.mdl]])
+	self.eff2 = hero:add_effect("hand right", [[ModelDEKAN\Ability\DEKAN_Asuna_W_Blust.mdl]])
+	self.eff3 = hero:add_effect("origin", [[model\asuna\e_starparticle.mdl]])
 end
 
 function mt:on_hit(damage)
 	local hero = self.target
 	local target = damage.target
-	target:add_effect('origin', [[war3mapimported\epipulse_9_12体.mdl]]):remove()
+	target:add_effect('origin', [[war3mapimported\epipulse_9_12.mdl]]):remove()
 	target:damage
 	{
 		source = hero,

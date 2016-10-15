@@ -83,7 +83,7 @@ function mt:on_cast_shot()
 	else
 		time = self.duration_none
 	end
-	hero:get_point():add_effect([[modeldekan\ability\DEKAN_Inori_W_Effect体.mdl]]):remove()
+	hero:get_point():add_effect([[modeldekan\ability\DEKAN_Inori_W_Effect.mdl]]):remove()
 	hero:add_buff '光学迷彩'
 	{
 		time = time,

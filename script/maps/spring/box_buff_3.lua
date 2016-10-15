@@ -12,7 +12,7 @@ function buff:on_add()
 	local hero = self.target
 	hero:add('冷却缩减', self.cool)
 	hero:add('减耗', self.cost)
-	self.eff = hero:add_effect('origin', [[war3mapimported\dustwave体.mdl]])
+	self.eff = hero:add_effect('origin', [[war3mapimported\dustwave.mdl]])
 end
 
 function buff:on_remove()

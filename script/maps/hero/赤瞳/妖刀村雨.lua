@@ -150,7 +150,7 @@ function mt:on_add()
 	local hero = self.source
 	local target = self.target
 	self.damage = self.damage / (self.time / self.pulse)
-	self.eff = target:add_effect('head', [[modeldekan\ability\dekan_Akame_E_buff体.mdl]])
+	self.eff = target:add_effect('head', [[modeldekan\ability\dekan_Akame_E_buff.mdl]])
 	target:add_buff '减速'
 	{
 		source = hero,

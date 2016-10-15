@@ -142,7 +142,7 @@ function mt:on_add()
 		else
 			eff = ac.effect(hero:get_point(),[[modeldekan\ability\DEKAN_Kirito_R_Flash_Red]]..str..[[.mdl]],angle - 90,size)
 		end
-		hero:add_effect('chest',[[modeldekan\ability\dekan_kirito_r_wind_blue体.mdl]]):remove()
+		hero:add_effect('chest',[[modeldekan\ability\dekan_kirito_r_wind_blue.mdl]]):remove()
 		eff.unit:set_high(200)
 		eff:remove()
 	end)
@@ -188,7 +188,7 @@ function mt:on_pulse()
 			attack = true,
 		}
 
-		u:add_effect('chest', [[modeldekan\ability\dekan_kirito_r_hit_effect体.mdl]]):remove()
+		u:add_effect('chest', [[modeldekan\ability\dekan_kirito_r_hit_effect.mdl]]):remove()
 
 		--对附近单位造成溅射伤害
 		for _, u in ac.selector()

@@ -65,9 +65,9 @@ function mt:on_cast_channel()
 		['破甲'] = hero:get '破甲' + self.armor_pene,
 		['穿透'] = hero:get '穿透' + self.armor_pene_percent,
 	}
-	self.target:add_effect('origin', [[crimsonwake体.mdl]]):remove()
+	self.target:add_effect('origin', [[crimsonwake.mdl]]):remove()
 	local unit = hero:create_dummy('e003', hero:get_point(), hero:get_facing())
-	unit:add_effect('chest', [[crescentslashredfix体.mdl]]):remove()
+	unit:add_effect('chest', [[crescentslashredfix.mdl]]):remove()
 	hero:wait(2000, function()
 		unit:remove()
 	end)

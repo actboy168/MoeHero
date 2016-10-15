@@ -103,7 +103,7 @@ function mt:on_cast_stop()
 	local target = hero:get_point() - {angle, 200} 
 	local eff =  target:effect
 	{
-		model = [[model\tohka\effect_e体.mdx]],
+		model = [[model\tohka\effect_e.mdx]],
 		size = 2,
 	}
 	local blocks = {}
