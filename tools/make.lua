@@ -11,6 +11,23 @@ local w3x2txt  = require 'w3x2txt'
 
 local map_name = 'MoeHero.w3x'
 
+local function pack_w3u(t)
+    local ignore = {
+        [".mdx"] = true,
+        [".mdl"] = true,
+        ["model\\dummy.mdl"] = true,
+    }
+    for id, u in pairs(t) do
+        if u.file and not ignore[u.file:lower()] then
+            u.file = [[units\human\Footman\Footman.mdx]]
+        end
+        if u.Art then
+            u.Art = [[ReplaceableTextures\CommandButtons\BTNFootman.blp]]
+        end
+    end
+    return t
+end
+
 local function pack(input_path)
     w3x2txt:init()
     local mode = arg[1]
@@ -22,6 +39,14 @@ local function pack(input_path)
 	map_file:add_input(resource_dir)
     if mode == 'release' then
 	    map_file:add_input(script_dir)
+    end
+    if not fs.exists(resource_dir) then
+        function map_file:on_lni(name, t)
+            if name == 'war3map.w3u' then
+                return pack_w3u(t)
+            end
+            return t
+        end 
     end
     function map_file:on_save(name, file, dir)
         if dir == script_dir then
