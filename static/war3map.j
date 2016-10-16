@@ -702,6 +702,3 @@ endfunction
 
 
 //Struct method generated initializers/callers:
-
-
-//1476537665

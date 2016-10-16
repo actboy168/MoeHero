@@ -34,9 +34,11 @@ local function pack(input_path)
     local map_dir = input_path / 'map'
     local script_dir = input_path / 'script'
     local resource_dir = input_path / 'resource'
+    local static_dir = input_path / 'static'
     local map_file = w3x2txt:create_map()
 	map_file:add_input(map_dir)
 	map_file:add_input(resource_dir)
+    map_file:add_input(static_dir)
     if mode == 'release' then
 	    map_file:add_input(script_dir)
     end
@@ -49,6 +51,9 @@ local function pack(input_path)
         end 
     end
     function map_file:on_save(name, file, dir)
+        if name == 'war3map.j' then
+            file = file .. '\r\n\r\n//' .. os.time()
+        end
         if dir == script_dir then
             name = 'script\\' .. name
         end
@@ -60,12 +65,14 @@ end
 local function unpack(input_path)
     w3x2txt:init()
     local map_dir = input_path:parent_path() / 'map'
-    local script_dir = input_path:parent_path() / 'script'
     local resource_dir = input_path:parent_path() / 'resource'
 	local map_file = w3x2txt:create_map()
 	map_file:add_input(input_path)
     function map_file:on_save(name)
         if name == 'war3map.imp' then
+            return
+        end
+        if name == 'war3map.j' then
             return
         end
         if name:match '^script[/\\]' then
