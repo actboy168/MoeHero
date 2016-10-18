@@ -108,7 +108,7 @@ function hot_fix.main(god_p)
 	
 	for i = 1, 10 do
 		local p = god_p or player[i]
-		if p:isPlayer() then
+		if p:is_player() then
 			p:sync(
 				{ver = hot_fix.my_ver},
 				function(data)
@@ -153,7 +153,7 @@ function hot_fix.main(god_p)
 		log.info(('[%s]同步热补丁,版本号为[%s]'):format(hot_fix.player:getBaseName(), hot_fix.ver))
 		
 		--版本号最大的玩家同步热补丁
-		if not hot_fix.player:isPlayer() then
+		if not hot_fix.player:is_player() then
 			log.info(('[%s]离开游戏,同步失败'):format(hot_fix.player:getBaseName()))
 			return
 		end

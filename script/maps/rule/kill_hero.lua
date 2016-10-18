@@ -153,7 +153,7 @@ hero:event '单位-死亡' (function(_, target, source)
 		: of_hero()
 		: of_not_illusion()
 		: get()
-	if not source or not source:get_owner():isPlayer() then
+	if not source or not source:get_owner():is_player() then
 		if #hero_tables > 0 then
 			source = hero_tables[math.random(1, #hero_tables)]
 		else

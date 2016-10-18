@@ -322,7 +322,7 @@ local function start()
 		--检查是否还有人没选英雄
 		for i = 1, 10 do
 			local p = player[i]
-			if p:isPlayer() and not p.hero then
+			if p:is_player() and not p.hero then
 				return
 			end
 		end
@@ -338,7 +338,7 @@ local function start()
 		local flag = true
 		for i = 1, 10 do
 			local p = player[i]
-			if p:isPlayer() and not p.hero then
+			if p:is_player() and not p.hero then
 				flag = false
 			end
 		end

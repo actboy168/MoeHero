@@ -81,7 +81,7 @@ function mt:setName(name)
 end
 
 --是否是玩家
-function mt:isPlayer()
+function mt:is_player()
 	return jass.GetPlayerController(self.handle) == jass.MAP_CONTROL_USER and jass.GetPlayerSlotState(self.handle) == jass.PLAYER_SLOT_STATE_PLAYING
 end
 
@@ -489,7 +489,7 @@ end
 function player.countAlive()
 	local count = 0
 	for i = 1, 16 do
-		if player[i]:isPlayer() then
+		if player[i]:is_player() then
 			count = count + 1
 		end
 	end
@@ -531,7 +531,7 @@ function player.regist_jass_triggers()
 	--玩家离开事件
 		local trg = war3.CreateTrigger(function()
 			local p = ac.player(jass.GetTriggerPlayer())
-			if p:isPlayer() then
+			if p:is_player() then
 				player.count = player.count - 1
 			end
 			p:event_notify('玩家-离开', p)
@@ -558,7 +558,7 @@ local function init()
 		player.create(i, jass.Player(i - 1))
 
 		--是否在线
-		if player[i]:isPlayer() then
+		if player[i]:is_player() then
 			player.count = player.count + 1
 		end
 

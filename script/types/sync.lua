@@ -30,7 +30,7 @@ end
 --	同步完成后回调的函数
 function player.__index:sync(data, func)
 	--print(('Start Sync: %s\t%s'):format(self:get(), func))
-	if self:isObserver() or not self:isPlayer() then
+	if self:isObserver() or not self:is_player() then
 		print(('sync.lua warning:player %d is not an alive player'):format(self:get()))
 		return
 	end
@@ -80,7 +80,7 @@ function player.__index:sync(data, func)
 			--检查是否同步完成
 			if jass.GetStoredInteger(sync.gc, first, '-') == 0 then
 				--检查是否还在游戏中
-				if not self:isPlayer() then
+				if not self:is_player() then
 					sync.using[index]	= nil
 					t:remove()
 					if func then

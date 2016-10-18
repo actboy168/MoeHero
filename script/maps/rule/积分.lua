@@ -12,7 +12,7 @@ local pc = {0, 0}
 -- 把双方的萌力加起来
 for i = 1, 12 do
 	local p = ac.player(i)
-	if p:isPlayer() then
+	if p:is_player() then
 		local tid = p:get_team()
 		moe[tid] = moe[tid] + p:get_record '萌力-100'
 		pc[tid] = pc[tid] + 1
@@ -30,7 +30,7 @@ moe[2] = moe[2] / 5
 -- 计算每个玩家的预期胜利得分/失败扣分
 for i = 1, 12 do
 	local p = ac.player(i)
-	if p:isPlayer() then
+	if p:is_player() then
 		local t = p:get_team()
 		local my_moe = p:get_record '萌力-100'
 		local m = (my_moe + moe[t]) / 2
@@ -68,7 +68,7 @@ local function allow_leave()
 	has_allow_leave = true
 	for i = 1, 12 do
 		local p = ac.player(i)
-		if p:isPlayer() then
+		if p:is_player() then
 			p:add_record('中出率', -2)
 			p:add_record('r1', -1)
 			p:save_record()
@@ -88,7 +88,7 @@ ac.game:event '游戏-结束' (function(_, team)
 			p:add_record('胜利-1', 1)
 			p:set_record('萌力-100', p.win_moe or 0)
 		end
-		if p:isPlayer() then
+		if p:is_player() then
 			max_kill = math.max(max_kill, p.kill_count)
 			p.mvp = (p.kill_count + p.assist_count * 0.7) / (1 + p.dead_count * 0.1)
 			max_mvp = math.max(max_mvp, p.mvp)

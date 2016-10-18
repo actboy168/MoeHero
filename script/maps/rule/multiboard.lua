@@ -39,7 +39,7 @@ local function init()
 	--队伍1
 	for i = 1, 5 do
 		local p = player.force[1][i]
-		if p:isPlayer() then
+		if p:is_player() then
 			player_count = player_count + 1
 			mb_players[p] = player_count
 		end
@@ -51,7 +51,7 @@ local function init()
 	--队伍2
 	for i = 1, 5 do
 		local p = player.force[2][i]
-		if p:isPlayer() then
+		if p:is_player() then
 			player_count = player_count + 1
 			mb_players[p] = player_count
 		end
@@ -107,7 +107,7 @@ local function freshPlayer()
 	for i = 1, 12 do
 		local p = player[i]
 		local color
-		if i > 10 or p:isPlayer() then
+		if i > 10 or p:is_player() then
 			color = p:getColorWord()
 		else
 			color = '|cff444444'

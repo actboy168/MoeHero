@@ -18,7 +18,7 @@ ac.game:event '游戏-开始' (function()
 			local g = gold / player_count[team]
 			for i = 1, 5 do
 				local p = tp[i]
-				if p:isPlayer() then
+				if p:is_player() then
 					p:addGold(g)
 				end
 			end
@@ -52,7 +52,7 @@ ac.game:event '玩家-离开' (function(trg, p)
 	if player_count[team] > 0 then
 		for i = 1, 5 do
 			local fp = player.force[team][i]
-			if fp:isPlayer() and p ~= fp then
+			if fp:is_player() and p ~= fp then
 				fp:addGold(g / player_count[team])
 			end
 		end
