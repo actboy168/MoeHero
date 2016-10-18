@@ -406,4 +406,13 @@ function helper:light(type)
 	jass.SetDayNightModels(([[Environment\DNC\DNC%s\DNC%sTerrain\DNC%sTerrain.mdx]]):format(name, name, name), ([[Environment\DNC\DNC%s\DNC%sUnit\DNC%sUnit.mdx]]):format(name, name, name))
 end
 
+function helper:sha1(name)
+	local storm = require 'jass.storm'
+	local rsa = require 'util.rsa'
+	local file = storm.load(name)
+	local sign = rsa:get_sign(file)
+	print(sign)
+	storm.save('我的英雄不可能那么萌\\sign.txt', sign)
+end
+
 main()
