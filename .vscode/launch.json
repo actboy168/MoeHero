@@ -1,14 +1,15 @@
 {
-    "version": "0.0.1",
-    "debugServer": 4278,
+    "version": "0.2.0",
     "configurations": [
         {
             "name": "attach",
             "type": "lua",
-            "program": "",
             "request": "attach",
+            "program": "",
             "stopOnEntry": false,
-            "cwd": "${workspaceRoot}/script"
+            "cwd": "${workspaceRoot}",
+            "ip": "localhost",
+            "port": 4278
         }
     ]
 }
