@@ -15,7 +15,8 @@ require 'rule.visible'
 require 'rule.multiboard'
 require 'rule.tips'
 require 'rule.sound'
-require 'rule.积分'
+--require 'rule.积分'
+require 'rule.新积分'
 
 local jass = require 'jass.common'
 

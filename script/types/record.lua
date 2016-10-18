@@ -1,6 +1,10 @@
 local japi = require 'jass.japi'
 local jass = require 'jass.common'
 
+local math_floor = math.floor
+local has_record = not not japi.InitGameCache
+log.info('积分环境', has_record)
+
 local names = {
 	'FlushGameCache',
 	'InitGameCache',
@@ -96,7 +100,7 @@ end
 local function write_score(table, key, data)
 	japi.StoreInteger(get_score(), table, key, data)
 	if get_player():is_self() then
-		japi.SyncStoredInteger(gc, table, key)
+		japi.SyncStoredInteger(get_score(), table, key)
 	end
 end
 
@@ -111,15 +115,23 @@ function ac.player.__index:get_score(name)
 end
 
 function ac.player.__index:set_score(name, value)
-	log.info(('设置积分:[%s][%s] <-- [%d]'):format(self:get_name(), name, value))
-	write_score(get_key(self) .. "=", name, value)
+	log.info(('设置RPG积分:[%s][%s] = [%d]'):format(self:get_name(), name, value))
+	if has_record then
+		write_score(get_key(self) .. "=", name, value)
+	else
+		write_score(get_key(self), name, value)
+	end
 end
 
-function ac.player.__index:add_scrore(name, value)
-	log.info(('增加积分:[%s][%s] <-- +[%d]'):format(self:get_name(), name, value))
-	write_score(get_key(self) .. "+", name, value)
+function ac.player.__index:add_score(name, value)
+	log.info(('增加RPG积分:[%s][%s] + [%d]'):format(self:get_name(), name, value))
+	if has_record then
+		write_score(get_key(self) .. "+", name, value)
+	else
+		write_score(get_key(self), name, value + self:get_score(name))
+	end
 end
 
-ac.game:event '游戏-结束' (function()
+function ac.game:score_game_end()
 	write_score("$", "GameEnd", 0)
-end)
+end
