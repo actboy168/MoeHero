@@ -56,7 +56,7 @@ function player.__index:sync(data, func)
 		local key = sync.getKey(i)
 		--print(('player[%d] sync start: %s = %s'):format(self:get(), name, value))
 		if value ~= 0 then
-			if self:isSelf() then
+			if self:is_self() then
 				--将数据保存到缓存中
 				jass.StoreInteger(sync.gc, first, key, value)
 				--发起同步
@@ -67,7 +67,7 @@ function player.__index:sync(data, func)
 		jass.StoreInteger(sync.gc, first, key, 0)
 	end
 	--发送一个结束标记
-	if self:isSelf() then
+	if self:is_self() then
 		jass.StoreInteger(sync.gc, first, '-', 1)
 		jass.SyncStoredInteger(sync.gc, first, '-')
 	end
@@ -155,7 +155,7 @@ function player.__index:syncText(data, func)
 				func(false)
 				return
 			end
-			if not self:isSelf() then
+			if not self:is_self() then
 				for i = 1, data.count do
 					ints[i] = 0
 				end

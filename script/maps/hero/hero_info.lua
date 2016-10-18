@@ -42,7 +42,7 @@ function mt:on_add()
 	if hero then
 		self.art = hero:get_slk 'Art'
 		self:fresh_art()
-		if self.owner:get_owner():isSelf() then
+		if self.owner:get_owner():is_self() then
 			local name = self.owner:get_owner():getColorWord() .. hero:get_name() .. '|r'
 			self.title = name
 		end

@@ -194,7 +194,7 @@ mt.pulse = 0.01
 
 function mt:on_pulse()
 	local u = self.target
-	if u:get_owner():isSelf() then
+	if u:get_owner():is_self() then
 		jass.SelectUnit(u.handle, false)
 	end
 end

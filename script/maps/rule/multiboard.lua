@@ -438,7 +438,7 @@ end
 --玩家选择英雄后显示多面板
 ac.game:event '玩家-注册英雄' (function(trg, player, hero)
 	local mt = getMultiboard()
-	if player:isSelf() then
+	if player:is_self() then
 		mt:show()
 	end
 end)

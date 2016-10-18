@@ -145,7 +145,7 @@ function shop.create(player, unit_id, rect_name, ...)
 		u:add_skill('商店物品', '物品', x, {default_item_id = ('ID%d%d'):format(i - 1, x - 1)})
 	end
 
-	if player:isSelf() then
+	if player:is_self() then
 		shop.self = u
 		u:set_high(0)
 	end

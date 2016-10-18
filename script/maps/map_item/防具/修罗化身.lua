@@ -68,7 +68,7 @@ function buff:on_add()
 	local source = self.source
 	local eff_dir = ''
 	local value = self.value / 100.0
-	if source:get_owner():isSelf() then
+	if source:get_owner():is_self() then
 		eff_dir = [[snipe target.mdl]]
 	end
 	self.eff = hero:add_effect('overhead', eff_dir)

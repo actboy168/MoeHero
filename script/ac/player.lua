@@ -91,7 +91,7 @@ function mt:isObserver()
 end
 
 --是否是本地玩家
-function mt:isSelf()
+function mt:is_self()
 	return self == player.self
 end
 
@@ -230,7 +230,7 @@ function mt:addGold(gold, where, flag)
 	}
 	if where.type == 'unit' then
 		local model
-		if self:isSelf() then
+		if self:is_self() then
 			model = [[UI\Feedback\GoldCredit\GoldCredit.mdl]]
 		else
 			model = ''
