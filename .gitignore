@@ -1,3 +1,5 @@
 /resource/
 *.w3x
 script/(ppk).lua
+*.sign
+tools/rsa/ppk
