@@ -12,6 +12,7 @@ local strchar = string.char
 local strbyte = string.byte
 local strsub  = string.sub
 local strunpack = string.unpack
+local osclock = os.clock
 local h0, h1, h2, h3, h4
 
 -------------------------------------------------
@@ -64,7 +65,9 @@ local function MainLoop(str)
 	local a, b, c, d, e, f, k, t
 	local i, j
 	local w = {}
-	for n = 1, #str, 64 do
+	local clock = osclock()
+	local len = #str
+	for n = 1, len, 64 do
 		w[0x01], w[0x02], w[0x03], w[0x04], w[0x05], w[0x06], w[0x07], w[0x08],
 		w[0x09], w[0x0A], w[0x0B], w[0x0C], w[0x0D], w[0x0E], w[0x0F], w[0x10]
 		= strunpack(('>LLLLLLLLLLLLLLLL'), str, n)
@@ -102,6 +105,10 @@ local function MainLoop(str)
 		h2 = (h2 + c) & 0xFFFFFFFF
 		h3 = (h3 + d) & 0xFFFFFFFF
 		h4 = (h4 + e) & 0xFFFFFFFF
+		if osclock() - clock >= 0.5 then
+			clock = osclock()
+			print(('sha1已计算[%d]字节 %04.2f%%'):format(n, n / len * 100))
+		end
 	end
 end
 
