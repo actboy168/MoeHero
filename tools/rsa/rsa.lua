@@ -40,7 +40,13 @@ local function bn2str(bn)
 end
 
 local function sha1(str)
-    return str2bn(_sha1(str))
+	local str = _sha1(str)
+	local bn = {}
+    for i = 1, #str / 2 do
+        local x = str:sub(i*2-1, i*2)
+        bn[#bn+1] = load('return 0x'..x)()
+    end
+    return string.char(table.unpack(bn))
 end
 
 local rsa = {}
@@ -103,13 +109,15 @@ local function main()
     end
 
     print('测试sha1算法')
-    if sha1('156498461560') == str2bn('98CA2D94F68F3373E545017C3A17B72400BE00E2') then
+    if sha1('156498461560') == str2bn('E200BE0024B7173A7C0145E573338FF6942DCA98') then
         print('测试通过')
     else
         print('sha1算法错误')
         print(bn2str(sha1('156498461560')))
         return
     end
+
+    --m = '156498461560'
 
     print('')
     print('')
