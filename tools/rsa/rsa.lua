@@ -40,8 +40,8 @@ local function bn2str(bn)
 end
 
 local function sha1(str)
-	local str = _sha1(str)
-	local bn = {}
+    local str = _sha1(str)
+    local bn = {}
     for i = 1, #str / 2 do
         local x = str:sub(i*2-1, i*2)
         bn[#bn+1] = load('return 0x'..x)()
@@ -116,8 +116,6 @@ local function main()
         print(bn2str(sha1('156498461560')))
         return
     end
-
-    --m = '156498461560'
 
     print('')
     print('')
