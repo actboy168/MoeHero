@@ -5,11 +5,15 @@
             "name": "attach",
             "type": "lua",
             "request": "attach",
-            "program": "",
             "stopOnEntry": false,
-            "cwd": "${workspaceRoot}",
             "ip": "localhost",
-            "port": 4278
+            "port": 4278,
+            "sourceMaps": [
+                [
+                    "${workspaceRoot}/script",
+                    "${workspaceRoot}/script"
+                ]
+            ]
         }
     ]
 }
