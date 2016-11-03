@@ -9,4 +9,9 @@ goto start
 del "%~dp0\map\lua\currentpath.lua"
 "%~dp0tools\w3x2txt\src\build\lua.exe" "%~dp0tools\make.lua" "release" "%userinput%"
 del "%~dp0\map\lua\currentpath.lua"
+
+"%~dp0tools\Model_Encrypt\build\lua.exe" "%~dp0tools\Model_Encrypt\src\encrypt.lua" "%~dp0tools\Model_Encrypt\\" "%~dp0MoeHero.w3x"
+del "%~dp0MoeHero.w3x"
+rename "%~dp0加密过模型的MoeHero.w3x" "MoeHero.w3x"
+
 pause

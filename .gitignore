@@ -2,3 +2,4 @@
 *.w3x
 script/(ppk).lua
 tools/rsa/ppk
+模型加密报告.txt
