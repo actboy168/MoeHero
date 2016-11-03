@@ -49,9 +49,9 @@ mt{
 	hit_area = 200,
 
 	--伤害
-	damage_base = {200, 400},
+	damage_base = {250, 500},
 	damage_plus = function(self, hero)
-		return hero:get_ad() * 3
+		return hero:get_ad() * 3.75
 	end,
 	damage = function(self, hero)
 		return self.damage_base + self.damage_plus
