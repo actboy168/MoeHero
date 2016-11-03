@@ -99,18 +99,3 @@ function mt:on_cast_channel()
 		end
 	end)
 end
-
-function mt:on_remove()
-end
-
-local buff = ac.buff['断罪-标记']
-
-buff.cover_type = 1
-
-function buff:on_add()
-	self.eff = self.target:add_effect('overhead', [[huoyan.mdl]])
-end
-
-function buff:on_remove()
-	self.eff:remove()
-end

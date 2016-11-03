@@ -183,19 +183,19 @@ function mt:on_hit(damage)
 	self.skill:castFire(damage.target)
 end
 
-local buff = ac.dot_buff['红莲太刀']
+local mt = ac.dot_buff['红莲太刀']
 
-buff.debuff = true
+mt.debuff = true
 
-function buff:on_add()
+function mt:on_add()
 	self.eff = self.target:add_effect('chest', [[Abilities\Spells\Other\BreathOfFire\BreathOfFireDamage.mdl]])
 end
 
-function buff:on_remove()
+function mt:on_remove()
 	self.eff:remove()
 end
 
-function buff:on_pulse(damage)
+function mt:on_pulse(damage)
 	self.target:damage
 	{
 		source = self.source,
