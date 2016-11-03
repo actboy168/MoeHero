@@ -184,14 +184,14 @@ local function start()
 			angle = target_angle
 		else
 			angle = p:getCameraField 'CAMERA_FIELD_ROTATION'
-			local a, w = math.angle(angle, target_angle)
+			local a, w = ac.math_angle(angle, target_angle)
 			if a < 1 then
 				--计算当前镜头距离与上次镜头距离的偏差,检测玩家是否自己拖动了镜头
 				local dis = current_target * last_target
 				if dis > 30 then
-					local _, w = math.angle(cent / last_target, cent / current_target)
+					local _, w = ac.math_angle(cent / last_target, cent / current_target)
 					target_angle = angle + w * 360 / hero.hero_count * 3
-					a, w = math.angle(angle, target_angle)
+					a, w = ac.math_angle(angle, target_angle)
 				end
 			end
 			angle = angle + a * w / 10

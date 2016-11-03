@@ -58,7 +58,7 @@ function mt:on_cast_channel()
 		: is_enemy(hero)
 		: ipairs()
 	do
-		if math.angle(angle, hero:get_point() / u:get_point()) <= self.angle / 2 then
+		if ac.math_angle(angle, hero:get_point() / u:get_point()) <= self.angle / 2 then
 			if skl then
 				for i = 1, self.debuff_stack do
 					skl:castFire(u)

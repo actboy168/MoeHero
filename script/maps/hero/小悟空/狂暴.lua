@@ -119,7 +119,7 @@ function mt:on_add()
 	self.trg1 = hero:event '受到伤害' (function(trg, damage)
 		local angle = damage.target:get_point() / damage.source:get_point()
 		local face = damage.target:get_facing()
-		if math.angle(angle, face) <= self.angle then
+		if ac.math_angle(angle, face) <= self.angle then
 			damage:div(self.damage_reduce)
 		end
 	end)

@@ -57,7 +57,7 @@ function mt:on_cast_channel()
 		return
 	end
 	function mvr:on_hit(target)
-		local _, r = math.angle(angle, hero:get_point() / target:get_point())
+		local _, r = ac.math_angle(angle, hero:get_point() / target:get_point())
 		local angle = angle
 		if r > 0 then
 			angle = angle + 90

@@ -195,7 +195,7 @@ function mt:on_pulse()
 		self:remove()
 		return
 	end
-	if math.angle(hero:get_facing(), hero:get_point() / target:get_point()) < self.move_angle then
+	if ac.math_angle(hero:get_facing(), hero:get_point() / target:get_point()) < self.move_angle then
 		self.bff = hero:add_buff '电磁牵引-加速'
 		{
 			move_speed = self.move_speed,

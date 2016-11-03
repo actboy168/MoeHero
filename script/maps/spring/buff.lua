@@ -77,7 +77,7 @@ function buff:on_pulse()
 	end
 
 	if self.river < hero then
-		local angle = math.angle(hero:get_facing(), self.angle)
+		local angle = ac.math_angle(hero:get_facing(), self.angle)
 		if angle <= self.angle_tol then
 			hero:add_buff '瀑布加速Buff' {}
 		elseif angle >= 180 - self.angle_tol then

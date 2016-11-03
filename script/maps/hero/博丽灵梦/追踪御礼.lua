@@ -115,7 +115,7 @@ local function cast_spell_q(hero, target, skill, damage, do_damage)
 					end
 				end
 				function mvr:on_finish()
-					local angle = math.angle(self.angle, self.mover:get_point() / u:get_point())
+					local angle = ac.math_angle(self.angle, self.mover:get_point() / u:get_point())
 					local distance = self.mover:get_point() * u:get_point()
 					local mvr = ac.mover.target
 					{
@@ -141,7 +141,7 @@ local function cast_spell_q(hero, target, skill, damage, do_damage)
 					end
 
 					function mvr:on_move()
-						local angle = math.angle(self.angle, self.mover:get_point() / self.target:get_point())
+						local angle = ac.math_angle(self.angle, self.mover:get_point() / self.target:get_point())
 						local distance = self.mover:get_point() * self.target:get_point()
 						self.turn_speed = angle * turn_speed_rate / distance
 						self:update()

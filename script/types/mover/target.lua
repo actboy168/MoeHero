@@ -44,10 +44,10 @@
 
 				--检查转身速度限制
 				local turn_speed = self.turn_speed * self.time_scale * mover.FRAME
-				if math.angle(target_angle, self.angle) <= turn_speed then
+				if ac.math_angle(target_angle, self.angle) <= turn_speed then
 					self.angle = target_angle
 				else
-					if math.angle(target_angle, self.angle + turn_speed) < math.angle(target_angle, self.angle - turn_speed) then
+					if ac.math_angle(target_angle, self.angle + turn_speed) < ac.math_angle(target_angle, self.angle - turn_speed) then
 						self.angle = self.angle + turn_speed
 					else
 						self.angle = self.angle - turn_speed

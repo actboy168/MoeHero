@@ -76,7 +76,7 @@ function mt:on_cast_channel()
 		: in_range(hero, self.distance)
 		: is_enemy(hero)
 		: add_filter(function(u)
-			return u:is_in_range(p, self.radius) or math.angle(p / u:get_point(), angle) <= self.angle / 2
+			return u:is_in_range(p, self.radius) or ac.math_angle(p / u:get_point(), angle) <= self.angle / 2
 		end)
 		: ipairs()
 	do

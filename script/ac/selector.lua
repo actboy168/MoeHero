@@ -6,7 +6,7 @@ local table_insert = table.insert
 local table_sort = table.sort
 local setmetatable = setmetatable
 local ipairs = ipairs
-local math_angle = math.angle
+local math_angle = ac.math_angle
 local math_abs = math.abs
 local math_random = math.random
 

@@ -11,12 +11,9 @@ local function main()
 
 	require 'war3.id'
 	require 'war3.api'
-	require 'util.math'
 	require 'util.log'
 	require 'ac.init'
 	require 'util.error'
-	require 'util.string'
-	require 'util.moe'
 
 	local runtime = require 'jass.runtime'
 	if runtime.perftrace then
