@@ -279,7 +279,7 @@ function mt:on_cast_shot()
 	-- 训练
 	if self.explosion_training then
 		local function do_damage()
-			local damage = self.damage * 0.5 * 0.5
+			local damage = self.damage * 0.5 * 0.25
 			for _, u in ac.selector()
 				: in_range(self.target, self.area)
 				: is_enemy(hero)

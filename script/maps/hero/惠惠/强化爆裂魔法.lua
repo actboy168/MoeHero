@@ -83,7 +83,7 @@ mt{
 table.insert(mt.sub_skills, {
 	art = [[model\megumin\BTNMeguminR1.blp]],
 	title = '惠惠的爆裂之道',
-	tip = '练习|cffff3333爆裂魔法|r会对建筑造成50%的伤害。|n|cffffaaaa爆裂魔法熟练度|r获取量+20%。',
+	tip = '练习|cffff3333爆裂魔法|r会对建筑造成25%的伤害。|n|cffffaaaa爆裂魔法熟练度|r获取量+20%。',
 })
 
 table.insert(mt.sub_skills, {
