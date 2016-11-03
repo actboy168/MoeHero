@@ -7,7 +7,7 @@ base = {}
 base.release = pcall(require, 'script\\release')
 
 --版本号
-base.version = '4.14'
+base.version = '4.15'
 
 --打开控制台
 if not base.release then
