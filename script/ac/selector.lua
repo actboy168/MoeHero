@@ -17,19 +17,6 @@ local FirstOfGroup = jass.FirstOfGroup
 local GroupRemoveUnit = jass.GroupRemoveUnit
 local ac_unit = ac.unit
 
-local j_function
-local j_condition = jass.Condition(function()
-	local u = ac.unit(jass.GetFilterUnit())
-	if u then
-		return j_function(u)
-	end
-	return false
-end)
-local function condition(f)
-	j_function = f
-	return j_condition
-end
-
 local mt = {}
 local api = {}
 mt.__index = api
