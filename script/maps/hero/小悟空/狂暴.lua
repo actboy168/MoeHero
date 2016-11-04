@@ -126,7 +126,7 @@ function mt:on_add()
 
 	--对建筑物造成额外伤害
 	self.trg2 = hero:event '造成伤害' (function(trg, damage)
-		if damage.target:is_building() then
+		if damage.target:is_type('建筑') then
 			damage:mul(self.crush)
 		end
 	end)

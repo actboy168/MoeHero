@@ -148,7 +148,7 @@ function mt:on_cast_channel()
 
 			function block:on_entry(mover)
 				if mover.missile and mover.source and mover.source:is_enemy(hero) then
-					if mover.source:is_building() then
+					if mover.source:is_type('建筑') then
 						return
 					end
 					return true

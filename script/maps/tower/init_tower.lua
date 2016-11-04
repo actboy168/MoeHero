@@ -66,7 +66,7 @@ ac.wait(0, function()
 end)
 
 ac.game:event '单位-死亡' (function(trg, u, source)
-	if not u:is_building() then
+	if not u:is_type('建筑') then
 		return
 	end
 	if u.building_name then

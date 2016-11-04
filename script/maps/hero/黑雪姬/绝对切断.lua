@@ -71,7 +71,7 @@ function mt:on_add()
 		end
 		
 		local target = damage.target
-		if target:is_building() then
+		if target:is_type('建筑') then
 			return
 		end
 		--检查是否计算护甲

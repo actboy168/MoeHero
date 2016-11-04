@@ -119,28 +119,13 @@ function mt:get_type_id()
 	return self.id
 end
 
-function mt:get_type()
-	return self.unit_type
+function mt:is_type(type)
+	return self.unit_type == type
 end
 
 --是否是英雄
 function mt:is_hero()
 	return self.unit_type == '英雄' and not self._is_illusion
-end
-
---ID是否是英雄
-function mt:is_type_hero()
-	return self.unit_type == '英雄'
-end
-
---是否是野怪
-function mt:is_creep()
-	return self.unit_type == '野怪'
-end
-
---是否是建筑
-function mt:is_building()
-	return self.unit_type == '建筑'
 end
 
 function mt:is_illusion()
@@ -1409,7 +1394,7 @@ function mt:range_attack_start(data)
 		damage = data.damage,
 		size = size,
 		skill = false,
-		need_elevation = self:is_type_hero(),
+		need_elevation = self:is_type('英雄'),
 	}
 
 	--弹道击中目标时造成伤害

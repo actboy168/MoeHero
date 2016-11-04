@@ -24,7 +24,7 @@ local function create_gun(hero, target)
 	dummy:set('攻击', hero:get('攻击'))
 	dummy:event '造成伤害' (function (_, damage)
 		local target = damage.target
-		if target:is_building() then
+		if target:is_type('建筑') then
 			damage:div(0.6)
 		end
 	end)

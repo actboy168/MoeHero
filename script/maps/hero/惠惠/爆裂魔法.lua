@@ -286,7 +286,7 @@ function mt:on_cast_shot()
 				: ipairs()
 			do
 				-- 有爆裂道
-				if self.explosion_training_building and u:is_building() then
+				if self.explosion_training_building and u:is_type('建筑') then
 					u:damage
 					{
 						source = hero,

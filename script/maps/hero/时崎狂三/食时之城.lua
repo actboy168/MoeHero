@@ -108,7 +108,7 @@ function mt:on_add()
 		if mover.source == hero then
 			return
 		end
-		if mover.source:is_hero() or mover.source:is_building() then
+		if mover.source:is_hero() or mover.source:is_type('建筑') then
 			mover.time_scale = mover.time_scale * (1 - slow_rate / 100)
 		else
 			mover:pause(true)
@@ -118,7 +118,7 @@ function mt:on_add()
 		if mover.source == hero then
 			return
 		end
-		if mover.source:is_hero() or mover.source:is_building() then
+		if mover.source:is_hero() or mover.source:is_type('建筑') then
 			mover.time_scale = mover.time_scale / (1 - slow_rate / 100)
 			if not mover.missile then
 				mover:remove()
@@ -200,14 +200,14 @@ function mt:on_add()
 		return
 	end
 	local target = self.target
-	if target:is_type_hero() then	
+	if target:is_type('英雄') then	
 		self.buff = target:add_buff '减速'
 		{
 			skill = self.skill,
 			source = self.source,
 			move_speed_rate = self.skill.slow_rate,
 		}
-	elseif not target:is_building() then
+	elseif not target:is_type('建筑') then
 		target:add_restriction '时停'
 	end
 end
@@ -217,9 +217,9 @@ function mt:on_remove()
 		return
 	end
 	local target = self.target
-	if target:is_type_hero() then
+	if target:is_type('英雄') then
 		self.buff:remove()
-	elseif not target:is_building() then
+	elseif not target:is_type('建筑') then
 		target:remove_restriction '时停'
 	end
 end

@@ -47,11 +47,11 @@ ac.game:event '受到伤害开始' (function(trg, damage)
 	if not source then
 		return
 	end
-	if source:is_creep() and source:get_point() * source:getBornPoint() < creep_range then
+	if source:is_type('野怪') and source:get_point() * source:getBornPoint() < creep_range then
 		source:remove_buff '野怪脱战回血'
 		return
 	end
-	if not target:is_creep() then
+	if not target:is_type('野怪') then
 		return
 	end
 	if not source:has_restriction '物免' then
@@ -69,7 +69,7 @@ end)
 
 --监听野怪归位
 ac.game:event '单位-发布指令' (function(self, u, order, target, player_order)
-	if not u:is_creep() then
+	if not u:is_type('野怪') then
 		return
 	end
 	if not player_order then

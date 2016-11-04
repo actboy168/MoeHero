@@ -6,7 +6,7 @@ player.__index.farm_count = 0
 
 --小兵死亡加钱
 ac.game:event '单位-杀死单位' (function(trg, source, target)
-	if target:is_building() then
+	if target:is_type('建筑') then
 		return
 	end
 	local from_p = source and source:get_owner()
@@ -47,7 +47,7 @@ end)
 
 --建筑死亡爆炸
 ac.game:event '单位-死亡' (function(trg, target, source)
-	if not target:is_building() then
+	if not target:is_type('建筑') then
 		return
 	end
 

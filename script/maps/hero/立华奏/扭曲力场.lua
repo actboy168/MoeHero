@@ -97,7 +97,7 @@ function mt:on_add()
 				bff:set_remaining(bff:get_remaining() - skill_cost)
 			else
 				local source = mover.source
-				if source:is_hero() or source:is_building() then
+				if source:is_hero() or source:is_type('建筑') then
 					bff:set_remaining(bff:get_remaining() - attack_cost)
 				else
 					bff:set_remaining(bff:get_remaining() - attack_cost * army_rate)
@@ -117,7 +117,7 @@ function mt:on_add()
 			eff.unit:wait(300, function ()
 				eff.unit:remove()
 			end)
-			if source:is_hero() or source:is_building() then
+			if source:is_hero() or source:is_type('建筑') then
 				bff:set_remaining(bff:get_remaining() - attack_cost)
 			else
 				bff:set_remaining(bff:get_remaining() - attack_cost * army_rate)

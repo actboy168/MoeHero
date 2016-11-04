@@ -123,28 +123,28 @@ end
 --必须是英雄
 function api:of_hero()
 	return self:add_filter(function(dest)
-		return dest:get_type() == '英雄'
+		return dest:is_type('英雄')
 	end)
 end
 
 --必须不是英雄
 function api:of_not_hero()
 	return self:add_filter(function(dest)
-		return dest:get_type() ~= '英雄'
+		return not dest:get_type('英雄')
 	end)
 end
 
 --必须是建筑
 function api:of_building()
 	return self:add_filter(function(dest)
-		return dest:is_building()
+		return dest:is_type('建筑')
 	end)
 end
 
 --必须不是建筑
 function api:of_not_building()
 	return self:add_filter(function(dest)
-		return not dest:is_building()
+		return not dest:is_type('建筑')
 	end)
 end
 
@@ -219,10 +219,10 @@ end
 function api:sort_nearest_type_hero(poi)
 	local poi = poi:get_point()
 	return self:set_sorter(function (u1, u2)
-		if u1:is_type_hero() and not u2:is_type_hero() then
+		if u1:is_type('英雄') and not u2:is_type('英雄') then
 			return true
 		end
-		if not u1:is_type_hero() and u2:is_type_hero() then
+		if not u1:is_type('英雄') and u2:is_type('英雄') then
 			return false
 		end
 		return u1:get_point() * poi < u2:get_point() * poi

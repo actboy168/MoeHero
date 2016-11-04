@@ -132,7 +132,7 @@ function mt:on_cast_shot()
 
 		local dummys = {}
 		for i, u in ipairs(g) do
-			if not u:is_building() then
+			if not u:is_type('建筑') then
 				u:add_restriction '时停'
 				u:add_restriction '阿卡林'
 				u:add_restriction '无敌'

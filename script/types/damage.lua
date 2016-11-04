@@ -547,7 +547,7 @@ function damage:__call()
 	
 	if not self.real_damage then
 
-		if not target:is_building() then
+		if not target:is_type('建筑') then
 			--吸血
 			on_life_steal(self)
 			--溅射

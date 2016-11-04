@@ -128,7 +128,7 @@ end
 local mt = ac.orb_buff['双手剑道']
 
 function mt:on_hit(damage)	
-	if damage.target:is_building() then
+	if damage.target:is_type('建筑') then
 		return
 	end
 	local skill = self.skill

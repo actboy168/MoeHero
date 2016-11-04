@@ -30,7 +30,7 @@ local function find_target (source, target)
 		: in_range(source, source:get '攻击范围')
 		: is_enemy(source)
 		: add_filter(function(u)
-			return not u:is_creep()
+			return not u:is_type('野怪')
 		end)
 		: get()
 	--防止唯一一个目标被注意到后马上跑开
@@ -83,7 +83,7 @@ ac.game:event '单位-攻击开始' (function(trg, data)
 	local source, target = data.source, data.target
 	local l = source:get_data('防御塔激光')
 	if not l then
-		if source:is_building() and (source:get_team() == 1 or source:get_team() == 2) then
+		if source:is_type('建筑') and (source:get_team() == 1 or source:get_team() == 2) then
 			local l = ac.lightning('LN01',source,source,300,55)
 			l:setAlpha(0)
 			l:fade(-8,'淡出后不删除')
@@ -128,7 +128,7 @@ end)
 
 --防御塔死亡后删除激光
 ac.game:event '单位-死亡' (function(trg, u, source)
-	if u and u:is_building() and u:get '攻击' > 0 then
+	if u and u:is_type('建筑') and u:get '攻击' > 0 then
 		--print('防御塔死亡')
 		local l = u:get_data('防御塔激光')
 		if not l then

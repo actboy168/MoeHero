@@ -59,7 +59,7 @@ function mt:on_add()
 	end)
 	self.damage_trg = self.dummy:event '造成伤害' (function (_, damage)
 		local target = damage.target
-		if target:is_building() then
+		if target:is_type('建筑') then
 			damage:div(0.6)
 		end
 	end)

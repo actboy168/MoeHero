@@ -116,7 +116,7 @@ function mt:on_pulse()
 		: is_enemy(hero)
 		: ipairs()
 	do
-		if u:is_building() then
+		if u:is_type('建筑') then
 			u:damage
 			{
 				source = hero,
