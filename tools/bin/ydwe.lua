@@ -1,4 +1,3 @@
-require 'luabind'
 require 'filesystem'
 require 'registry'
 
