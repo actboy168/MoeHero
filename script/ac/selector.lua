@@ -117,7 +117,7 @@ end
 --必须不是英雄
 function api:of_not_hero()
 	return self:add_filter(function(dest)
-		return not dest:get_type('英雄')
+		return not dest:is_type('英雄')
 	end)
 end
 
