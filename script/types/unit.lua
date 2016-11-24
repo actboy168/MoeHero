@@ -1564,14 +1564,18 @@ local function restriction_akari(unit, flag)
 end
 
 local function restriction_fly(unit, flag)
-	jass.SetUnitPathing(unit.handle, not flag)
+	if unit:has_restriction '幽灵' then
+		japi.EXGhostUnit(unit.handle)
+	else
+		jass.SetUnitPathing(unit.handle, not flag)
+	end
 end
 
-local function restriction_collision(self, flag)
+local function restriction_collision(unit, flag)
 	if flag then
-		self:add_ability 'A008'
+		japi.EXGhostUnit(unit.handle)
 	else
-		self:remove_ability 'A008'
+		jass.SetUnitPathing(unit.handle, not unit:has_restriction '飞行')
 	end
 end
 
