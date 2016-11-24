@@ -6,8 +6,6 @@ mt.cover_max = 1
 mt.control = 10
 mt.debuff = true
 mt.model = [[Abilities\Spells\Human\Thunderclap\ThunderclapTarget.mdl]]
-mt.eff = nil
-mt.mt = nil
 
 function mt:on_add()
 	if not self.eff and self.model then
