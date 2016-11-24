@@ -61,7 +61,9 @@ function mt:on_cast_channel()
 	hero:remove_buff 'LastWord[掠日彗星]'
 	local count = 6
 	local angle = 0
+	local fogs = {}
 	local function move_attack(from_loc, to_loc)
+		table.insert(fogs, hero:get_owner():createFogmodifier(from_loc, 600))
 		local angle = from_loc / to_loc
 		local dummy1 = hero:create_dummy(nil, hero:get_point(), angle)
 		dummy1:set_class '幻象'
@@ -109,6 +111,9 @@ function mt:on_cast_channel()
 			dummy2:remove()
 			count = count - 1
 			if count <= 0 then
+				for _, fog in ipairs(fogs) do
+					fog:remove()
+				end
 				self.skill:finish()
 				return
 			end
