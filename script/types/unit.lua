@@ -427,8 +427,13 @@ end
 
 	--设置朝向
 	--	朝向
-	function mt:set_facing(angle)
-		jass.SetUnitFacing(self.handle, angle)
+	--  瞬间转身
+	function mt:set_facing(angle, instant)
+    	if instant then
+        	japi.EXSetUnitFacing(self.handle, angle)
+    	else
+		    jass.SetUnitFacing(self.handle, angle)
+    	end
 		if self._dummy_angle then
 			self._dummy_angle = angle
 		end
