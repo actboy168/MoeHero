@@ -1,5 +1,4 @@
 require 'ydwe'
-require 'luabind'
 require 'sys'
 if not ydwe then
     return
