@@ -1564,18 +1564,24 @@ local function restriction_akari(unit, flag)
 end
 
 local function restriction_fly(unit, flag)
-	if unit:has_restriction '幽灵' then
-		japi.EXGhostUnit(unit.handle)
-	else
-		jass.SetUnitPathing(unit.handle, not flag)
-	end
+    if flag then
+        jass.SetUnitPathing(unit.handle, false)
+    else
+        jass.SetUnitPathing(unit.handle, true)
+    	if unit:has_restriction '幽灵' then
+    		japi.EXGhostUnit(unit.handle)
+    	end
+    end
 end
 
 local function restriction_collision(unit, flag)
+    if unit:has_restriction '飞行' then
+        return
+    end
 	if flag then
 		japi.EXGhostUnit(unit.handle)
 	else
-		jass.SetUnitPathing(unit.handle, not unit:has_restriction '飞行')
+		jass.SetUnitPathing(unit.handle, true)
 	end
 end
 
