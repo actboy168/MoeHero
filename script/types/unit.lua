@@ -1570,11 +1570,12 @@ end
 
 local function restriction_fly(unit, flag)
     if flag then
-        jass.SetUnitPathing(unit.handle, false)
+        jass.EXSetUnitMoveType(unit.handle, 4)
     else
-        jass.SetUnitPathing(unit.handle, true)
     	if unit:has_restriction '幽灵' then
-    		japi.EXGhostUnit(unit.handle)
+        	jass.EXSetUnitMoveType(unit.handle, 16)
+		else
+        	jass.EXSetUnitMoveType(unit.handle, 2)
     	end
     end
 end
@@ -1584,9 +1585,9 @@ local function restriction_collision(unit, flag)
         return
     end
 	if flag then
-		japi.EXGhostUnit(unit.handle)
+        jass.EXSetUnitMoveType(unit.handle, 16)
 	else
-		jass.SetUnitPathing(unit.handle, true)
+        jass.EXSetUnitMoveType(unit.handle, 2)
 	end
 end
 
