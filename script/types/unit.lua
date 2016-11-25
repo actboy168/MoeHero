@@ -1924,11 +1924,6 @@ function unit.init()
 	for i = 0, 15 do
 		jass.TriggerRegisterPlayerUnitEvent(j_trg, jass.Player(i), jass.EVENT_PLAYER_UNIT_SUMMON, nil)
 	end
-
-	-- 硬直
-	ac.dummy:add_ability 'A00A'
-	-- 禁魔
-	ac.dummy:add_ability 'A00D'
 end
 
 return unit
