@@ -1570,12 +1570,12 @@ end
 
 local function restriction_fly(unit, flag)
     if flag then
-        jass.EXSetUnitMoveType(unit.handle, 4)
+        japi.EXSetUnitMoveType(unit.handle, 4)
     else
     	if unit:has_restriction '幽灵' then
-        	jass.EXSetUnitMoveType(unit.handle, 16)
+        	japi.EXSetUnitMoveType(unit.handle, 16)
 		else
-        	jass.EXSetUnitMoveType(unit.handle, 2)
+        	japi.EXSetUnitMoveType(unit.handle, 2)
     	end
     end
 end
@@ -1585,9 +1585,9 @@ local function restriction_collision(unit, flag)
         return
     end
 	if flag then
-        jass.EXSetUnitMoveType(unit.handle, 16)
+        japi.EXSetUnitMoveType(unit.handle, 16)
 	else
-        jass.EXSetUnitMoveType(unit.handle, 2)
+        japi.EXSetUnitMoveType(unit.handle, 2)
 	end
 end
 
