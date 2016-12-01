@@ -1,6 +1,6 @@
 [submodule "tools/w3x2lni"]
 	path = tools/w3x2lni
-	url = git@github.com:syj2010syj/w3x2lni.git
+	url = https://github.com/syj2010syj/w3x2lni.git
 [submodule "tools/Model_Encrypt"]
 	path = tools/Model_Encrypt
-    url=git@github.com:syj2010syj/Model_Encrypt.git
+    url= https://github.com/syj2010syj/Model_Encrypt.git
