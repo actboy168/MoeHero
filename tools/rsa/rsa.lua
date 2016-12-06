@@ -3,9 +3,7 @@
 	package.path = package.path .. ';' .. exepath .. '..\\?.lua'
 end)()
 
-require 'luabind'
 require 'filesystem'
-require 'utility'
 
 local uni = require 'unicode'
 local bignum = require 'rsa.bignum'
@@ -82,19 +80,46 @@ function rsa:check_sign(content, sign)
 	return content == self:encrypt(sign)
 end
 
+function io_load(path)
+    local f = io.open(uni.u2a(path:string()), 'rb')
+    if f then
+        local content = f:read 'a'
+        f:close()
+        return content 
+    end
+end
+
+function io_save(path, content)
+    local f = io.open(uni.u2a(path:string()), 'wb')
+    if f then
+        f:write()
+        f:close()
+    end
+end
+
+local std_print = print
+function print(...)
+    local tbl = {...}
+    local n = select('#', ...)
+    for i = 1, n do
+        tbl[i] = uni.u2a(tostring(tbl[i]))
+    end
+    return std_print(table.concat(tbl, '\t'))
+end
+
 local function main()
     if not arg[1] then
         print('把要签名的文件拖到bat中')
         return
     end
 
-    local d = io.load(rsa_dir / 'ppk')
+    local d = io_load(rsa_dir / 'ppk')
     if not d then
         print('没有私钥')
         return
     end
 
-    local e, n = load_public(io.load(rsa_dir / 'pub'))
+    local e, n = load_public(io_load(rsa_dir / 'pub'))
     print('e =', e)
     print('n =', n)
     print('d =', d)
@@ -102,7 +127,7 @@ local function main()
     rsa:init(e, n, d)
 
     local filepath = fs.path(uni.a2u(arg[1]))
-    local m = io.load(filepath)
+    local m = io_load(filepath)
     if not m then
         print('文件读取失败', filepath:string())
         return
@@ -138,7 +163,7 @@ local function main()
     print('')
     print('')
     print('生成签名')
-    io.save(fs.path(filepath:string() .. '.sign'), sign)
+    io_save(fs.path(filepath:string() .. '.sign'), sign)
     print('用时', os.clock(), '秒')
 end
 
