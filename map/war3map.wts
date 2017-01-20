@@ -1,223 +1,3 @@
-STRING 406
-{
-1
-}
-
-STRING 410
-{
-1
-}
-
-STRING 414
-{
-1
-}
-
-STRING 418
-{
-1
-}
-
-STRING 427
-{
-1
-}
-
-STRING 431
-{
-1
-}
-
-STRING 435
-{
-1
-}
-
-STRING 439
-{
-1
-}
-
-STRING 448
-{
-1
-}
-
-STRING 452
-{
-1
-}
-
-STRING 456
-{
-1
-}
-
-STRING 460
-{
-1
-}
-
-STRING 469
-{
-1
-}
-
-STRING 473
-{
-1
-}
-
-STRING 477
-{
-1
-}
-
-STRING 481
-{
-1
-}
-
-STRING 490
-{
-1
-}
-
-STRING 494
-{
-1
-}
-
-STRING 498
-{
-1
-}
-
-STRING 502
-{
-1
-}
-
-STRING 511
-{
-1
-}
-
-STRING 515
-{
-1
-}
-
-STRING 519
-{
-1
-}
-
-STRING 523
-{
-1
-}
-
-STRING 532
-{
-1
-}
-
-STRING 536
-{
-1
-}
-
-STRING 540
-{
-1
-}
-
-STRING 544
-{
-1
-}
-
-STRING 553
-{
-1
-}
-
-STRING 557
-{
-1
-}
-
-STRING 561
-{
-1
-}
-
-STRING 565
-{
-1
-}
-
-STRING 574
-{
-1
-}
-
-STRING 578
-{
-1
-}
-
-STRING 582
-{
-1
-}
-
-STRING 586
-{
-1
-}
-
-STRING 595
-{
-1
-}
-
-STRING 599
-{
-1
-}
-
-STRING 603
-{
-1
-}
-
-STRING 607
-{
-1
-}
-
-STRING 616
-{
-1
-}
-
-STRING 620
-{
-1
-}
-
-STRING 624
-{
-1
-}
-
-STRING 628
-{
-1
-}
-
 STRING 633
 {
  - 提高物理攻击力
@@ -567,4 +347,24 @@ STRING 9476
 STRING 9477
 {
 玩家 10
+}
+
+STRING 9478
+{
+我的英雄不可能那么萌
+}
+
+STRING 9479
+{
+10人
+}
+
+STRING 9480
+{
+这里并没有说明
+}
+
+STRING 9481
+{
+魔霸工作室
 }
