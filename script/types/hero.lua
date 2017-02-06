@@ -99,7 +99,7 @@ function mt:transform(target_id)
 	self:add('移动速度', 0)
 
 	--恢复攻击间隔
-	self:set('攻击间隔', attack_cool)
+	self:add('攻击间隔', 0)
 
 	--可以飞行
 	self:add_ability 'Arav'
