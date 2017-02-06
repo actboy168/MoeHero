@@ -1232,6 +1232,9 @@ function unit.init_illusion(handle, p)
 end
 
 function unit.init_unit(handle, p)
+	if unit.all_units[handle] then
+		return unit.all_units[handle]
+	end
 	local u = init_unit(handle, p)
 	if not u then
 		return nil
