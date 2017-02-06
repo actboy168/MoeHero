@@ -42,7 +42,7 @@ function mt:on_add()
 		if buff_val > 20 then
 			buff_val = 20
 		end
-		hero:add_buff '盖亚之握'
+		hero:add_buff '盖亚护手'
 		{
 			time = 5,
 			val = buff_val,
@@ -58,7 +58,7 @@ function mt:on_remove()
 end
 
 
-local buff = ac.buff['盖亚之握']
+local buff = ac.buff['盖亚护手']
 
 function buff:on_add()
 	self.target:addDamageRate(self.val)

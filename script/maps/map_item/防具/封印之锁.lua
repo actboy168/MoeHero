@@ -29,7 +29,7 @@ function mt:on_add()
 	local hero = self.owner
 	self.trg = hero:event '造成伤害效果' (function (trg, damage)
 		if damage.target:is_enemy(hero) then
-			damage.target:add_buff '神圣壁垒'
+			damage.target:add_buff '封印之锁'
 			{
 				time = 3
 			}
@@ -44,7 +44,7 @@ end
 
 
 
-local buff = ac.buff['神圣壁垒']
+local buff = ac.buff['封印之锁']
 
 buff.debuff = true
 
