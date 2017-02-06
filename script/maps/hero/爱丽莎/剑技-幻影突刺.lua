@@ -46,9 +46,9 @@ local mt = ac.skill['剑技-幻影突刺']
 	gun_damage_rate = 30,
 	gun_hit_width = {100, 140},
 	gun_hit_height = {700, 900},
-	gun_damage_base = {60, 120},
+	gun_damage_base = {60, 140},
 	gun_damage_plus = function(self, hero)
-		return hero:get_ad() * 1.2
+		return hero:get_ad() * 1.4
 	end,
 	gun_damage = function(self, hero)
 		return self.gun_damage_base + self.gun_damage_plus

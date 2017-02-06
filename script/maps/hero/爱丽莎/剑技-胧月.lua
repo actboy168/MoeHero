@@ -41,9 +41,9 @@ local mt = ac.skill['剑技-胧月']
 	gun_count = {3, 7},
 	gun_distance = 600,
 	gun_life_rate = 4,
-	gun_damage_base = {60, 120},
+	gun_damage_base = {60, 140},
 	gun_damage_plus = function(self, hero)
-		return hero:get_ad() * 1.2
+		return hero:get_ad() * 1.4
 	end,
 	gun_damage = function(self, hero)
 		return self.gun_damage_base + self.gun_damage_plus
