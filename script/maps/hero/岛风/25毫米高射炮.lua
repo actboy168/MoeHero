@@ -2,6 +2,8 @@ local mt = ac.skill['25毫米高射炮']
 
 mt{
 	level = 0,
+	max_level = 3,
+	requirement = {6, 11, 16},
 	art = [[replaceabletextures\commandbuttons\BTNmarisaE.blp]],
 	title = '25毫米高射炮',
 	tip = [[
@@ -34,7 +36,7 @@ function mt:on_cast_shot()
 	local n = 2
 	local skl = hero:find_skill '连装炮酱'
 	if skl then
-		for _, dummy in ipairs(skl:get('连装炮酱')) do
+		for _, dummy in ipairs(skl:getShimakaze()) do
 			if dummy:get_point() * self.target <= self.range then
 				n = n + 2
 			end
