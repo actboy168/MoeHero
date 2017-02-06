@@ -5,7 +5,7 @@ mt{
     art = [[replaceabletextures\commandbuttons\BTNmarisaE.blp]],
     title = '连装炮酱',
     tip = [[
-召唤|cff11ccff连装炮酱|r并肩作战。你每次使用其他技能时，|cff11ccff连装炮酱|r也会同时使用，只会造成$rate$%的伤害。
+召唤|cff11ccff连装炮酱|r并肩作战。你每次使用其他技能时，|cff11ccff连装炮酱|r也会同时使用，只会造成%rate%%的伤害。
 |cff11ccff连装炮酱|r最多同时存在%count%个。
     ]],
     cool = 0,
