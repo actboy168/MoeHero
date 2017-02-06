@@ -8,6 +8,6 @@ goto start
 
 del "%~dp0\map\lua\currentpath.lua"
 echo return [[%~dp0script\]] >> "%~dp0\map\lua\currentpath.lua"
-"%~dp0tools\w3x2lni\src\build\lua.exe" "%~dp0tools\make.lua" "debug" "%userinput%"
+"%~dp0tools\bin\lua.exe" "%~dp0tools\make.lua" "debug" "%userinput%"
 del "%~dp0\map\lua\currentpath.lua"
 pause
