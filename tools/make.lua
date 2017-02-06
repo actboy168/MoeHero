@@ -74,11 +74,17 @@ local function pack_proxy(path)
         return pairs(ar)
     end
 
-    function mt:add_input(path)
+    function mt:add_input(path, type)
         local new = archive(path)
         search_dir(new)
-        for name, buf in pairs(new) do
-            ar:set(name, buf)
+        if type == 'script' then
+            for name, buf in pairs(new) do
+                ar:set('script\\' .. name, buf)
+            end
+        else
+            for name, buf in pairs(new) do
+                ar:set(name, buf)
+            end
         end
         new:close()
     end
@@ -108,11 +114,10 @@ local function pack_w3u(t)
         if u.file and not ignore[u.file:lower()] then
             u.file = [[units\human\Footman\Footman.mdx]]
         end
-        if u.Art then
-            u.Art = [[ReplaceableTextures\CommandButtons\BTNFootman.blp]]
+        if u.art then
+            u.art = [[ReplaceableTextures\CommandButtons\BTNFootman.blp]]
         end
     end
-    return t
 end
 
 local function pack(input_path)
@@ -128,36 +133,25 @@ local function pack(input_path)
 
     input_ar:add_input(input_path / 'static')
     if mode == 'release' then
-        input_ar:add_input(input_path / 'script')
+        input_ar:add_input(input_path / 'script', 'script')
     end
     if fs.exists(input_path / 'resource') then
         input_ar:add_input(input_path / 'resource')
     end
 
+    input_ar:set('war3map.j', input_ar:get('war3map.j') .. '\r\n\r\n//' .. os.time())
+
     local slk = {}
     w2l:frontend(input_ar, slk)
+
+    if not fs.exists(input_path / 'resource') then
+        pack_w3u(slk.unit)
+    end
+
     w2l:backend(input_ar, slk)
     save_map(w2l, output_ar, slk.w3i, input_ar)
     output_ar:close()
     input_ar:close()
-    
-   --if not fs.exists(resource_dir) then
-   --    function map_file:on_lni(name, t)
-   --        if name == 'war3map.w3u' then
-   --            return pack_w3u(t)
-   --        end
-   --        return t
-   --    end 
-   --end
-   --function map_file:on_save(name, file, dir)
-   --    if name == 'war3map.j' then
-   --        file = file .. '\r\n\r\n//' .. os.time()
-   --    end
-   --    if dir == script_dir then
-   --        name = 'script\\' .. name
-   --    end
-	--	return name, file
-   --end
 end
 
 local function unpack_config()
