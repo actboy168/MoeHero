@@ -7,7 +7,7 @@ goto start
 :start
 
 del "%~dp0\map\lua\currentpath.lua"
-"%~dp0tools\w3x2lni\src\build\lua.exe" "%~dp0tools\make.lua" "release" "%userinput%"
+"%~dp0tools\bin\lua.exe" "%~dp0tools\make.lua" "release" "%userinput%"
 del "%~dp0\map\lua\currentpath.lua"
 
 "%~dp0tools\Model_Encrypt\build\lua.exe" "%~dp0tools\Model_Encrypt\src\encrypt.lua" "%~dp0tools\Model_Encrypt\\" "%~dp0MoeHero.w3x"

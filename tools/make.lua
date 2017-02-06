@@ -23,38 +23,79 @@ function message(...)
     print(table.unpack(strs))
 end
 
+local function scan_dir(dir, callback)
+    for path in dir:list_directory() do
+        if fs.is_directory(path) then
+            scan_dir(path, callback)
+        else
+            callback(path)
+        end
+    end
+end
+
+local function search_dir(map)
+    local len = #map.path:string()
+    scan_dir(map.path, function(path)
+        local name = path:string():sub(len+2):lower()
+        map:get(name)
+    end)
+end
+
 local function pack_config()
+    local config = w2l.config
     -- 转换后的目标格式(lni, obj, slk)
     config.target_format = 'obj'
     -- 是否分析slk文件
-    read_slk = false
+    config.read_slk = false
     -- 分析slk时寻找id最优解的次数,0表示无限,寻找次数越多速度越慢
-    find_id_times = 0
+    config.find_id_times = 0
     -- 移除与模板完全相同的数据
-    remove_same = true
+    config.remove_same = true
     -- 移除超出等级的数据
-    remove_exceeds_level = true
+    config.remove_exceeds_level = true
     -- 移除只在WE使用的文件
-    remove_we_only = false
+    config.remove_we_only = false
     -- 移除没有引用的对象
-    remove_unuse_object = false
+    config.remove_unuse_object = false
     -- mdx压缩
-    mdx_squf = false
+    config.mdx_squf = false
     -- 转换为地图还是目录(mpq, dir)
-    target_storage = 'mpq'
+    config.target_storage = 'mpq'
 end
 
-local function pack_proxy()
-    local archives = {}
+local function pack_proxy(path)
+    local ar = archive(path)
 
     local mt = {}
+    mt.__index = ar
+    mt.__newindex = ar
+
+    function mt:__pairs()
+        return pairs(ar)
+    end
 
     function mt:add_input(path)
-        fs.create_directory(path)
-        archives[#archives+1] = archive(path)
+        local new = archive(path)
+        search_dir(new)
+        for name, buf in pairs(new) do
+            ar:set(name, buf)
+        end
+        new:close()
     end
-    
-    return mt
+
+    function mt:get(name)
+        return ar:get(name)
+    end
+
+    function mt:set(name, buf)
+        return ar:set(name, buf)
+    end
+
+    function mt:save(...)
+        return ar:save(...)
+    end
+
+    return setmetatable(mt, mt)
 end
 
 local function pack_w3u(t)
@@ -77,7 +118,7 @@ end
 local function pack(input_path)
     local mode = arg[1]
 
-    local input_ar = pack_proxy()
+    local input_ar = pack_proxy(input_path / 'map')
     local output_ar = archive(input_path / 'MoeHero.w3x', 'w')
     if not input_ar or not output_ar then
         return
@@ -85,7 +126,6 @@ local function pack(input_path)
 
     pack_config()
 
-    input_ar:add_input(input_path / 'map')
     input_ar:add_input(input_path / 'static')
     if mode == 'release' then
         input_ar:add_input(input_path / 'script')
@@ -101,14 +141,14 @@ local function pack(input_path)
     output_ar:close()
     input_ar:close()
     
-    if not fs.exists(resource_dir) then
-        function map_file:on_lni(name, t)
-            if name == 'war3map.w3u' then
-                return pack_w3u(t)
-            end
-            return t
-        end 
-    end
+   --if not fs.exists(resource_dir) then
+   --    function map_file:on_lni(name, t)
+   --        if name == 'war3map.w3u' then
+   --            return pack_w3u(t)
+   --        end
+   --        return t
+   --    end 
+   --end
    --function map_file:on_save(name, file, dir)
    --    if name == 'war3map.j' then
    --        file = file .. '\r\n\r\n//' .. os.time()
@@ -145,7 +185,6 @@ end
 local function unpack_proxy(...)
     local archives = {}
     for i, path in ipairs {...} do
-        fs.create_directory(path)
         archives[i] = archive(path, 'w')
         if not archives[i] then
             return nil
