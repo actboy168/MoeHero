@@ -142,6 +142,7 @@ function mt:on_add()
 		local damage = damage.damage
 		local damage_rate = self.damage_rate / 100
 		local unit_mark = {}
+        local cast = self:create_cast()
 		
 		local angle = hero:get_point() / target
 		for i = -2, 2 do
@@ -154,7 +155,7 @@ function mt:on_add()
 				angle = angle + i * 7,
 				distance = self.distance,
 				high = 110,
-				skill = self,
+				skill = cast,
 				damage = damage,
 				hit_area = self.hit_area,
 				size = 0.8,

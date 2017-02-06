@@ -38,6 +38,7 @@ function mt:on_add()
 		local damage = damage.damage
 		local damage_rate = self.damage_rate / 100
 		local unit_mark = {}
+        local cast = self:create_cast()
 		
 		local angle = hero:get_point() / target
 		local function cast_shot(model, detal)
@@ -49,7 +50,7 @@ function mt:on_add()
 				angle = angle + detal,
 				distance = self.distance,
 				high = 60,
-				skill = self,
+				skill = cast,
 				damage = damage,
 				hit_area = self.hit_area,
 				on_hit = function (self, target)
@@ -59,7 +60,7 @@ function mt:on_add()
 						{
 							source = hero,
 							damage = damage,
-							skill = self,
+							skill = self.skill,
 							missile = self,
 							attack = true,
 							common_attack = true,
@@ -69,7 +70,7 @@ function mt:on_add()
 						{
 							source = hero,
 							damage = damage * damage_rate,
-							skill = self,
+							skill = self.skill,
 							missile = self,
 							attack = true,
 						}

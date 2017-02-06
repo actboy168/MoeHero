@@ -69,6 +69,7 @@ function mt:on_add()
 		local damage = damage.damage
 		local damage_rate = self.damage_rate / 100
 		local unit_mark = {}
+        local cast = self:create_cast()
 		cast_spell_q(hero, target, self, damage, function (dest, missile)
 			if not unit_mark[dest] then
 				unit_mark[dest] = true
@@ -76,7 +77,7 @@ function mt:on_add()
 				{
 					source = hero,
 					damage = damage,
-					skill = self,
+					skill = cast,
 					missile = missile,
 					attack = true,
 					common_attack = true,
@@ -86,7 +87,7 @@ function mt:on_add()
 				{
 					source = hero,
 					damage = damage * damage_rate,
-					skill = self,
+					skill = cast,
 					missile = missile,
 					attack = true,
 				}
