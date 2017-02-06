@@ -10,7 +10,7 @@ mt{
 将铁砂固定成剑型，增加%damage_base%(+%damage_plus%)点攻击，持续%damage_time%秒。持续时间内，被动效果不再有冷却。
 
 |cff11ccff被动：|r
-受到控制效果影响时，免疫此效果并获得一个抵挡%shield_base%(+%shield_plus%)点伤害的护盾，持续%shield_time%秒。
+受到控制效果影响时，免疫此效果并获得一个护盾，吸收%shield_base%(+%shield_plus%)伤害，持续%shield_time%秒。
 这个效果每%shield_cool%秒内只会触发一次。
 	]],
 	cool = { 20, 12 },
