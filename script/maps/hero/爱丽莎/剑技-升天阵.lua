@@ -38,9 +38,9 @@ local mt = ac.skill['剑技-升天阵']
 	gun_range = {300, 500},
 	gun_distance = {800, 1000},
 	gun_stun_time = 0.5,
-	gun_damage_base = {60, 120},
+	gun_damage_base = {60, 140},
 	gun_damage_plus = function(self, hero)
-		return hero:get_ad() * 1.2
+		return hero:get_ad() * 1.4
 	end,
 	gun_damage = function(self, hero)
 		return self.gun_damage_base + self.gun_damage_plus

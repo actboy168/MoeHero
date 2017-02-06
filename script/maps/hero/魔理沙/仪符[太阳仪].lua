@@ -24,7 +24,7 @@ mt{
 		return hero:get_ad() * 0.2
 	end,
 	speed = 600,
-	damaged_rate = {6, 10},
+	damaged_rate = {7, 15},
 	max_stack = 3,
 	time = 5,
 	passive = true,

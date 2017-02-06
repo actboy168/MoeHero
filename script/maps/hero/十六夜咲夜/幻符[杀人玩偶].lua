@@ -45,7 +45,7 @@ mt{
 	count = {12, 16},
 
 	buff_time = 1,
-	buff_damage_rate = {18, 30},
+	buff_damage_rate = {24, 40},
 }
 
 local create_knife = require 'hero.十六夜咲夜.光速[光速跳跃]'

@@ -39,9 +39,9 @@ local mt = ac.skill['剑技-樱花残月']
 	end,
 
 	--炮技
-	gun_damage_base = {60, 120},
+	gun_damage_base = {60, 140},
 	gun_damage_plus = function(self, hero)
-		return hero:get_ad() * 1.2
+		return hero:get_ad() * 1.4
 	end,
 	gun_damage = function(self, hero)
 		return self.gun_damage_base + self.gun_damage_plus
