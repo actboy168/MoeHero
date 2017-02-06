@@ -41,7 +41,7 @@ local function search_dir(map)
     end)
 end
 
-local function pack_config()
+local function pack_config_debug()
     local config = w2l.config
     -- 转换后的目标格式(lni, obj, slk)
     config.target_format = 'obj'
@@ -59,6 +59,28 @@ local function pack_config()
     config.remove_unuse_object = false
     -- mdx压缩
     config.mdx_squf = false
+    -- 转换为地图还是目录(mpq, dir)
+    config.target_storage = 'mpq'
+end
+
+local function pack_config_release()
+    local config = w2l.config
+    -- 转换后的目标格式(lni, obj, slk)
+    config.target_format = 'slk'
+    -- 是否分析slk文件
+    config.read_slk = true
+    -- 分析slk时寻找id最优解的次数,0表示无限,寻找次数越多速度越慢
+    config.find_id_times = 0
+    -- 移除与模板完全相同的数据
+    config.remove_same = false
+    -- 移除超出等级的数据
+    config.remove_exceeds_level = true
+    -- 移除只在WE使用的文件
+    config.remove_we_only = false
+    -- 移除没有引用的对象
+    config.remove_unuse_object = true
+    -- mdx压缩
+    config.mdx_squf = true
     -- 转换为地图还是目录(mpq, dir)
     config.target_storage = 'mpq'
 end
@@ -129,7 +151,11 @@ local function pack(input_path)
         return
     end
 
-    pack_config()
+    if mode == 'debug' then
+        pack_config_debug()
+    else
+        pack_config_release()
+    end
 
     input_ar:add_input(input_path / 'static')
     if mode == 'release' then
