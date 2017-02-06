@@ -86,8 +86,12 @@ local function unpack(input_path)
     if not input_ar then
         return
     end
-    local output_ar = archive(resource_dir, 'w')
-    if not output_ar then
+    local output_map = archive(map_dir, 'w')
+    if not output_map then
+        return
+    end
+    local output_resource = archive(resource_dir, 'w')
+    if not output_resource then
         return
     end
 
@@ -115,34 +119,43 @@ local function unpack(input_path)
     w2l:frontend(input_ar, slk)
     w2l:backend(input_ar, slk)
 
-    input_ar:set('war3map.imp', false)
-    input_ar:set('war3map.j', false)
+    local proxy = {}
 
-    save_map(w2l, output_ar, slk.w3i, input_ar)
-    output_ar:close()
+    function proxy:set(name, buf)
+        if name == 'war3map.imp' then
+            return
+        end
+        if name == 'war3map.j' then
+            return
+        end
+        if name:match '^script[/\\]' then
+            return
+        end
+        local extension = name:match '^.*(%..-)$'
+        if extension == '.blp' or 
+            extension == '.mdx' or
+            extension == '.mp3' or
+            extension == '.mdl' or
+            extension == '.tga'
+        then
+            output_resource:set(name, buf)
+            return
+        end
+        output_map:set(name, buf)
+    end
+
+    function proxy:save(...)
+        return output_map:save(...) and output_resource:save(...)
+    end
+
+    function proxy:get_type()
+        return 'dir'
+    end
+
+    save_map(w2l, proxy, slk.w3i, input_ar)
+    output_map:close()
+    output_resource:close()
     input_ar:close()
-
-   --function map_file:on_save(name)
-   --    if name == 'war3map.imp' then
-   --        return
-   --    end
-   --    if name == 'war3map.j' then
-   --        return
-   --    end
-   --    if name:match '^script[/\\]' then
-   --        return
-   --    end
-   --    local extension = name:match '^.*(%..-)$'
-   --    if extension == '.blp' or 
-   --       extension == '.mdx' or
-   --       extension == '.mp3' or
-   --       extension == '.mdl' or
-   --       extension == '.tga'
-   --    then
-   --        return name, resource_dir
-   --    end
-	--	return name, map_dir
-   --end
 end
 
 local input_path = fs.path(uni.a2u(arg[2]))
