@@ -48,7 +48,7 @@ function mt:on_add()
 		}
 		hero:add_buff '次元穿梭'
 		{
-			time = self.damage_buff,
+			time = self.damage_time,
 			val = self.damage_rate,
 		}
 	end)
