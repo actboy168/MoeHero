@@ -5,7 +5,7 @@ for i = 1, 12 do
 	local p = ac.player(i)
 	if p:is_player() then
 		local tid = p:get_team()
-		moe[tid] = moe[tid] + p:get_score '萌力-100'
+		moe[tid] = moe[tid] + p:get_score '萌力+100'
 		pc[tid] = pc[tid] + 1
 	end
 end
@@ -23,13 +23,13 @@ for i = 1, 12 do
 	local p = ac.player(i)
 	if p:is_player() then
 		local t = p:get_team()
-		local my_moe = p:get_score '萌力-100'
+		local my_moe = p:get_score '萌力+100'
 		local m = (my_moe + moe[t]) / 2
 		local enemy = moe[t % 2 + 1]
 		p.win_moe = math.floor(my_moe + math.min(100, math.max(10, 50 - (m - enemy) * 2)))
 		p.lose_moe = math.floor(my_moe + math.min(50, math.max(-100, -50 - (m - enemy) * 2)))
 		-- 先认为玩家输了
-		p:set_score('萌力-100', p.lose_moe)
+		p:set_score('萌力+100', p.lose_moe)
 		-- 先认为所有人都逃跑
 		local r1 = p:get_score 'r1'
 		local r2 = p:get_score 'r2'
@@ -76,28 +76,28 @@ ac.game:event '游戏-结束' (function(_, team)
 	for i = 1, 12 do
 		local p = ac.player(i)
 		if p:get_team() == team	 then
-			p:add_score('胜利-1', 1)
-			p:set_score('萌力-100', p.win_moe or 0)
+			p:add_score('胜利+1', 1)
+			p:set_score('萌力+100', p.win_moe or 0)
 		end
 		if p:is_player() then
 			max_kill = math.max(max_kill, p.kill_count)
 			p.mvp = (p.kill_count + p.assist_count * 0.7) / (1 + p.dead_count * 0.1)
 			max_mvp = math.max(max_mvp, p.mvp)
 		end
-		p:add_score('局数-1', 1)
+		p:add_score('局数+1', 1)
 		local hero = p.hero
 		if hero then
 			if hero.yuri then
-				p:add_score('百合-1', 1)
-				p:set_score('百合控', math.floor(p:get_score '百合-1' / p:get_score '局数-1' * 100))
+				p:add_score('百合+1', 1)
+				p:set_score('百合控', math.floor(p:get_score '百合+1' / p:get_score '局数+1' * 100))
 			end
 			if hero.pad then
-				p:add_score('平胸-1', 1)
-				p:set_score('平胸控', math.floor(p:get_score '平胸-1' / p:get_score '局数-1' * 100))
+				p:add_score('平胸+1', 1)
+				p:set_score('平胸控', math.floor(p:get_score '平胸+1' / p:get_score '局数+1' * 100))
 			end
 			if hero.loli then
-				p:add_score('萝莉-1', 1)
-				p:set_score('萝莉控', math.floor(p:get_score '萝莉-1' / p:get_score '局数-1' * 100))
+				p:add_score('萝莉+1', 1)
+				p:set_score('萝莉控', math.floor(p:get_score '萝莉+1' / p:get_score '局数+1' * 100))
 			end
 		end
 		p:save_record()
@@ -106,12 +106,12 @@ ac.game:event '游戏-结束' (function(_, team)
 		local p = ac.player(i)
 		if max_mvp >= 1 then
 			if p.mvp == max_mvp then
-				p:add_score('萌王-1', 1)
+				p:add_score('萌王+1', 1)
 			end
 		end
 		if max_kill >= 5 then
 			if p.kill_count == max_kill then
-				p:add_score('萌杀-1', 1)
+				p:add_score('萌杀+1', 1)
 			end
 		end
 		p:save_record()
