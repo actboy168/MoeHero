@@ -47,7 +47,6 @@ for i = 1, 12 do
 		p:add_score('中出率', 2)
 		p:set_score('r1', r1)
 		p:set_score('r2', r2)
-		p:save_record()
 	end
 end
 
@@ -62,7 +61,6 @@ local function allow_leave()
 		if p:is_player() then
 			p:add_score('中出率', -2)
 			p:add_score('r1', -1)
-			p:save_record()
 		end
 	end
 end
@@ -100,7 +98,6 @@ ac.game:event '游戏-结束' (function(_, team)
 				p:set_score('萝莉控', math.floor(p:get_score '萝莉+1' / p:get_score '局数+1' * 100))
 			end
 		end
-		p:save_record()
 	end
 	for i = 1, 12 do
 		local p = ac.player(i)
@@ -114,7 +111,6 @@ ac.game:event '游戏-结束' (function(_, team)
 				p:add_score('萌杀+1', 1)
 			end
 		end
-		p:save_record()
 	end
     ac.game:score_game_end()
 end)

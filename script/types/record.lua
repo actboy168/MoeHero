@@ -49,13 +49,13 @@ end
 --获取积分
 function ac.player.__index:get_record(name)
 	local value = japi.GetStoredInteger(self:record(), '', name)
-	log.info(('获取积分:[%s][%s] --> [%d]'):format(self:get_name(), name, value))
+	log.info(('获取积分:[%s][%s] --> [%s]'):format(self:get_name(), name, value))
 	return value
 end
 
 --设置积分
 function ac.player.__index:set_record(name, value)
-	log.info(('设置积分:[%s][%s] <-- [%d]'):format(self:get_name(), name, value))
+	log.info(('设置积分:[%s][%s] <-- [%s]'):format(self:get_name(), name, value))
 	return japi.StoreInteger(self:record(), '', name, value)
 end
 
@@ -63,7 +63,7 @@ end
 function ac.player.__index:add_record(name, value)
 	local old_value = japi.GetStoredInteger(self:record(), '', name)
 	local new_value = old_value + value
-	log.info(('增加积分:[%s][%s] : [%d] --> [%d]'):format(self:get_name(), name, old_value, new_value))
+	log.info(('增加积分:[%s][%s] : [%s] --> [%s]'):format(self:get_name(), name, old_value, new_value))
 	return japi.StoreInteger(self:record(), '', name, new_value)
 end
 
@@ -110,12 +110,12 @@ end
 
 function ac.player.__index:get_score(name)
 	local value = read_score(get_key(self), name)
-	log.info(('获取RPG积分:[%s][%s] --> [%d]'):format(self:get_name(), name, value))
+	log.info(('获取RPG积分:[%s][%s] --> [%s]'):format(self:get_name(), name, value))
 	return value
 end
 
 function ac.player.__index:set_score(name, value)
-	log.info(('设置RPG积分:[%s][%s] = [%d]'):format(self:get_name(), name, value))
+	log.info(('设置RPG积分:[%s][%s] = [%s]'):format(self:get_name(), name, value))
 	if has_record then
 		write_score(get_key(self) .. "=", name, value)
 	else
@@ -124,7 +124,7 @@ function ac.player.__index:set_score(name, value)
 end
 
 function ac.player.__index:add_score(name, value)
-	log.info(('增加RPG积分:[%s][%s] + [%d]'):format(self:get_name(), name, value))
+	log.info(('增加RPG积分:[%s][%s] + [%s]'):format(self:get_name(), name, value))
 	if has_record then
 		write_score(get_key(self) .. "+", name, value)
 	else
