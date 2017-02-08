@@ -42,6 +42,9 @@ function mt:on_cast_shot()
 				break
 			end
 		end
+        if dummy.removed then
+            return
+        end
 		dummy:add_restriction '硬直'
 		dummy:set_animation 'spell channel two'
 		dummy:set_animation_speed(-0.2)
