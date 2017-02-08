@@ -34,7 +34,6 @@ list['A00V'] = true
 list['A00E'] = true
 list['AZ00'] = true
 list['AB31'] = true
-list['A900'] = true
 list['A01K'] = true
 list['A01G'] = true
 list['A01W'] = true
