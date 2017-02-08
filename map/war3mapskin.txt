@@ -27,27 +27,12 @@ AGILITY_HILIGHT=|Cffffff00坚韧|R
 ARMORTIP_HERO=减少受到的所有伤害
 ARMORTIP_HERO_V0C=减少受到的所有伤害
 ARMORTIP_HERO_V0M=减少受到的所有伤害
-BONUS_ATTACK_SPEED= - |cffffff00格挡:|r
-几率降低受到的攻击伤害
-|cff888888 - 负防御:
-受到的伤害加深|r
-BONUS_DAMAGE= - |cffffff00攻速:|r
-加快攻击速度与技能冷却速度
+BONUS_ATTACK_SPEED= - |cffffff00格挡:|r|n几率降低受到的攻击伤害|n|cff888888 - 负防御:|n受到的伤害加深|r
+BONUS_DAMAGE= - |cffffff00攻速:|r|n加快攻击速度与技能冷却速度
 BONUS_DEFENSE= - 提高物理攻击力
-BONUS_DEFENSE_FIXED= - |cffffff00防御:|r
-减少受到的伤害
- - |cffffff00回血:|r
-提升每秒恢复的生命值
- - |cffffff00吸血(%%):|r
-将部分伤害转化为生命恢复
-BONUS_HITPOINTS= - |cffffff00破防:|r
-无视对方部分防御
- - |cffffff00暴击:|r
-有几率造成额外伤害
- - |cffffff00溅射:|r
-对附近的敌人也造成部分伤害
-BONUS_HPREGEN=|cff888888 - 负攻速:
-攻击间隔与技能冷却延长
+BONUS_DEFENSE_FIXED= - |cffffff00防御:|r|n减少受到的伤害|n - |cffffff00回血:|r|n提升每秒恢复的生命值|n - |cffffff00吸血(%%):|r|n将部分伤害转化为生命恢复
+BONUS_HITPOINTS= - |cffffff00破防:|r|n无视对方部分防御|n - |cffffff00暴击:|r|n有几率造成额外伤害|n - |cffffff00溅射:|r|n对附近的敌人也造成部分伤害
+BONUS_HPREGEN=|cff888888 - 负攻速:|n攻击间隔与技能冷却延长
 BONUS_MANA= - 每秒可以移动的距离
 BONUS_MANAREGEN=|cffffffff|r
 COLON_AGILITY=|cffffff00坚韧：|r
@@ -74,8 +59,7 @@ ITEM_PAWN_TOOLTIP=|cff808080将物品扔在地上以卖出|R
 ITEM_USE_TOOLTIP= 
 KEY_QUESTS=说明 (|Cfffed312F9|R)
 LUMBER=分钟
-PRIMARY_ATTRIBUTE=|cffffff00攻击:|r
-提升攻击力与技能威力
+PRIMARY_ATTRIBUTE=|cffffff00攻击:|r|n提升攻击力与技能威力
 QUESTDESCRIPTION=说明描述
 QUESTS=说明
 QUESTSMAIN=主要说明
