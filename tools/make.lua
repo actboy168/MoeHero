@@ -154,7 +154,7 @@ local function pack(input_path)
     if mode == 'debug' then
         pack_config_debug()
     else
-        pack_config_release()
+        pack_config_debug()
     end
 
     input_ar:add_input(input_path / 'static')
