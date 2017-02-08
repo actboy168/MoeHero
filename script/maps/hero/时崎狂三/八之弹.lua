@@ -14,6 +14,7 @@ function mt:on_remove()
 	for _, dummy in ipairs(self.dummys) do
 		dummy:remove()
 	end
+    self.dummys = {}
 end
 
 function mt:on_cast_shot()
