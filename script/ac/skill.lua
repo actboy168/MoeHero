@@ -1867,7 +1867,11 @@ function hero.__index:add_all_hero_skills()
 	local t = {}
 	for i = 1, #self.skill_datas do
 		local skl = self.skill_datas[i]
-		t[i] = self:find_skill(i, '英雄', true) or self:add_skill(skl.name, '英雄', i, {level = 0})
+        if i > 4 then
+            t[i] = self:find_skill(i, '隐藏', true) or self:add_skill(skl.name, '隐藏', i, {level = 0})
+        else
+            t[i] = self:find_skill(i, '英雄', true) or self:add_skill(skl.name, '英雄', i, {level = 0})
+        end
 	end
 	for i = 1, #t do
 		local level = self.skill_datas[i].level

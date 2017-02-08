@@ -15,7 +15,7 @@ local mt = ac.skill['英雄属性面板']
 	tip = [[
 生命:    %life%/%max_life% %life_recover% %life_recover_idle%
 %resource_type%:    %mana%/%max_mana% %mana_recover% %mana_recover_idle%
-
+%shield%
 攻速:    %attack_speed%(每秒攻击%attack_rate%次)
 暴击:    %crit_chance%%(造成%crit_damage%%伤害)
 溅射:    %splash%%
@@ -203,4 +203,12 @@ end
 
 function mt:damaged_rate()
 	return self.owner:getDamagedRate()
+end
+
+function mt:shield()
+    local v = self.owner:get '护盾'
+    if v > 0 then
+        return '|r护盾:    |cff77bbff' .. v .. '|r|n'
+    end
+    return ''
 end

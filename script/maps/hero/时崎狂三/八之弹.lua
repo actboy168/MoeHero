@@ -14,6 +14,7 @@ function mt:on_remove()
 	for _, dummy in ipairs(self.dummys) do
 		dummy:remove()
 	end
+    self.dummys = {}
 end
 
 function mt:on_cast_shot()
@@ -29,7 +30,7 @@ function mt:on_cast_shot()
 			dummy:transform(hero_id)
 		end
 	end
-	dummy:set('攻击', hero:get('攻击') * (0.1 + hero:get_level() * 0.05))
+	dummy:set('攻击', hero:get('攻击') * (0.04 + hero:get_level() * 0.02))
 	dummy:set('破甲', hero:get('破甲'))
 	dummy:set('暴击', hero:get('暴击'))
 	dummy:add_restriction '定身'
@@ -42,6 +43,9 @@ function mt:on_cast_shot()
 				break
 			end
 		end
+        if dummy.removed then
+            return
+        end
 		dummy:add_restriction '硬直'
 		dummy:set_animation 'spell channel two'
 		dummy:set_animation_speed(-0.2)
