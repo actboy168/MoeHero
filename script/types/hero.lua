@@ -1,6 +1,7 @@
 
 local jass = require 'jass.common'
 local japi = require 'jass.japi'
+local dbg = require 'jass.debug'
 local unit = require 'types.unit'
 local player = require 'ac.player'
 local damage = require 'types.damage'
@@ -85,9 +86,6 @@ function mt:transform(target_id)
 	--修改ID
 	self.id = target_id
 
-	--添加敌我识别标记
-	self:add_enemy_tag()
-
 	--恢复攻击距离
 	self.default_attack_range = nil
 	self:add('攻击范围', 0)
@@ -108,6 +106,18 @@ function mt:transform(target_id)
 
 	--动画混合时间
 	jass.SetUnitBlendTime(self.handle, self:get_slk('blend', 0))
+
+    -- 恢复特效
+    if self._effect_list then
+        for _, eff in ipairs(self._effect_list) do
+            if eff.handle then
+                jass.DestroyEffect(eff.handle)
+                dbg.handle_unref(eff.handle)
+                eff.handle = jass.AddSpecialEffectTarget(eff.model, self.handle, eff.socket or 'origin')
+                dbg.handle_ref(eff.handle)
+            end
+        end
+    end
 end
 
 --获得属性

@@ -25,7 +25,7 @@ mt.model = ''
 mt.unit = nil
 
 --部位(字符串 - 绑在单位身上的哪个位置)
-mt.part = 'origin'
+mt.socket = 'origin'
 
 --点(创建在哪个点上)
 mt.point = nil

@@ -955,7 +955,7 @@ end
 
 		eff.model = model
 		eff.unit = self
-		eff.part = part
+		eff.socket = part
 
 		--存在单位身上
 		if not self._effect_list then
