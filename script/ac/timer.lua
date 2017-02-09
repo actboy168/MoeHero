@@ -108,7 +108,13 @@ function api:get_remaining()
 	if self.removed then
 		return 0
 	end
-	return self.pause_remaining or self.timeout_frame - cur_frame
+    if self.pause_remaining then
+        return self.pause_remaining
+    end
+    if self.timeout_frame == cur_frame then
+        return self.timeout or 0
+    end
+    return self.timeout_frame - cur_frame
 end
 
 function api:pause()
