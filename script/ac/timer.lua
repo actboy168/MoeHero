@@ -38,7 +38,7 @@ local function m_wakeup(self)
 		return
 	end
 	self:on_timer()
-	if self.removed then
+	if self.removed or self.pause_remaining then
 		return
 	end
 	if self.timeout then
@@ -122,8 +122,8 @@ function api:pause()
 	local ti = self.timeout_frame
 	local q = timer[ti]
 	if q then
-		for i, t in ipairs(q) do
-			if t == self then
+		for i= #q, 1, -1 do
+			if q[i] == self then
 				q[i] = false
 				return
 			end
