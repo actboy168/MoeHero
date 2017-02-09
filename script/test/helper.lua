@@ -275,15 +275,19 @@ end
 
 --计时器测试
 function helper:timer()
-	local t = ac.wait(1000, function()end)
-	ac.timer(100, 20, function()
-		print(t:get_remaining())
-	end)
-	ac.wait(500, function()
-		t:pause()
-	end)
-	ac.wait(1000, function()
+    local count = 0
+	local t = ac.loop(100, function(t)
+        print(ac.clock())
+        count = count + 1
+        if count == 10 then
+            t:pause()
+        end
+    end)
+	ac.wait(3000, function()
 		t:resume()
+	end)
+	ac.wait(5000, function()
+		t:remove()
 	end)
 end
 
