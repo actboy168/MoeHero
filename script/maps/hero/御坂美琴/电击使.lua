@@ -58,7 +58,7 @@ function mt:on_cast_channel()
 	--创建一个光束
 	local ln = ac.lightning('CLPB', hero, target, 175, 0)
 	target:add_effect([[Abilities\Spells\Human\Thunderclap\ThunderClapCaster.mdl]]):remove()
-	hero:timer(400, 1, function()
+	hero:wait(400, function()
 		ln:remove()
 	end)
 
@@ -111,7 +111,7 @@ function mt:on_cast_channel()
 			attack = true,
 		}
 
-		hero:timer(400, 1, function()
+		hero:wait(400, function()
 			light_1:remove()
 			light_2:remove()
 		end)

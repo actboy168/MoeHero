@@ -87,7 +87,7 @@ function mt:on_cast_channel()
 	local damage = self.damage + self.damage_plus
 	local area = self.damage_area
 
-	hero:timer(500, 1, function(t)
+	hero:wait(500, function(t)
 		hero:timer(100, 10, function(t)
 			for i = 1, 8 do
 				local angle = math.random(1, 360)

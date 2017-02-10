@@ -39,7 +39,7 @@ function mt:on_add()
 	local hero = self.owner
 	local rate = self.attack_rate_ex / 100
 
-	self.timer = hero:timer(self.pulse, 0, function()
+	self.timer = hero:loop(self.pulse, function()
 		local attack = hero:get '生命上限' * rate
 		hero:add('攻击', attack - self.changed_attack)
 		self.changed_attack = attack

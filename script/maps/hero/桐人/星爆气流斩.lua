@@ -120,7 +120,7 @@ function mt:on_add()
 
 	--视觉动画
 	local timer_index = 0
-	self.timer = hero:timer(100, 0, function()
+	self.timer = hero:loop(100, function()
 		hero:set_facing(hero:get_facing() + 90)
 		hero:set_high(math.random(120,240), false)
 		hero:set_animation('attack alternate')

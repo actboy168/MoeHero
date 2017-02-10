@@ -76,7 +76,7 @@ function mt:on_cast_start()
 	--在武器上绑定一个特效
 
 	local eff = hero:add_effect('weapon', [[Abilities\Weapons\PhoenixMissile\Phoenix_Missile.mdl]])
-	hero:timer(600, 1, function()
+	hero:wait(600, function()
 		eff:remove()
 	end)
 end
