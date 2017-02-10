@@ -36,7 +36,7 @@ function mt:on_add()
 		return
 	end
 	self.trg1 = hero:event '单位-进入战斗' (function(trg)
-		self.timer = hero:timer(self.time * 1000, 0, function ()
+		self.timer = hero:loop(self.time * 1000, function ()
 			if self.dummy_unit then
 				self.dummy_unit:remove()
 			end

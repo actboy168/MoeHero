@@ -96,7 +96,7 @@ function mt:on_cast_channel()
 
 		table.remove(units, 1)
 
-		hero:timer(100,1,function()
+		hero:wait(100, function()
 			--进行冲锋
 			local mvr = ac.mover.line
 			{

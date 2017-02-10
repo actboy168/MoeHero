@@ -39,7 +39,7 @@ function mt:on_add()
 	local pulse = self.pulse
 	local damage_rate = self.damage_rate
 	self.eff = hero:add_effect('origin', [[Abilities\Spells\Orc\CommandAura\CommandAura.mdl]])
-	self.timer = hero:timer(pulse * 1000, 0, function()
+	self.timer = hero:loop(pulse * 1000, function()
 		if not hero:is_alive() then
 			return
 		end

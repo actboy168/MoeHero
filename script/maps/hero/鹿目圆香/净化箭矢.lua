@@ -222,7 +222,7 @@ function mt:on_cast_channel()
 		cast_q(self, u)
 	end
 	hero:replace_skill(self.name, '净化箭矢', true)
-	hero:timer(1000, 1, function()
+	hero:wait(1000, function()
 		hero:remove_buff '圆环之理'
 	end)
 end

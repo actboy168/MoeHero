@@ -98,7 +98,7 @@ function mt:on_cast_channel()
 				local eff2 = dummy2:add_effect('origin', [[dtpink.mdx]])
 				self:remove()
 				dummy:remove()
-				local t = hero:timer(1500, 1, function()
+				local t = hero:wait(1500, function()
 					eff2:remove()
 					dummy2:remove()
 				end)
@@ -109,7 +109,7 @@ function mt:on_cast_channel()
 	--延迟1.5秒
 	hero:add_restriction '硬直'
 
-	hero:timer(self.delay * 1000, 1, function()
+	hero:wait(self.delay * 1000, function()
 		hero:remove_restriction '硬直'
 		
 		if not hero:is_alive() then
@@ -143,7 +143,7 @@ function mt:on_cast_channel()
 	end)
 
 	--延迟起飞
-	hero:timer(500, 1, function ()
+	hero:wait(500, function ()
 		hero:add_buff '高度'
 		{
 			time = 0.5,

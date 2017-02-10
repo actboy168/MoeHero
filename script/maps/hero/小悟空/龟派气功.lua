@@ -79,7 +79,7 @@ function mt:on_cast_stop()
 	hero:remove_buff '龟派气功'
 	hero:set_animation(7)
 	hero:set_animation_speed(5)
-	hero:timer(100, 1, function()
+	hero:wait(100, function()
 		hero:set_animation_speed(1)
 		hero:add_animation 'stand'
 	end)

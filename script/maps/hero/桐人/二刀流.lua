@@ -85,7 +85,7 @@ function mt:on_cast_channel()
 
 	if not u then
 		self:stop()
-		hero:timer(1, 1, function()
+		hero:wait(1, function()
 			hero:set_animation('attack alternate slam')
 			hero:add_animation('stand alternate')
 		end)
@@ -108,7 +108,7 @@ function mt:on_cast_channel()
 
 	if not mover then
 		self:stop()
-		hero:timer(1, 1, function()
+		hero:wait(1, function()
 			hero:set_animation('attack alternate slam')
 			hero:add_animation('stand alternate')
 		end)

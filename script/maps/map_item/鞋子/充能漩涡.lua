@@ -33,7 +33,7 @@ function mt:on_add()
 	local count = 0
 	local stack = 0
 	local is_walking = false
-	self.timer1 = hero:timer(20, 0, function ()
+	self.timer1 = hero:loop(20, function ()
 		local now = hero:get_point()
 		if now * last > 1 then
 			is_walking = true
@@ -42,7 +42,7 @@ function mt:on_add()
 		end
 		last = now
 	end)
-	self.timer2 = hero:timer(200, 0, function ()
+	self.timer2 = hero:loop(200, function ()
 		if is_walking then
 			local max_stack = hero:get('移动速度') * self.rate / 100
 			if self:get_stack() < max_stack then
