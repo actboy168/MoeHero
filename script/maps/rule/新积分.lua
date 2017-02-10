@@ -26,10 +26,10 @@ for i = 1, 12 do
 		local my_moe = p:get_score '萌力+100'
 		local m = (my_moe + moe[t]) / 2
 		local enemy = moe[t % 2 + 1]
-		p.win_moe = math.floor(my_moe + math.min(100, math.max(10, 50 - (m - enemy) * 2)))
-		p.lose_moe = math.floor(my_moe + math.min(50, math.max(-100, -50 - (m - enemy) * 2)))
+		p.win_moe = math.floor(math.min(100, math.max(10, 50 - (m - enemy) * 2)))
+		p.lose_moe = math.floor(math.min(50, math.max(-100, -50 - (m - enemy) * 2)))
 		-- 先认为玩家输了
-		p:set_score('萌力+100', p.lose_moe)
+		p:add_score('萌力+100', p.lose_moe)
 		-- 先认为所有人都逃跑
 		local r1 = p:get_score 'r1'
 		local r2 = p:get_score 'r2'
@@ -41,10 +41,10 @@ for i = 1, 12 do
 		r2 = r2 & (1 << 25 - 1)
 		r2 = r2 | (r1h == 0 and 0 or 1)
 		if r2h ~= 0 then
-			p:add_score('中出率', -2)
+			p:set_score('中出率', p:get_score '中出率' - 2)
 		end
 		r1 = r1 | 1
-		p:add_score('中出率', 2)
+		p:set_score('中出率', p:get_score '中出率' + 2)
 		p:set_score('r1', r1)
 		p:set_score('r2', r2)
 	end
@@ -59,8 +59,8 @@ local function allow_leave()
 	for i = 1, 12 do
 		local p = ac.player(i)
 		if p:is_player() then
-			p:add_score('中出率', -2)
-			p:add_score('r1', -1)
+			p:set_score('中出率', p:get_score '中出率' - 2)
+			p:set_score('r1', p:get_score 'r1' - 1)
 		end
 	end
 end
@@ -75,7 +75,7 @@ ac.game:event '游戏-结束' (function(_, team)
 		local p = ac.player(i)
 		if p:get_team() == team	 then
 			p:add_score('胜利+1', 1)
-			p:set_score('萌力+100', p.win_moe or 0)
+			p:add_score('萌力+100', p.win_moe or 0)
 		end
 		if p:is_player() then
 			max_kill = math.max(max_kill, p.kill_count)
