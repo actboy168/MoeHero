@@ -73,11 +73,11 @@ ac.game:event '游戏-结束' (function(_, team)
 	local max_mvp = 0
 	for i = 1, 12 do
 		local p = ac.player(i)
-		if p:get_team() == team	 then
-			p:add_score('胜利+1', 1)
-			p:add_score('萌力+100', p.win_moe or 0)
-		end
 		if p:is_player() then
+            if p:get_team() == team then
+                p:add_score('胜利+1', 1)
+                p:add_score('萌力+100', p.win_moe - p.lose_moe)
+            end
 			max_kill = math.max(max_kill, p.kill_count)
 			p.mvp = (p.kill_count + p.assist_count * 0.7) / (1 + p.dead_count * 0.1)
 			max_mvp = math.max(max_mvp, p.mvp)
@@ -87,15 +87,12 @@ ac.game:event '游戏-结束' (function(_, team)
 		if hero then
 			if hero.yuri then
 				p:add_score('百合+1', 1)
-				p:set_score('百合控', math.floor(p:get_score '百合+1' / p:get_score '局数+1' * 100))
 			end
 			if hero.pad then
 				p:add_score('平胸+1', 1)
-				p:set_score('平胸控', math.floor(p:get_score '平胸+1' / p:get_score '局数+1' * 100))
 			end
 			if hero.loli then
 				p:add_score('萝莉+1', 1)
-				p:set_score('萝莉控', math.floor(p:get_score '萝莉+1' / p:get_score '局数+1' * 100))
 			end
 		end
 	end
