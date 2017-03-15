@@ -93,20 +93,20 @@ ac.game:event '游戏-结束' (function(_, team)
 			p.mvp = (p.kill_count + p.assist_count * 0.7) / (1 + p.dead_count * 0.1)
 			max_mvp = math.max(max_mvp, p.mvp)
 		end
-		p:add_record('局数-1', 1)
+		p:add_record('局数', 1)
 		local hero = p.hero
 		if hero then
 			if hero.yuri then
 				p:add_record('百合', 1)
-				p:set_record('百合控', math.floor(p:get_record '百合' / p:get_record '局数-1' * 100))
+				p:set_record('百合控', math.floor(p:get_record '百合' / p:get_record '局数' * 100))
 			end
 			if hero.pad then
 				p:add_record('平胸', 1)
-				p:set_record('平胸控', math.floor(p:get_record '平胸' / p:get_record '局数-1' * 100))
+				p:set_record('平胸控', math.floor(p:get_record '平胸' / p:get_record '局数' * 100))
 			end
 			if hero.loli then
 				p:add_record('萝莉', 1)
-				p:set_record('萝莉控', math.floor(p:get_record '萝莉' / p:get_record '局数-1' * 100))
+				p:set_record('萝莉控', math.floor(p:get_record '萝莉' / p:get_record '局数' * 100))
 			end
 		end
 		p:save_record()
