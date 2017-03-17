@@ -287,47 +287,6 @@ function helper:timer()
 	end)
 end
 
-local function main()
-	ac.game:event '玩家-聊天' (function(self, player, str)
-		local hero = player.hero
-		local strs = {}
-		for s in str:gmatch '%S+' do
-			table.insert(strs, s)
-		end
-		local str = strs[1]:sub(2)
-		print(str)
-
-		for i = 2, #strs do
-			strs[i] = tonumber(strs[i]) or strs[i]
-			if strs[i] == 'true' then
-				strs[i] = true
-			end
-			if strs[i] == 'false' then
-				strs[i] = false
-			end
-			if strs[i] == 'nil' then
-				strs[i] = nil
-			end
-		end
-		if type(helper[str]) == 'function' then
-			xpcall(helper[str], error_handle, hero, table.unpack(strs, 2))
-		end
-		if hero then
-			local f = hero[str]
-			if type(f) == 'function' then
-				print('-->', f(hero, table.unpack(strs, 2)))
-			else
-				print('-->', f)
-			end
-		end
-	end)
-
-	--按下ESC来重载脚本
-	ac.game:event '按下ESC' (function(trg)
-		--helper.reload(data.player)
-	end)
-end
-
 --测试
 function helper:power()
 	helper.move(self)
@@ -413,6 +372,77 @@ function helper:sha1(name)
 	local sign = rsa:get_sign(file)
 	print(sign)
 	storm.save('我的英雄不可能那么萌\\sign.txt', sign)
+end
+
+local show_message = false
+function helper:show_message()
+    show_message = not show_message
+end
+
+local function message(obj, ...)
+    local n = select('#', ...)
+    local arg = {...}
+    for i = 1, n do
+        arg[i] = tostring(arg[i])
+    end
+    local str = table.concat(arg, '\t')
+    print(obj, '-->', str)
+    if show_message then
+        for i = 1, 12 do
+            ac.player(i):sendMsg(str)
+        end
+    end
+end
+
+local function call_method(obj, cmd)
+    local f = obj[cmd[1]]
+    if type(f) == 'function' then
+        for i = 2, #cmd do
+            local v = cmd[i]
+            v = tonumber(v) or v
+            if v == 'true' then
+                v = true
+            elseif v == 'false' then
+                v = false
+            end
+            cmd[i] = v
+        end
+        local rs = {xpcall(f, error_handle, obj, table.unpack(cmd, 2))}
+        message(obj, table.unpack(rs, 2))
+    else
+        message(obj, f)
+    end
+end
+
+function helper:player(cmd)
+    table.remove(cmd, 1)
+    call_method(self:get_owner(), cmd)
+end
+
+local function main()
+	ac.game:event '玩家-聊天' (function(self, player, str)
+		local hero = player.hero
+		local strs = {}
+		for s in str:gmatch '%S+' do
+			table.insert(strs, s)
+		end
+		local str = strs[1]:sub(2)
+		print(str)
+
+		if type(helper[str]) == 'function' then
+			xpcall(helper[str], error_handle, hero, strs)
+            return
+		end
+		if hero then
+			call_method(hero, strs)
+            return
+		end
+	end)
+
+	--按下ESC来重载脚本
+	ac.game:event '按下ESC' (function(trg)
+		--helper.reload(data.player)
+	end)
 end
 
 main()
