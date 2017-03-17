@@ -421,6 +421,9 @@ end
 
 local function main()
 	ac.game:event '玩家-聊天' (function(self, player, str)
+        if str:sub(1, 1) ~= '-' and str:sub(1, 1) ~= '.' then
+            return
+        end
 		local hero = player.hero
 		local strs = {}
 		for s in str:gmatch '%S+' do
