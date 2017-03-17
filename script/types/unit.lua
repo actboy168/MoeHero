@@ -21,6 +21,11 @@ local unit = {}
 setmetatable(unit, unit)
 ac.unit = unit
 
+function unit:__tostring()
+    local player = self:get_owner()
+    return ('%s|%s|%s'):format('unit', self:get_name(), player.base_name)
+end
+
 --结构
 local mt = {}
 unit.__index = mt

@@ -170,6 +170,11 @@ function hero.create(name)
 		--继承英雄属性
 		setmetatable(data, hero)
 		data.__index = data
+
+        function data:__tostring()
+            local player = self:get_owner()
+            return ('%s|%s|%s'):format('hero', self:get_name(), player.base_name)
+        end
 		
 		--注册技能
 		data.skill_datas = {}
