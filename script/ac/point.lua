@@ -9,6 +9,10 @@ local ipairs = ipairs
 local point = {}
 setmetatable(point, point)
 
+function point:__tostring()
+    return ('{%.4f, %.4f, %.4f}'):format(self:get(true))
+end
+
 --结构
 local mt = {}
 point.__index = mt

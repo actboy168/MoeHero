@@ -11,6 +11,10 @@ local player = {}
 setmetatable(player, player)
 ac.player = player
 
+function player:__tostring()
+    return ('玩家%02d|%s|%s'):format(self.id, self.base_name, jass.GetPlayerName(self.handle))
+end
+
 local mt = {}
 player.__index = mt
 

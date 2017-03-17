@@ -427,6 +427,7 @@ local function main()
 			table.insert(strs, s)
 		end
 		local str = strs[1]:sub(2)
+        strs[1] = str
 		print(str)
 
 		if type(helper[str]) == 'function' then
