@@ -6,12 +6,12 @@
             "type": "lua",
             "request": "attach",
             "stopOnEntry": false,
-            "ip": "localhost",
+            "ip": "127.0.0.1",
             "port": 4278,
             "sourceMaps": [
                 [
-                    "${workspaceRoot}/script",
-                    "${workspaceRoot}/script"
+                    "${workspaceRoot}/script/",
+                    "${workspaceRoot}/script/"
                 ]
             ]
         }
