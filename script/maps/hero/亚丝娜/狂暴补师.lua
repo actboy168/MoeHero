@@ -54,7 +54,7 @@ function mt:on_add()
 	hero:add('攻击速度', self.attack_speed)
 	self:set_stack(1)
 	self.trg = hero:event '受到治疗开始' (function (_, heal)
-		if not heal.skill:is(self.skill) then
+		if not heal.skill or not heal.skill:is(self.skill) then
 			return
 		end
 		heal.heal = heal.heal * (0.80 ^ self:get_stack(1))
