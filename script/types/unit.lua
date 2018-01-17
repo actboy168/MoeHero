@@ -1869,7 +1869,8 @@ function unit.saveDefaultUnits()
 	for _, u in ipairs(group) do
 		dbg.handle_ref(u.handle)
 		if u.unit_type == 'unit' then
-			log.error('未知的单位', u.handle, u:get_name())
+			-- 预设单位没有普通单位，如果有，说明是误摆放的单位，或者是预设建筑没有识别
+			log.error('未知的单位', u.handle, u.id, u:get_name())
 		end
 	end
 end
