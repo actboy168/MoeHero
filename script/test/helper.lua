@@ -221,7 +221,7 @@ end
 
 --满级
 function helper:lv(lv)
-	self:set_level(lv)
+	self:set_level(tonumber(lv))
 end
 
 --动画
@@ -438,7 +438,7 @@ local function main()
 		print(str)
 
 		if type(helper[str]) == 'function' then
-			xpcall(helper[str], error_handle, hero, strs)
+			xpcall(helper[str], error_handle, hero, table.unpack(strs, 2))
             return
 		end
 		if hero then

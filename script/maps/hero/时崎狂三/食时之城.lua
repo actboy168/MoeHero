@@ -218,7 +218,7 @@ function mt:on_remove()
 	end
 	local target = self.target
 	if target:is_type('英雄') then
-		self.buff:remove()
+		if self.buff then self.buff:remove() end
 	elseif not target:is_type('建筑') then
 		target:remove_restriction '时停'
 	end

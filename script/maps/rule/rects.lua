@@ -67,7 +67,7 @@ function map.pathRegionInit()
 	jass.EnumDestructablesInRect(jass.Rect(-8192, -8192, 8192, 8192), nil, function()
 		local dstrct = jass.GetEnumDestructable()
 		local id = jass.GetDestructableTypeId(dstrct)
-		if slk.destructable[id].walkable == '1' then
+		if tonumber(slk.destructable[id].walkable) == 1 then
 			return
 		end
 		local x0, y0 = jass.GetDestructableX(dstrct), jass.GetDestructableY(dstrct)
