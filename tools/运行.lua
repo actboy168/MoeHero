@@ -22,7 +22,7 @@ local command = (registry.current_user() / [[SOFTWARE\Classes\YDWEMap\shell\run_
 command = command:gsub("%%1", (rootpath / 'MoeHero.w3x'):string())
 local dbg = get_debugger()
 if dbg then
-    command = command .. ' -debugger "' .. dbg:string() .. '"'
+    command = command .. ' -debugger 4278'
 end
 print(command)
 local p = sys.process()

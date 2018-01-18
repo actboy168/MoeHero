@@ -8,10 +8,11 @@
             "stopOnEntry": false,
             "ip": "127.0.0.1",
             "port": 4278,
+            "preLaunchTask": "运行",
             "sourceMaps": [
                 [
-                    "${workspaceRoot}/script/",
-                    "${workspaceRoot}/script/"
+                    "script/?",
+                    "${workspaceRoot}/script/?"
                 ]
             ]
         }
