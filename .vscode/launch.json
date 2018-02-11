@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "attach",
+            "name": "测试",
             "type": "lua",
             "request": "attach",
             "stopOnEntry": false,
