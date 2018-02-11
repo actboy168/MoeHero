@@ -38,4 +38,4 @@
 * ctrl+p 输入task，会列出几个快捷操作，分别是 运行、配置、语法检查
 * 安装推荐的插件
 * status-bar-tasks task会出现在左下方状态栏，适合不想输入指令的人
-* lua-debug 先运行地图，ctrl+shift+d可以启动调试
+* lua-debug ctrl+shift+d可以运行地图并调试
