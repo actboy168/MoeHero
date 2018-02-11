@@ -12,7 +12,6 @@ base.version = '4.18'
 --打开控制台
 if not base.release then
 	console.enable = true
-	runtime.debugger = true
 end
 
 --重载print,自动转换编码
