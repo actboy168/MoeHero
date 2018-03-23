@@ -16,6 +16,7 @@ local input_path = fs.path(uni.a2u(arg[2]))
 local function unpack_command()
     local commands = {
         ('"%s"'):format(input_path:string()),
+        ('"%s"'):format((input_path:parent_path() / 'MoeHero'):string()),
         '-lni',
         ('"-config=%s"'):format(fs.current_path() / 'unpack_config.ini'),
     }
@@ -26,19 +27,22 @@ local function unpack(path)
     local application = fs.current_path() / 'w3x2lni' / 'bin' / 'w2l-worker.exe'
     local entry = fs.current_path() / 'w3x2lni' / 'script' / 'map.lua'
     local currentdir = fs.current_path() / 'w3x2lni' / 'script'
-    local command_line = ('"%s" -e "package.cpath=[[%s]]" "%s" %s'):format(application:string(), package.cpath, entry:string(), unpack_command())
+    local command_line = ('"%s" "%s" %s'):format(application:string(), entry:string(), unpack_command())
 	local p = process()
 	p:hide_window()
 	local stdout, stderr = p:std_output(), p:std_error()
 	if not p:create(application, command_line, currentdir) then
-		print(string.format("Executed %s failed", command_line))
-		return -1, nil, nil
+		error('运行失败：\n'..command_line)
 	end
-	print(string.format("Executed %s.", command_line))
     local out = stdout:read 'a'
     local err = stderr:read 'a'
     local exit_code = p:wait()
     p:close()
+    if err ~= '' then
+        print(err)
+        return
+    end
+    print(out)
 end
 
 if fs.is_directory(input_path) then
@@ -46,4 +50,4 @@ if fs.is_directory(input_path) then
 else
     unpack(input_path)
 end
-message('[完毕]: 用时 ' .. os.clock() .. ' 秒')
+print('[完毕]: 用时 ' .. os.clock() .. ' 秒')
