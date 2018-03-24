@@ -12,7 +12,6 @@ local ignore = {
 
 for id, u in pairs(w2l.slk.unit) do
     if u.file and not ignore[u.file:lower()] then
-        w2l.message(u.file, not not w2l:map_load('resource/'..u.file))
         u.file = [[units\human\Footman\Footman.mdx]]
     end
     if u.art then
