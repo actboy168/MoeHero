@@ -33,8 +33,15 @@ local function unpack(path)
 	local stdout, stderr = p:std_output(), p:std_error()
 	if not p:create(application, command_line, currentdir) then
 		error('运行失败：\n'..command_line)
-	end
-    local out = stdout:read 'a'
+    end
+    while true do
+        local out = stdout:read 'l'
+        if out then
+            print(out)
+        else
+            break
+        end
+    end
     local err = stderr:read 'a'
     local exit_code = p:wait()
     p:close()
@@ -42,7 +49,6 @@ local function unpack(path)
         print(err)
         return
     end
-    print(out)
 end
 
 if fs.is_directory(input_path) then
