@@ -23,11 +23,20 @@ local function unpack_command()
     return table.concat(commands, ' ')
 end
 
+local function save_files()
+    local map_path = fs.current_path():parent_path() / 'MoeHero'
+    local jass = io.load(map_path / 'jass' / 'war3map.j')
+    return function ()
+        io.save(map_path / 'jass' / 'war3map.j', jass)
+    end
+end
+
 local function unpack(path)
     local application = fs.current_path() / 'w3x2lni' / 'bin' / 'w2l-worker.exe'
     local entry = fs.current_path() / 'w3x2lni' / 'script' / 'map.lua'
     local currentdir = fs.current_path() / 'w3x2lni' / 'script'
     local command_line = ('"%s" "%s" %s'):format(application:string(), entry:string(), unpack_command())
+    local save_point = save_files()
 	local p = process()
 	p:hide_window()
 	local stdout, stderr = p:std_output(), p:std_error()
@@ -47,8 +56,8 @@ local function unpack(path)
     p:close()
     if err ~= '' then
         print(err)
-        return
     end
+    save_point()
 end
 
 if fs.is_directory(input_path) then

@@ -1,5 +1,5 @@
-resource/
-MoeHero/lua/(ppk).lua
-tools/rsa/ppk
+/resource/
+/MoeHero/lua/(ppk).lua
+/tools/rsa/ppk
 *.w3x
-模型加密报告.txt
+/模型加密报告.txt
