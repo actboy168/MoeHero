@@ -1,5 +1,9 @@
 local w2l = require 'w3x2lni'
 
+if w2l.config.mode ~= 'obj' or w2l.config.mode ~= 'slk' then
+    return
+end
+
 if w2l:file_load('resource', 'model/dummy.mdl') then
     return
 end

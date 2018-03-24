@@ -13,7 +13,10 @@ local function print(...)
 end
 
 local function message(msg)
-    if msg:sub(1, 9) == '-progress' then
+    if msg:sub(1, 9) == '-progress' or
+       msg:sub(1, 7) == '-report' or
+       msg:sub(1, 4) == '-tip'
+    then
         return
     end
     print('w3x2lni:', msg)
@@ -53,7 +56,7 @@ local function lni_command()
         ('"%s"'):format(input_path:string()),
         ('"%s"'):format((input_path:parent_path() / 'MoeHero'):string()),
         '-lni',
-        ('"-config=%s"'):format(fs.current_path() / 'lni_config.ini'),
+        ('"-config=%s"'):format(fs.current_path() / 'config.ini'),
     }
     return table.concat(commands, ' ')
 end
@@ -63,7 +66,17 @@ local function obj_command()
         ('"%s"'):format(input_path:string()),
         ('"%s"'):format((input_path:parent_path() / 'MoeHero.w3x'):string()),
         '-obj',
-        ('"-config=%s"'):format(fs.current_path() / 'obj_config.ini'),
+        ('"-config=%s"'):format(fs.current_path() / 'config.ini'),
+    }
+    return table.concat(commands, ' ')
+end
+
+local function slk_command()
+    local commands = {
+        ('"%s"'):format(input_path:string()),
+        ('"%s"'):format((input_path:parent_path() / 'MoeHero.w3x'):string()),
+        '-slk',
+        ('"-config=%s"'):format(fs.current_path() / 'config.ini'),
     }
     return table.concat(commands, ' ')
 end
@@ -89,8 +102,31 @@ local function obj(path)
     end
 end
 
+local function slk(path)
+    local map_path = fs.current_path():parent_path() / 'MoeHero'
+    local resource_path = map_path:parent_path() / 'resource'
+    local script_path = map_path:parent_path() / 'script'
+    if fs.exists(resource_path) then
+        fs.rename(resource_path, map_path / 'resource')
+    end
+    if fs.exists(script_path) then
+        fs.rename(script_path, map_path / 'lua' / 'script')
+    end
+    call_w2l(slk_command())
+    if fs.exists(map_path / 'resource') then
+        fs.rename(map_path / 'resource', resource_path)
+    end
+    if fs.exists(map_path / 'lua' / 'script') then
+        fs.rename(map_path / 'lua' / 'script', script_path)
+    end
+end
+
 if fs.is_directory(input_path) then
-    obj(input_path)
+    if mode == 'debug' then
+        obj(input_path)
+    else
+        slk(input_path)
+    end
 else
     lni(input_path)
 end
