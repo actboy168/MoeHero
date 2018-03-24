@@ -1,5 +1,9 @@
 local w2l = require 'w3x2lni'
 
+if w2l:file_load('resource', 'model/dummy.mdl') then
+    return
+end
+
 local ignore = {
     [".mdx"] = true,
     [".mdl"] = true,
@@ -7,10 +11,11 @@ local ignore = {
 }
 
 for id, u in pairs(w2l.slk.unit) do
-    if u.file and not ignore[u.file:lower()] and not w2l:file_load('resource', u.file) then
+    if u.file and not ignore[u.file:lower()] then
+        w2l.message(u.file, not not w2l:map_load('resource/'..u.file))
         u.file = [[units\human\Footman\Footman.mdx]]
     end
-    if u.art and not w2l:file_load('resource', u.art) then
+    if u.art then
         u.art = [[ReplaceableTextures\CommandButtons\BTNFootman.blp]]
     end
 end

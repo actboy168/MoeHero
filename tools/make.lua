@@ -78,8 +78,10 @@ end
 local function obj(path)
     local map_path = fs.current_path():parent_path() / 'MoeHero'
     io.save(map_path / 'lua' / 'lua' / 'currentpath.lua', ([=[return [[%s\script\]]]=]):format(fs.current_path():parent_path():string()))
+    fs.rename(map_path:parent_path() / 'resource', map_path / 'resource')
     call_w2l(obj_command())
     fs.remove(map_path / 'lua' / 'lua' / 'currentpath.lua')
+    fs.rename(map_path / 'resource', map_path:parent_path() / 'resource')
 end
 
 if fs.is_directory(input_path) then
