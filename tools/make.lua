@@ -12,6 +12,14 @@ local function print(...)
     std_print(table.concat(t, '\t'))
 end
 
+local function message(msg)
+    if msg:sub(1, 9) == '-progress' then
+        return
+    end
+    print('w3x2lni:', msg)
+end
+
+local mode = arg[1]
 local input_path = fs.path(uni.a2u(arg[2]))
 local function unpack_command()
     local commands = {
@@ -46,7 +54,7 @@ local function unpack(path)
     while true do
         local out = stdout:read 'l'
         if out then
-            print(out)
+            message(out)
         else
             break
         end
