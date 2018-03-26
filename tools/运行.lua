@@ -1,5 +1,6 @@
-require 'ydwe'
-require 'sys'
+require 'filesystem'
+local ydwe = require 'ydwe'
+local process = require 'process'
 if not ydwe then
     return
 end
@@ -7,8 +8,8 @@ end
 local function get_debugger()
     local path = fs.path(os.getenv('USERPROFILE')) / '.vscode' / 'extensions'
     for extpath in path:list_directory() do
-        if extpath:filename():string():sub(1, 20) == 'actboy168.lua-debug-' then
-            local dbgpath = extpath / 'debugger.dll'
+        if fs.is_directory(extpath) and extpath:filename():string():sub(1, 20) == 'actboy168.lua-debug-' then
+            local dbgpath = extpath / 'windows' / 'x64' / 'debugger.dll'
             if fs.exists(dbgpath) then
                 return dbgpath
             end
@@ -25,7 +26,7 @@ if dbg then
     command = command .. ' -debugger 4278'
 end
 print(command)
-local p = sys.process()
+local p = process()
 if p:create(nil, command, nil) then
     p:close()
 end

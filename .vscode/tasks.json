@@ -14,7 +14,7 @@
         {
             "taskName": "运行",
             "args": [
-                "\"${workspaceRoot}/tools/bin/lua.exe\"",
+                "\"${workspaceRoot}/tools/bin/w2l-worker.exe\"",
                 ".\\tools\\运行.lua"
             ],
             "isBuildCommand": true
@@ -22,14 +22,14 @@
         {
             "taskName": "配置",
             "args": [
-                "\"${workspaceRoot}/tools/bin/lua.exe\"",
+                "\"${workspaceRoot}/tools/bin/w2l-worker.exe\"",
                 ".\\tools\\配置.lua"
             ]
         },
         {
             "taskName": "语法检查",
             "args": [
-                "\"${workspaceRoot}/tools/bin/lua.exe\"",
+                "\"${workspaceRoot}/tools/bin/w2l-worker.exe\"",
                 ".\\tools\\语法检查.lua",
                 ".\\script"
             ], 

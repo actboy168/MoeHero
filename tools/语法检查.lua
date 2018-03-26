@@ -1,5 +1,4 @@
 require 'filesystem'
-local uni = require 'unicode'
 
 local function for_directory(path, f)
 	for p in path:list_directory() do
@@ -16,10 +15,10 @@ for_directory(fs.path(arg[1]), function(filename)
     if filename:extension():string():lower() ~= '.lua' then
         return
     end
-    local r, e = loadfile(uni.u2a(filename:string()), 't')
+    local r, e = loadfile(filename:string(), 't')
     if not r then
         failed = failed + 1
-        print(uni.a2u(e))
+        print(e)
     else
         succeed = succeed + 1
     end

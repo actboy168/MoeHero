@@ -1,12 +1,11 @@
-require 'ydwe'
-require 'sys'
+local ydwe = require 'ydwe'
+local process = require 'process'
 
 if not ydwe then
     return
 end
 print('YDWE:', ydwe:string())
-local p = sys.process()
+local p = process()
 if p:create(nil, ydwe / 'bin' / 'ydweconfig.exe', nil) then
     p:close()
 end
-

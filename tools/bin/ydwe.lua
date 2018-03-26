@@ -11,4 +11,4 @@ if not suc or not r then
     print('需要YDWE关联w3x文件')
     return
 end
-ydwe = r
+return r
