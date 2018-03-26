@@ -9,9 +9,6 @@ w2l:file_remove('lua', 'lua/release.lua')
 
 local file_save = w2l.file_save
 function w2l:file_save(type, name, buf)
-    if type == 'resource' then
-        return
-    end
     if type == 'lua' then
         if name:sub(1, 7) == 'script\\' then
             return
