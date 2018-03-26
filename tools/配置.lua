@@ -1,4 +1,4 @@
-local ydwe = require 'ydwe'
+local ydwe = require 'tools.ydwe'
 local process = require 'process'
 
 if not ydwe then

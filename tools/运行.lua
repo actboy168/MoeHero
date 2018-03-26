@@ -1,5 +1,5 @@
 require 'filesystem'
-local ydwe = require 'ydwe'
+local ydwe = require 'tools.ydwe'
 local process = require 'process'
 if not ydwe then
     return
@@ -18,7 +18,11 @@ local function get_debugger()
     end
 end
 
-local rootpath = fs.get(fs.DIR_EXE):remove_filename():remove_filename():remove_filename()
+local rootpath = fs.get(fs.DIR_EXE):remove_filename():remove_filename():remove_filename():remove_filename()
+if not fs.exists(rootpath / 'MoeHero.w3x') then
+    print('地图不存在', rootpath / 'MoeHero.w3x')
+    return
+end
 local command = (registry.current_user() / [[SOFTWARE\Classes\YDWEMap\shell\run_war3\command]])['']
 command = command:gsub("%%1", (rootpath / 'MoeHero.w3x'):string())
 local dbg = get_debugger()
