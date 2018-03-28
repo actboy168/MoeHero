@@ -1,8 +1,4 @@
-local w2l = require 'w3x2lni'
-
-if w2l.config.mode ~= 'slk' then
-	return
-end
+local w2l
 
 local function encrypt_name(name)
 	return name .. '体'
@@ -225,8 +221,18 @@ local function encrypt_others()
 	encrypt_txt 'units\\wowtrailercaptions.txt'
 end
 
-encrypt_jasses()
-encrypt_luas()
-encrypt_objs()
-encrypt_others()
-rename_files()
+local mt = {}
+
+function mt:on_complete_data(w2l_)
+	w2l = w2l_
+	if w2l.config.mode ~= 'slk' then
+		return
+	end
+	encrypt_jasses()
+	encrypt_luas()
+	encrypt_objs()
+	encrypt_others()
+	rename_files()
+end
+
+return mt

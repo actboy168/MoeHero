@@ -4,7 +4,7 @@ local console	= require 'jass.console'
 base = {}
 
 --判断是否是发布版本
-base.release = pcall(require, 'lua\\release')
+base.release = not pcall(require, 'lua\\currentpath')
 
 --版本号
 base.version = '4.18'

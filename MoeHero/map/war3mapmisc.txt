@@ -1,5 +1,8 @@
 [FontHeights]
 LeaderBoard=0.011
+[HERO]
+DependencyOr=Hamg,Hblm,Hmkg,Hpal,Obla,Ofar,Oshd,Otch,Edem,Ekee,Emoo,Ewar,Ucrl,Udea,Udre,Ulic,Npbm,Nbrn,Nngs,Nplh,Nbst
+Name=一个英雄
 [Misc]
 AgiAttackSpeedBonus=0.0
 AgiDefenseBase=0.0
@@ -71,3 +74,18 @@ TradingIncSmall=0
 UpkeepUsage=0
 [PingColor]
 PingAttackColor=0,0,0,0
+[TALT]
+DependencyOr=halt,oalt,eate,uaod
+Name=一个祭坛
+[TWN1]
+DependencyOr=htow,ogre,etol,unpl
+Name=城镇大厅或者大厅或者生命之树或者大墓地
+XPFactor=0
+[TWN2]
+DependencyOr=hkee,ostr,etoa,unp1
+Name=主城或者要塞或者远古之树或者亡者大厅
+XPFactor=0
+[TWN3]
+DependencyOr=hcas,ofrt,etoe,unp2
+Name=城堡或者堡垒或者永恒之树或者黑色城堡
+XPFactor=0

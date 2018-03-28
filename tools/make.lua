@@ -61,14 +61,17 @@ local function call_w2l(commands)
 	if not p:create(application, command_line, currentdir) then
 		error('运行失败：\n'..command_line)
     end
+    local outs = {}
     while true do
         local out = stdout:read 'l'
         if out then
+            outs[#outs+1] = out
             message(out)
         else
             break
         end
     end
+    io.save(fs.current_path():parent_path() / 'log.txt', table.concat(outs, '\n'))
     local err = stderr:read 'a'
     local exit_code = p:wait()
     p:close()
@@ -115,36 +118,14 @@ local function lni(path)
 end
 
 local function obj(path)
-    local map_path = root / 'MoeHero'
-    local resource_path = map_path:parent_path() / 'resource'
-    io.save(map_path / 'lua' / 'lua' / 'currentpath.lua', ([=[return [[%s\script\]]]=]):format(root:string()))
-    if fs.exists(resource_path) then
-        fs.rename(resource_path, map_path / 'resource')
-    end
+    local map_path = fs.current_path():parent_path() / 'MoeHero'
+    io.save(map_path / 'script' / 'lua' / 'currentpath.lua', ([=[return [[%s\MoeHero\script\]]]=]):format(fs.current_path():parent_path():string()))
     call_w2l(obj_command())
-    fs.remove(map_path / 'lua' / 'lua' / 'currentpath.lua')
-    if fs.exists(map_path / 'resource') then
-        fs.rename(map_path / 'resource', resource_path)
-    end
+    fs.remove(map_path / 'script' / 'lua' / 'currentpath.lua')
 end
 
 local function slk(path)
-    local map_path = root / 'MoeHero'
-    local resource_path = map_path:parent_path() / 'resource'
-    local script_path = map_path:parent_path() / 'script'
-    if fs.exists(resource_path) then
-        fs.rename(resource_path, map_path / 'resource')
-    end
-    if fs.exists(script_path) then
-        fs.rename(script_path, map_path / 'lua' / 'script')
-    end
     call_w2l(slk_command())
-    if fs.exists(map_path / 'resource') then
-        fs.rename(map_path / 'resource', resource_path)
-    end
-    if fs.exists(map_path / 'lua' / 'script') then
-        fs.rename(map_path / 'lua' / 'script', script_path)
-    end
 end
 
 if fs.is_directory(input_path) then
