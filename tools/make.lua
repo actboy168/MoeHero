@@ -2,6 +2,9 @@ require 'filesystem'
 local uni = require 'ffi.unicode'
 local process = require "process"
 
+local mode = arg[1]
+local input_path = fs.path(uni.a2u(arg[2]))
+local root = fs.path(uni.a2u(arg[3]))
 
 function io.load(file_path)
     local f, e = io.open(file_path:string(), "rb")
@@ -48,9 +51,9 @@ local function message(msg)
 end
 
 local function call_w2l(commands)
-    local application = fs.current_path() / 'w3x2lni' / 'bin' / 'w2l-worker.exe'
-    local entry = fs.current_path() / 'w3x2lni' / 'script' / 'map.lua'
-    local currentdir = fs.current_path() / 'w3x2lni' / 'script'
+    local application = root / 'tools' / 'w3x2lni' / 'bin' / 'w2l-worker.exe'
+    local entry = root / 'tools' / 'w3x2lni' / 'script' / 'map.lua'
+    local currentdir = root / 'tools' / 'w3x2lni' / 'script'
     local command_line = ('"%s" "%s" %s'):format(application:string(), entry:string(), commands)
     local p = process()
 	p:hide_window()
@@ -77,14 +80,12 @@ local function call_w2l(commands)
     end
 end
 
-local mode = arg[1]
-local input_path = fs.path(uni.a2u(arg[2]))
 local function lni_command()
     local commands = {
         ('"%s"'):format(input_path:string()),
         ('"%s"'):format((input_path:parent_path() / 'MoeHero'):string()),
         '-lni',
-        ('"-config=%s"'):format(fs.current_path() / 'config.ini'),
+        ('"-config=%s"'):format(root / 'tools' / 'config.ini'),
     }
     return table.concat(commands, ' ')
 end
@@ -94,7 +95,7 @@ local function obj_command()
         ('"%s"'):format(input_path:string()),
         ('"%s"'):format((input_path:parent_path() / 'MoeHero.w3x'):string()),
         '-obj',
-        ('"-config=%s"'):format(fs.current_path() / 'config.ini'),
+        ('"-config=%s"'):format(root / 'tools' / 'config.ini'),
     }
     return table.concat(commands, ' ')
 end
@@ -104,13 +105,13 @@ local function slk_command()
         ('"%s"'):format(input_path:string()),
         ('"%s"'):format((input_path:parent_path() / 'MoeHero.w3x'):string()),
         '-slk',
-        ('"-config=%s"'):format(fs.current_path() / 'config.ini'),
+        ('"-config=%s"'):format(root / 'tools' / 'config.ini'),
     }
     return table.concat(commands, ' ')
 end
 
 local function lni(path)
-    local map_path = fs.current_path():parent_path() / 'MoeHero'
+    local map_path = root / 'MoeHero'
     local jass = io.load(map_path / 'jass' / 'war3map.j')
 	call_w2l(lni_command())
     io.save(map_path / 'jass' / 'war3map.j', jass)

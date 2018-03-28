@@ -7,5 +7,5 @@ goto start
 :start
 
 cd %~dp0tools
-"w3x2lni\bin\w2l-worker.exe" "make.lua" "release" "%userinput%"
+"w3x2lni\bin\w2l-worker.exe" "make.lua" "release" "%userinput%" %~dp0
 pause
