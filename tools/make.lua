@@ -58,14 +58,17 @@ local function call_w2l(commands)
 	if not p:create(application, command_line, currentdir) then
 		error('运行失败：\n'..command_line)
     end
+    local outs = {}
     while true do
         local out = stdout:read 'l'
         if out then
+            outs[#outs+1] = out
             message(out)
         else
             break
         end
     end
+    io.save(fs.current_path():parent_path() / 'log.txt', table.concat(outs, '\n'))
     local err = stderr:read 'a'
     local exit_code = p:wait()
     p:close()
