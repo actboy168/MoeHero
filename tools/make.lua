@@ -1,5 +1,5 @@
 require 'filesystem'
-local uni = require 'ffi.unicode'
+local uni = require 'tools.ffi.unicode'
 local process = require "process"
 
 local mode = arg[1]

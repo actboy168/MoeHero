@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "测试",
+            "name": "测试地图",
             "type": "lua",
             "request": "attach",
             "stopOnEntry": false,
@@ -14,6 +14,25 @@
                     "script/?",
                     "${workspaceRoot}/script/?"
                 ]
+            ]
+        },
+        {
+            "name": "测试Tools",
+            "type": "lua",
+            "request": "launch",
+            "stopOnEntry": true,
+            "program": "${workspaceRoot}\\tools\\make.lua",
+            "luadll": "${workspaceRoot}\\tools\\w3x2lni\\lua53.dll",
+            "path": "${workspaceRoot}\\?.lua;${workspaceRoot}\\?\\init.lua",
+            "cpath": "${workspaceRoot}\\tools\\w3x2lni\\bin\\?.dll;",
+            "env": {
+                "PATH" : "${workspaceRoot}\\tools\\w3x2lni\\bin\\"
+            },
+            "console": "ansi",
+            "arg": [
+                "debug",
+                "${workspaceRoot}\\MoeHero",
+                "${workspaceRoot}"
             ]
         }
     ]
