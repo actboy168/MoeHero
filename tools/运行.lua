@@ -9,7 +9,7 @@ local function get_debugger()
     local path = fs.path(os.getenv('USERPROFILE')) / '.vscode' / 'extensions'
     for extpath in path:list_directory() do
         if fs.is_directory(extpath) and extpath:filename():string():sub(1, 20) == 'actboy168.lua-debug-' then
-            local dbgpath = extpath / 'windows' / 'x64' / 'debugger.dll'
+            local dbgpath = extpath / 'windows' / 'x86' / 'debugger.dll'
             if fs.exists(dbgpath) then
                 return dbgpath
             end
