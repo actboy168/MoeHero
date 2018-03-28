@@ -118,9 +118,9 @@ end
 
 local function obj(path)
     local map_path = fs.current_path():parent_path() / 'MoeHero'
-    io.save(map_path / 'lua' / 'lua' / 'currentpath.lua', ([=[return [[%s\script\]]]=]):format(fs.current_path():parent_path():string()))
+    io.save(map_path / 'script' / 'lua' / 'currentpath.lua', ([=[return [[%s\MoeHero\script\]]]=]):format(fs.current_path():parent_path():string()))
     call_w2l(obj_command())
-    fs.remove(map_path / 'lua' / 'lua' / 'currentpath.lua')
+    fs.remove(map_path / 'script' / 'lua' / 'currentpath.lua')
 end
 
 local function slk(path)
