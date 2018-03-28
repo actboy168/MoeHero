@@ -2,19 +2,15 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "0.1.0",
-    "command": "cmd",
-    "args": [
-        "/c"
-    ],
+    "command": "\"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
     "isShellCommand": true,
     "showOutput": "always",
-    "echoCommand": true,
+    "echoCommand": false,
     "suppressTaskName": true,
     "tasks": [
         {
             "taskName": "运行",
             "args": [
-                "\"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
                 ".\\tools\\运行.lua"
             ],
             "isBuildCommand": true
@@ -22,14 +18,12 @@
         {
             "taskName": "配置",
             "args": [
-                "\"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
                 ".\\tools\\配置.lua"
             ]
         },
         {
             "taskName": "语法检查",
             "args": [
-                "\"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
                 ".\\tools\\语法检查.lua",
                 ".\\MoeHero\\script"
             ], 
@@ -48,7 +42,6 @@
         {
             "taskName": "打包地图",
             "args": [
-                "\"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
                 ".\\tools\\make.lua",
                 "debug",
                 "${workspaceRoot}\\MoeHero",
