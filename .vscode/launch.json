@@ -22,7 +22,7 @@
             "request": "launch",
             "stopOnEntry": true,
             "program": "${workspaceRoot}\\tools\\make.lua",
-            "luadll": "${workspaceRoot}\\tools\\w3x2lni\\lua53.dll",
+            "luadll": "${workspaceRoot}\\tools\\w3x2lni\\bin\\lua53.dll",
             "path": "${workspaceRoot}\\?.lua;${workspaceRoot}\\?\\init.lua",
             "cpath": "${workspaceRoot}\\tools\\w3x2lni\\bin\\?.dll;",
             "env": {
