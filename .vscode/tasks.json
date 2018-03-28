@@ -44,6 +44,16 @@
                 }
             },
             "isTestCommand": true
+        },
+        {
+            "taskName": "打包地图",
+            "args": [
+                "\"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
+                ".\\tools\\make.lua",
+                "debug",
+                "${workspaceRoot}\\MoeHero",
+                "${workspaceRoot}"
+            ]
         }
     ]
 }
