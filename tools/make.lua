@@ -71,7 +71,7 @@ local function call_w2l(commands)
             break
         end
     end
-    io.save(fs.current_path():parent_path() / 'log.txt', table.concat(outs, '\n'))
+    io.save(root / 'log.txt', table.concat(outs, '\n'))
     local err = stderr:read 'a'
     local exit_code = p:wait()
     p:close()
@@ -118,8 +118,8 @@ local function lni(path)
 end
 
 local function obj(path)
-    local map_path = fs.current_path():parent_path() / 'MoeHero'
-    io.save(map_path / 'script' / 'lua' / 'currentpath.lua', ([=[return [[%s\MoeHero\script\]]]=]):format(fs.current_path():parent_path():string()))
+    local map_path = root / 'MoeHero'
+    io.save(map_path / 'script' / 'lua' / 'currentpath.lua', ([=[return [[%s\MoeHero\script\script\]]]=]):format(root:string()))
     call_w2l(obj_command())
     fs.remove(map_path / 'script' / 'lua' / 'currentpath.lua')
 end
