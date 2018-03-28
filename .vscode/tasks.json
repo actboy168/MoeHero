@@ -31,7 +31,7 @@
             "args": [
                 "\"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
                 ".\\tools\\语法检查.lua",
-                ".\\script"
+                ".\\MoeHero\\script"
             ], 
             "problemMatcher": {
                 "owner": "lua",
