@@ -194,7 +194,7 @@ function mt:on_add()
 	local hero = self.target
 	self.blends = {}
 	for i, skill in ipairs(self.skill.skills) do
-		self.blends[i] = skill:add_blend('1', '边框', 1)
+		self.blends[i] = skill:add_blend('1', 'frame', 1)
 		skill.cost_stack = skill.cost_stack - 1
 		skill:fresh()
 	end
@@ -239,7 +239,7 @@ function mt:on_add()
 	local hero = self.target
 	self.blends = {}
 	for i, skill in ipairs(self.skill.skills) do
-		self.blends[i] = skill:add_blend('2', '边框', 2)
+		self.blends[i] = skill:add_blend('2', 'frame', 2)
 		skill.cost_stack = skill.cost_stack - 1
 		skill:fresh()
 	end

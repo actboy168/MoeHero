@@ -134,7 +134,7 @@ local mt = ac.buff['电磁牵引-加速']
 
 function mt:on_add()
 	local hero = self.target
-	self.blend = self.skill:add_blend('2', '边框', 2)
+	self.blend = self.skill:add_blend('2', 'frame', 2)
 	hero:add('移动速度', self.move_speed)
 end
 
@@ -172,7 +172,7 @@ function mt:on_add()
 		self.eff = self.path_point:add_effect([[Abilities\Spells\Orc\Purge\PurgeBuffTarget.mdl]])
 	end
 	local target = self.target_unit or self.path_point
-	self.blend = self.skill:add_blend('1', '边框', 1)
+	self.blend = self.skill:add_blend('1', 'frame', 1)
 	self.ln = ac.lightning('CLSB', self.source, target, 75, 75)
 	self:on_pulse()
 end

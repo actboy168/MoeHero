@@ -131,7 +131,7 @@ function mt:on_add()
 		end
 		damage:div(aoe_reduce)
 	end)
-	self.blend = self.skill:add_blend('2', '边框', 2)
+	self.blend = self.skill:add_blend('2', 'frame', 2)
 	self.skill:show_buff(self)
 	self.skill:set_option('show_cd', 0)
 	self.skill:set_option('passive', true)

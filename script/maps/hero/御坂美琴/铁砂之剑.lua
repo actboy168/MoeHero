@@ -71,7 +71,7 @@ function mt:on_add()
 	self.missile_art = hero.missile_art
 	hero.missile_art = [[Abilities\Weapons\AvengerMissile\AvengerMissile.mdl]]
 	hero:add('攻击', self.damage)
-	self.blend = self.skill:add_blend('2', '边框', 2)
+	self.blend = self.skill:add_blend('2', 'frame', 2)
 	self.skill:show_buff(self)
 	self.skill:set_option('show_cd', 0)
 	self.skill:set_option('passive', true)
@@ -98,7 +98,7 @@ mt.keep = true
 function mt:on_add()
 	local hero = self.target
 	local skl = self.skill
-	self.blend = self.skill:add_blend('1', '边框', 1)
+	self.blend = self.skill:add_blend('1', 'frame', 1)
 	self.eff = hero:add_effect('origin', [[Abilities\Spells\Orc\Purge\PurgeBuffTarget.mdl]])
 	self.trg = hero:event '单位-即将获得状态' (function(trg, _, buff)
 		if not buff:is_control() then

@@ -228,7 +228,7 @@ end
 local mt = ac.buff['食时之城-额外强化']
 
 function mt:on_add()
-	self.blend = self.skill:add_blend('2', '边框', 1)
+	self.blend = self.skill:add_blend('2', 'frame', 1)
 end
 
 function mt:on_remove()

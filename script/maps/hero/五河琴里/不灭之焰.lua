@@ -129,7 +129,7 @@ local mt = ac.buff['不灭之焰-记录']
 
 function mt:on_add()
 	local hero = self.target
-	self.blend = self.skill:add_blend('2', '边框', 2)
+	self.blend = self.skill:add_blend('2', 'frame', 2)
 	self.trg = hero:event '受到伤害效果' (function(_, damage)
 		hero:add_buff '不灭之焰-治疗'
 		{

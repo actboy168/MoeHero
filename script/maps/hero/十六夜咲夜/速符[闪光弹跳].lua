@@ -148,10 +148,10 @@ function mt:on_add()
 	local has_w = hero:find_skill '银符[完美女仆]'
 	local has_e = hero:find_skill '幻符[杀人玩偶]'
 	if has_w then
-		self.blend1 = has_w:add_blend('2', '边框', 2)
+		self.blend1 = has_w:add_blend('2', 'frame', 2)
 	end
 	if has_e then
-		self.blend2 = has_e:add_blend('2', '边框', 2)
+		self.blend2 = has_e:add_blend('2', 'frame', 2)
 	end
 end
 

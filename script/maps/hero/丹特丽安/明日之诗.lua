@@ -148,7 +148,7 @@ function mt:on_add()
 	self.mark = {}
 	for _, name in ipairs {'妖精之书', '雷神之书', '冥界之书'} do
 		local skill = hero:find_skill(name, '英雄', true)
-		self.mark[name] = skill:add_blend('2', '边框', 2)
+		self.mark[name] = skill:add_blend('2', 'frame', 2)
 	end
 	self.trg = hero:event '技能-施法引导' (function(_, _, skill)
 		if skill:get_type() == '英雄' and self.mark[skill.name] then

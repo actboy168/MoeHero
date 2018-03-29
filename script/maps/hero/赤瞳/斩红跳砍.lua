@@ -71,7 +71,7 @@ function mt:on_cast_channel()
 			self.illustion = nil
 		end
 		if not self.blend then
-			self.blend = self:add_blend('2', '边框', 2)
+			self.blend = self:add_blend('2', 'frame', 2)
 		end
 		return true
 	end)
@@ -82,7 +82,7 @@ function mt:on_cast_channel()
 			self.illustion = nil
 		end
 		if not self.blend then
-			self.blend = self:add_blend('2', '边框', 2)
+			self.blend = self:add_blend('2', 'frame', 2)
 		end
 		return true
 	end)

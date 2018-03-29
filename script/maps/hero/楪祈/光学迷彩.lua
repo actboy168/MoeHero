@@ -51,7 +51,7 @@ function mt:on_add()
 			: get()
 		if #g <= 0 then
 			if not self.blend then
-				self.blend = self:add_blend('2', '边框', 2)
+				self.blend = self:add_blend('2', 'frame', 2)
 			end
 		else
 			if self.blend then
@@ -100,7 +100,7 @@ function mt:on_add()
 	local hero = self.target
 	local skl = hero:find_skill '快速射击'
 	if skl then
-		self.blend = skl:add_blend('2', '边框', 2)
+		self.blend = skl:add_blend('2', 'frame', 2)
 	end
 	self.target:add_restriction '隐身'
 	self.target:add('移动速度%', self.move_speed_rate)

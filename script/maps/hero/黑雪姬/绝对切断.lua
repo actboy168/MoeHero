@@ -48,7 +48,7 @@ function mt:on_add()
 	for _, name in ipairs{'死亡穿刺', '死亡旋转'} do
 		local skill = hero:find_skill(name, nil, true)
 		if skill then
-			self.skills[name] = skill:add_blend('2', '边框', 2)
+			self.skills[name] = skill:add_blend('2', 'frame', 2)
 		end
 	end
 	self.eff = hero:add_effect('origin', [[modeldekan\ability\DEKAN_Inori_W_Effect.mdl]])

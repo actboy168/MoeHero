@@ -193,7 +193,7 @@ function mt:on_add()
 	if skl then
 		skl:set_option('passive', true)
 		skl:set_show_cd()
-		skl.blend = skl:add_blend('pas', '边框', 3)
+		skl.blend = skl:add_blend('pas', 'frame', 3)
 	end
 	local skl = hero:find_skill('死亡旋转', nil, true)
 	if skl then

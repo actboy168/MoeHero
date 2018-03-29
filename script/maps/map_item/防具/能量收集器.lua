@@ -97,7 +97,7 @@ function mt:enable_block()
 		skill = self,
 		model = [[war3mapimported\barrier.mdx]],
 	}
-	self.blend = self:add_blend('2', '边框', 2)
+	self.blend = self:add_blend('2', 'frame', 2)
 end
 
 function mt:disable_block()

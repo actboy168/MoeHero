@@ -111,7 +111,7 @@ function mt:on_add()
 	self.target:add('攻击速度', self.attack_speed)
 	self.target:add('移动速度%', self.move_speed_rate)
 	self.effect = self.target:add_effect(self.ref, self.model)
-	self.blend = self.skill:add_blend('2', '边框', 2)
+	self.blend = self.skill:add_blend('2', 'frame', 2)
 end
 
 function mt:on_remove()

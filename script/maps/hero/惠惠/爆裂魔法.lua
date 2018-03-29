@@ -581,7 +581,7 @@ end
 local mt = ac.buff['爆裂魔法-和真的支援']
 
 function mt:on_add()
-	self.blend = self.target_skill:add_blend('2', '边框', 2)
+	self.blend = self.target_skill:add_blend('2', 'frame', 2)
 	self.target_skill:set_option('ignore_cost', true)
 end
 
