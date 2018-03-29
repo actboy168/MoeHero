@@ -4,6 +4,7 @@ local process = require "process"
 local mode = arg[1]
 local root = fs.path(arg[2])
 local w2l = root / 'tools' / 'w3x2lni'
+local title = ('W3x2%s%s'):format(mode:sub(1,1):upper(), mode:sub(2))
 
 function io.save(filepath, content)
     local f, e = io.open(filepath:string(), "wb")
@@ -24,7 +25,7 @@ local function message(msg)
     then
         return
     end
-    print('w3x2lni:', msg)
+    print(('| %s |    %s'):format(title, msg))
 end
 
 local function call_w2l(commands)
@@ -80,4 +81,4 @@ end
 
 call_w2l(make_command(mode))
 
-print('[完毕]: 用时 ' .. os.clock() .. ' 秒')
+print('用时 ' .. os.clock() .. ' 秒')
