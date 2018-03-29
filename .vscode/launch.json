@@ -21,18 +21,18 @@
             "type": "lua",
             "request": "launch",
             "stopOnEntry": true,
-            "program": "${workspaceRoot}\\tools\\make.lua",
+            "program": "${workspaceRoot}\\tools\\打包地图.lua",
             "luadll": "${workspaceRoot}\\tools\\w3x2lni\\bin\\lua53.dll",
             "path": "${workspaceRoot}\\?.lua;${workspaceRoot}\\?\\init.lua",
             "cpath": "${workspaceRoot}\\tools\\w3x2lni\\bin\\?.dll;",
             "env": {
                 "PATH" : "${workspaceRoot}\\tools\\w3x2lni\\bin\\"
             },
-            "console": "ansi",
+            "sourceCoding": "utf8",
+            "console": "utf8",
             "arg": [
-                "debug",
-                "${workspaceRoot}\\MoeHero",
-                "${workspaceRoot}"
+                "${workspaceRoot}",
+                "obj"
             ]
         }
     ]

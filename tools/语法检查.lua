@@ -28,11 +28,12 @@ local function compilation(path)
     return res, succeed, failed
 end
 
-local path = fs.path(arg[1])
+local root = fs.path(arg[1])
+local script = root / 'MoeHero' / 'script'
 local watch = arg[2] == '--watch'
 
 if not watch then
-    local res, succeed, failed = compilation(path)
+    local res, succeed, failed = compilation(script)
     print(res)
     print(string.format('成功 %d 个, 失败 %d 个', succeed, failed))
     return
@@ -46,7 +47,7 @@ ffi.cdef[[
 
 local last = ''
 while true do
-    local res, succeed, failed = compilation(path)
+    local res, succeed, failed = compilation(script)
     if last ~= res then
         last = res
         print('[Watch] File change detected.')

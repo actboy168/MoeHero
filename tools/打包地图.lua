@@ -1,8 +1,8 @@
 require 'filesystem'
 local process = require "process"
 
-local mode = arg[1]
-local root = fs.path(arg[2])
+local root = fs.path(arg[1])
+local mode = arg[2]
 local w2l = root / 'tools' / 'w3x2lni'
 local title = ('W3x2%s%s'):format(mode:sub(1,1):upper(), mode:sub(2))
 
