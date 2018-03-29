@@ -59,7 +59,7 @@ local function call_w2l(commands)
 end
 
 local function make_command(mode)
-    local dir = root / 'MoeHero'
+    local dir = root
     local w3x = root / 'MoeHero.w3x'
     local input, output
     if mode == 'obj' then
