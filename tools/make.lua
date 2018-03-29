@@ -1,10 +1,9 @@
 require 'filesystem'
-local uni = require 'tools.ffi.unicode'
 local process = require "process"
 
 local mode = arg[1]
-local input_path = fs.path(uni.a2u(arg[2]))
-local root = fs.path(uni.a2u(arg[3]))
+local input_path = fs.path(arg[2])
+local root = fs.path(arg[3])
 
 function io.load(file_path)
     local f, e = io.open(file_path:string(), "rb")
