@@ -12,8 +12,7 @@
             "taskName": "运行",
             "args": [
                 ".\\tools\\运行.lua"
-            ],
-            "isBuildCommand": true
+            ]
         },
         {
             "taskName": "配置",
@@ -26,10 +25,14 @@
             "args": [
                 ".\\tools\\语法检查.lua",
                 ".\\MoeHero\\script"
-            ], 
+            ],
+            "showOutput": "silent",
             "problemMatcher": {
                 "owner": "lua",
-                "fileLocation": ["relative", "${workspaceRoot}"],
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
                 "pattern": {
                     "regexp": "^(.*):(\\d+):\\s+(.*)$",
                     "file": 1,
@@ -37,7 +40,7 @@
                     "message": 3
                 }
             },
-            "isTestCommand": true
+            "isBuildCommand": true
         },
         {
             "taskName": "Obj",
@@ -70,10 +73,14 @@
                 ".\\MoeHero\\script",
                 "--watch"
             ],
+            "showOutput": "silent",
             "isBackground": true,
             "problemMatcher": {
                 "owner": "lua",
-                "fileLocation": ["relative", "${workspaceRoot}"],
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
                 "pattern": {
                     "regexp": "^(.*):(\\d+):\\s+(.*)$",
                     "file": 1,
