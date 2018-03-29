@@ -5,22 +5,8 @@ local mode = arg[1]
 local root = fs.path(arg[2])
 local w2l = root / 'tools' / 'w3x2lni'
 
-function io.load(file_path)
-    local f, e = io.open(file_path:string(), "rb")
-    if f then
-        if f:read(3) ~= '\xEF\xBB\xBF' then
-            f:seek('set')
-        end
-        local content = f:read 'a'
-        f:close()
-        return content
-    else
-        return false, e
-    end
-end
-
-function io.save(file_path, content)
-    local f, e = io.open(file_path:string(), "wb")
+function io.save(filepath, content)
+    local f, e = io.open(filepath:string(), "wb")
     if f then
         f:write(content)
         f:close()
@@ -71,60 +57,27 @@ local function call_w2l(commands)
     end
 end
 
-local function lni_command()
-    local commands = {
-        ('"%s"'):format((root / 'MoeHero.w3x'):string()),
-        ('"%s"'):format((root / 'MoeHero'):string()),
-        '-lni',
+local function make_command(mode)
+    local dir = root / 'MoeHero'
+    local w3x = root / 'MoeHero.w3x'
+    local input, output
+    if mode == 'obj' then
+        input, output = dir, w3x
+    elseif mode == 'lni' then
+        input, output = w3x, dir
+    elseif mode == 'slk' then
+        input, output = dir, w3x
+    else
+        error(('错误的`mode`: %s'):format(mode))
+    end
+    return table.concat({
+        ('"%s"'):format(input:string()),
+        ('"%s"'):format(output:string()),
+        '-' .. mode,
         ('"-config=%s"'):format(root / 'tools' / 'config.ini'),
-    }
-    return table.concat(commands, ' ')
+    }, ' ')
 end
 
-local function obj_command()
-    local commands = {
-        ('"%s"'):format((root / 'MoeHero'):string()),
-        ('"%s"'):format((root / 'MoeHero.w3x'):string()),
-        '-obj',
-        ('"-config=%s"'):format(root / 'tools' / 'config.ini'),
-    }
-    return table.concat(commands, ' ')
-end
-
-local function slk_command()
-    local commands = {
-        ('"%s"'):format((root / 'MoeHero'):string()),
-        ('"%s"'):format((root / 'MoeHero.w3x'):string()),
-        '-slk',
-        ('"-config=%s"'):format(root / 'tools' / 'config.ini'),
-    }
-    return table.concat(commands, ' ')
-end
-
-local function lni()
-    local map_path = root / 'MoeHero'
-    local jass = io.load(map_path / 'jass' / 'war3map.j')
-	call_w2l(lni_command())
-    io.save(map_path / 'jass' / 'war3map.j', jass)
-end
-
-local function obj()
-    call_w2l(obj_command())
-end
-
-local function slk()
-    call_w2l(slk_command())
-end
-
-
-if mode == 'obj' then
-    obj()
-elseif mode == 'lni' then
-    lni()
-elseif mode == 'slk' then
-    slk()
-else
-    error(('错误的`mode`: %s'):format(mode))
-end
+call_w2l(make_command(mode))
 
 print('[完毕]: 用时 ' .. os.clock() .. ' 秒')
