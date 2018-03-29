@@ -419,7 +419,7 @@ function mt:get_art(art, dis)
 		art = get_dis_art(art)
 	else
 		if self._blends then
-			art = get_blend_art(art, self._blends, '边框')
+			art = get_blend_art(art, self._blends, 'frame')
 		end
 
 		if self._show_buff then
