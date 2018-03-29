@@ -1,5 +1,5 @@
-/MoeHero/resource/
-/MoeHero/lua/(ppk).lua
+resource/
+lua/(ppk).lua
 /tools/rsa/ppk
-/*.w3x
+/MoeHero.w3x
 /log.txt
