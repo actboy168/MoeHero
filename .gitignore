@@ -1,5 +1,5 @@
-resource/
-lua/(ppk).lua
+/resource/
+/map/lua/(ppk).lua
 /tools/rsa/ppk
 /*.w3x
 !/.w3x
