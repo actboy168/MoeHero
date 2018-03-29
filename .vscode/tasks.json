@@ -40,16 +40,34 @@
             "isTestCommand": true
         },
         {
-            "taskName": "打包地图",
+            "taskName": "Obj",
             "args": [
-                ".\\tools\\make.lua",
+                ".\\tools\\打包地图.lua",
                 "debug",
                 "${workspaceRoot}\\MoeHero",
                 "${workspaceRoot}"
             ]
         },
         {
-            "taskName": "Watch",
+            "taskName": "Lni",
+            "args": [
+                ".\\tools\\打包地图.lua",
+                "debug",
+                "${workspaceRoot}\\MoeHero",
+                "${workspaceRoot}"
+            ]
+        },
+        {
+            "taskName": "Slk",
+            "args": [
+                ".\\tools\\打包地图.lua",
+                "debug",
+                "${workspaceRoot}\\MoeHero",
+                "${workspaceRoot}"
+            ]
+        },
+        {
+            "taskName": "🔍",
             "args": [
                 ".\\tools\\语法检查.lua",
                 ".\\MoeHero\\script",
