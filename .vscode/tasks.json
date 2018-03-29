@@ -43,8 +43,7 @@
             "taskName": "Obj",
             "args": [
                 ".\\tools\\打包地图.lua",
-                "debug",
-                "${workspaceRoot}\\MoeHero",
+                "obj",
                 "${workspaceRoot}"
             ]
         },
@@ -52,8 +51,7 @@
             "taskName": "Lni",
             "args": [
                 ".\\tools\\打包地图.lua",
-                "debug",
-                "${workspaceRoot}\\MoeHero",
+                "lni",
                 "${workspaceRoot}"
             ]
         },
@@ -61,8 +59,7 @@
             "taskName": "Slk",
             "args": [
                 ".\\tools\\打包地图.lua",
-                "debug",
-                "${workspaceRoot}\\MoeHero",
+                "slk",
                 "${workspaceRoot}"
             ]
         },

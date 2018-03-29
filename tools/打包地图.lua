@@ -2,8 +2,7 @@ require 'filesystem'
 local process = require "process"
 
 local mode = arg[1]
-local input_path = fs.path(arg[2])
-local root = fs.path(arg[3])
+local root = fs.path(arg[2])
 
 function io.load(file_path)
     local f, e = io.open(file_path:string(), "rb")
@@ -72,8 +71,8 @@ end
 
 local function lni_command()
     local commands = {
-        ('"%s"'):format(input_path:string()),
-        ('"%s"'):format((input_path:parent_path() / 'MoeHero'):string()),
+        ('"%s"'):format((root / 'MoeHero.w3x'):string()),
+        ('"%s"'):format((root / 'MoeHero'):string()),
         '-lni',
         ('"-config=%s"'):format(root / 'tools' / 'config.ini'),
     }
@@ -82,8 +81,8 @@ end
 
 local function obj_command()
     local commands = {
-        ('"%s"'):format(input_path:string()),
-        ('"%s"'):format((input_path:parent_path() / 'MoeHero.w3x'):string()),
+        ('"%s"'):format((root / 'MoeHero'):string()),
+        ('"%s"'):format((root / 'MoeHero.w3x'):string()),
         '-obj',
         ('"-config=%s"'):format(root / 'tools' / 'config.ini'),
     }
@@ -92,39 +91,41 @@ end
 
 local function slk_command()
     local commands = {
-        ('"%s"'):format(input_path:string()),
-        ('"%s"'):format((input_path:parent_path() / 'MoeHero.w3x'):string()),
+        ('"%s"'):format((root / 'MoeHero'):string()),
+        ('"%s"'):format((root / 'MoeHero.w3x'):string()),
         '-slk',
         ('"-config=%s"'):format(root / 'tools' / 'config.ini'),
     }
     return table.concat(commands, ' ')
 end
 
-local function lni(path)
+local function lni()
     local map_path = root / 'MoeHero'
     local jass = io.load(map_path / 'jass' / 'war3map.j')
 	call_w2l(lni_command())
     io.save(map_path / 'jass' / 'war3map.j', jass)
 end
 
-local function obj(path)
+local function obj()
     local map_path = root / 'MoeHero'
     io.save(map_path / 'script' / 'lua' / 'currentpath.lua', ([=[return [[%s\MoeHero\script\script\]]]=]):format(root:string()))
     call_w2l(obj_command())
     fs.remove(map_path / 'script' / 'lua' / 'currentpath.lua')
 end
 
-local function slk(path)
+local function slk()
     call_w2l(slk_command())
 end
 
-if fs.is_directory(input_path) then
-    if mode == 'debug' then
-        obj(input_path)
-    else
-        slk(input_path)
-    end
+
+if mode == 'obj' then
+    obj()
+elseif mode == 'lni' then
+    lni()
+elseif mode == 'slk' then
+    slk()
 else
-    lni(input_path)
+    error(('错误的`mode`: %s'):format(mode))
 end
+
 print('[完毕]: 用时 ' .. os.clock() .. ' 秒')
