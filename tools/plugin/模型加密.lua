@@ -62,7 +62,7 @@ local function encrypt_jasses()
 end
 
 local function encrypt_lua(path)
-	local lua = w2l:file_load('lua', path)
+	local lua = w2l:file_load('script', path)
 	if not lua then
 		return
 	end
@@ -78,12 +78,12 @@ local function encrypt_lua(path)
 		end
 	end)
 
-	w2l:file_save('lua', path, new_lua)
+	w2l:file_save('script', path, new_lua)
 end
 
 local function encrypt_luas()
 	for type, name, buf in w2l:file_pairs() do
-		if type == 'lua' then
+		if type == 'script' then
 			encrypt_lua(name)
 		end
 	end
