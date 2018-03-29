@@ -47,6 +47,30 @@
                 "${workspaceRoot}\\MoeHero",
                 "${workspaceRoot}"
             ]
+        },
+        {
+            "taskName": "Watch",
+            "args": [
+                ".\\tools\\语法检查.lua",
+                ".\\MoeHero\\script",
+                "--watch"
+            ],
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "lua",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "message": 3
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "\\[Watch\\] File change detected\\.",
+                    "endsPattern": "\\[Watch\\] Complete\\."
+                }
+            }
         }
     ]
 }
