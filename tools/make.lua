@@ -31,15 +31,6 @@ function io.save(file_path, content)
     end
 end
 
-local std_print = print
-local function print(...)
-    local t = table.pack(...)
-    for i = 1, t.n do
-        t[i] = uni.u2a(tostring(t[i]))
-    end
-    std_print(table.concat(t, '\t'))
-end
-
 local function message(msg)
     if msg:sub(1, 9) == '-progress' or
        msg:sub(1, 7) == '-report' or
