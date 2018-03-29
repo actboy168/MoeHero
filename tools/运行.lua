@@ -13,7 +13,6 @@ local function get_debugger()
             if fs.exists(dbgpath) then
                 return dbgpath
             end
-            return
         end
     end
 end

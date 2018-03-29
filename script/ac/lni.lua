@@ -3,15 +3,6 @@ local storm = require 'jass.storm'
 
 ac.lni = {}
 
-local localpath
-local suc, r = pcall(require, [[lua\currentpath]])
-if suc then localpath = r end
-
-if localpath then
-	lni:set_marco('MapPath', localpath)
-else
-	lni:set_marco('MapPath', 'script\\')
-end
 lni:set_marco('TableSearcher', '$MapPath$table\\')
 for _, path in ipairs(ac.split(package.path, ';')) do
 	local buf = storm.load(path:gsub('%?%.lua', 'table\\.iniconfig'))
