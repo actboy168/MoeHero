@@ -6,17 +6,6 @@ local root = fs.path(arg[2])
 local w2l = root / 'tools' / 'w3x2lni'
 local title = ('W3x2%s%s'):format(mode:sub(1,1):upper(), mode:sub(2))
 
-function io.save(filepath, content)
-    local f, e = io.open(filepath:string(), "wb")
-    if f then
-        f:write(content)
-        f:close()
-        return true
-    else
-        return false, e
-    end
-end
-
 local function message(msg)
     if msg:sub(1, 9) == '-progress' or
        msg:sub(1, 7) == '-report' or
@@ -39,17 +28,14 @@ local function call_w2l(commands)
 	if not p:create(application, command_line, currentdir) then
 		error('运行失败：\n'..command_line)
     end
-    local outs = {}
     while true do
         local out = stdout:read 'l'
         if out then
-            outs[#outs+1] = out
             message(out)
         else
             break
         end
     end
-    io.save(root / 'log.txt', table.concat(outs, '\n'))
     local err = stderr:read 'a'
     local exit_code = p:wait()
     p:close()
@@ -79,6 +65,8 @@ local function make_command(mode)
     }, ' ')
 end
 
+print('---------------------------------------------------')
 call_w2l(make_command(mode))
-
 print('用时 ' .. os.clock() .. ' 秒')
+os.setlocale('chs')
+print(os.date())
