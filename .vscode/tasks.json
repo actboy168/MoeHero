@@ -40,13 +40,52 @@
             "isTestCommand": true
         },
         {
-            "taskName": "打包地图",
+            "taskName": "Obj",
             "args": [
-                ".\\tools\\make.lua",
-                "debug",
-                "${workspaceRoot}\\MoeHero",
+                ".\\tools\\打包地图.lua",
+                "obj",
                 "${workspaceRoot}"
             ]
+        },
+        {
+            "taskName": "Lni",
+            "args": [
+                ".\\tools\\打包地图.lua",
+                "lni",
+                "${workspaceRoot}"
+            ]
+        },
+        {
+            "taskName": "Slk",
+            "args": [
+                ".\\tools\\打包地图.lua",
+                "slk",
+                "${workspaceRoot}"
+            ]
+        },
+        {
+            "taskName": "🔍",
+            "args": [
+                ".\\tools\\语法检查.lua",
+                ".\\MoeHero\\script",
+                "--watch"
+            ],
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "lua",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "message": 3
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "\\[Watch\\] File change detected\\.",
+                    "endsPattern": "\\[Watch\\] Complete\\."
+                }
+            }
         }
     ]
 }
