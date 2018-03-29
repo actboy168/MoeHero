@@ -3,6 +3,7 @@ local process = require "process"
 
 local mode = arg[1]
 local root = fs.path(arg[2])
+local w2l = root / 'tools' / 'w3x2lni'
 
 function io.load(file_path)
     local f, e = io.open(file_path:string(), "rb")
@@ -40,9 +41,9 @@ local function message(msg)
 end
 
 local function call_w2l(commands)
-    local application = root / 'tools' / 'w3x2lni' / 'bin' / 'w2l-worker.exe'
-    local entry = root / 'tools' / 'w3x2lni' / 'script' / 'map.lua'
-    local currentdir = root / 'tools' / 'w3x2lni' / 'script'
+    local application = w2l / 'bin' / 'w2l-worker.exe'
+    local entry = w2l / 'script' / 'map.lua'
+    local currentdir = w2l / 'script'
     local command_line = ('"%s" "%s" %s'):format(application:string(), entry:string(), commands)
     local p = process()
 	p:hide_window()
