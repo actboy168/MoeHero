@@ -17,6 +17,22 @@ local function inject_jass(w2l, name)
     w2l:file_save('map', name, table.concat(bufs))
 end
 
+local function reduce_jass(w2l, name)
+    local buf = w2l:file_load('map', name)
+    if not buf then
+        return
+    end
+    local a, b = buf:find('function main takes nothing returns nothing\r\n    call Cheat("exec-lua:lua\\\\currentpath")', 1, true)
+    if not a or not b then
+        return
+    end
+    local bufs = {}
+    bufs[1] = buf:sub(1, a-1)
+    bufs[2] = 'function main takes nothing returns nothing'
+    bufs[3] = buf:sub(b+1)
+    w2l:file_save('map', name, table.concat(bufs))
+end
+
 function mt:on_complete_data(w2l)
     if w2l.config.mode == 'obj' then
         local file_save = w2l.file_save
@@ -34,6 +50,8 @@ function mt:on_complete_data(w2l)
     
     if w2l.config.mode == 'lni' then
         w2l:file_remove('map', 'lua/currentpath.lua')
+        reduce_jass(w2l, 'war3map.j')
+        reduce_jass(w2l, 'scripts/war3map.j')
     end
 end
 

@@ -33,7 +33,8 @@ end
 local function message(msg)
     if msg:sub(1, 9) == '-progress' or
        msg:sub(1, 7) == '-report' or
-       msg:sub(1, 4) == '-tip'
+       msg:sub(1, 4) == '-tip' or
+       msg:sub(1, 6) == '-title'
     then
         return
     end
