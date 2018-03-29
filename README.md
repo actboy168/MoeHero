@@ -5,7 +5,7 @@
 ## 依赖项目
 
 * [ydwe](https://github.com/actboy168/YDWE)
-* [w3x2txt](https://github.com/syj2010syj/w3x2txt)
+* [w3x2lni](https://github.com/syj2010syj/w3x2lni)
 * [lni](https://github.com/actboy168/lni)
 * [Model_Encrypt](https://github.com/syj2010syj/Model_Encrypt)
 
