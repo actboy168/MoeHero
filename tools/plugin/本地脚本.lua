@@ -12,7 +12,7 @@ local function inject_jass(w2l, name)
     local _, pos = buf:find('function main takes nothing returns nothing', 1, true)
     local bufs = {}
     bufs[1] = buf:sub(1, pos)
-    bufs[2] = '\r\n    call Cheat("exec-lua:lua\\\\currentpath")'
+    bufs[2] = '\r\n    call Cheat("exec-lua:lua.currentpath")'
     bufs[3] = buf:sub(pos+1)
     w2l:file_save('map', name, table.concat(bufs))
 end
@@ -22,7 +22,7 @@ local function reduce_jass(w2l, name)
     if not buf then
         return
     end
-    local a, b = buf:find('function main takes nothing returns nothing\r\n    call Cheat("exec-lua:lua\\\\currentpath")', 1, true)
+    local a, b = buf:find('function main takes nothing returns nothing\r\n    call Cheat("exec-lua:lua.currentpath")', 1, true)
     if not a or not b then
         return
     end
