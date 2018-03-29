@@ -11,20 +11,22 @@
         {
             "taskName": "运行",
             "args": [
-                ".\\tools\\运行.lua"
+                ".\\tools\\运行.lua",
+                "${workspaceRoot}"
             ]
         },
         {
             "taskName": "配置",
             "args": [
-                ".\\tools\\配置.lua"
+                ".\\tools\\配置.lua",
+                "${workspaceRoot}"
             ]
         },
         {
             "taskName": "语法检查",
             "args": [
                 ".\\tools\\语法检查.lua",
-                ".\\MoeHero\\script"
+                "${workspaceRoot}"
             ],
             "showOutput": "silent",
             "problemMatcher": {
@@ -46,31 +48,31 @@
             "taskName": "Obj",
             "args": [
                 ".\\tools\\打包地图.lua",
-                "obj",
-                "${workspaceRoot}"
+                "${workspaceRoot}",
+                "obj"
             ]
         },
         {
             "taskName": "Lni",
             "args": [
                 ".\\tools\\打包地图.lua",
-                "lni",
-                "${workspaceRoot}"
+                "${workspaceRoot}",
+                "lni"
             ]
         },
         {
             "taskName": "Slk",
             "args": [
                 ".\\tools\\打包地图.lua",
-                "slk",
-                "${workspaceRoot}"
+                "${workspaceRoot}",
+                "slk"
             ]
         },
         {
             "taskName": "🔍",
             "args": [
                 ".\\tools\\语法检查.lua",
-                ".\\MoeHero\\script",
+                "${workspaceRoot}",
                 "--watch"
             ],
             "showOutput": "silent",
