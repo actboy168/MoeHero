@@ -108,10 +108,7 @@ local function lni()
 end
 
 local function obj()
-    local map_path = root / 'MoeHero'
-    io.save(map_path / 'script' / 'lua' / 'currentpath.lua', ([=[return [[%s\MoeHero\script\script\]]]=]):format(root:string()))
     call_w2l(obj_command())
-    fs.remove(map_path / 'script' / 'lua' / 'currentpath.lua')
 end
 
 local function slk()
