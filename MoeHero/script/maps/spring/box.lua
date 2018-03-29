@@ -1,13 +1,13 @@
 
 local player = require 'ac.player'
 local rect = require 'types.rect'
-local map = require 'map'
+local map = require 'maps.map'
 
 local math = math
-require 'spring.box_buff_1'
-require 'spring.box_buff_2'
-require 'spring.box_buff_3'
-require 'spring.box_buff_4'
+require 'maps.spring.box_buff_1'
+require 'maps.spring.box_buff_2'
+require 'maps.spring.box_buff_3'
+require 'maps.spring.box_buff_4'
 
 local self = {}
 

@@ -1,8 +1,8 @@
 
-require 'hero.赤瞳.赤红之刺'
-require 'hero.赤瞳.斩红跳砍'
-require 'hero.赤瞳.妖刀村雨'
-require 'hero.赤瞳.葬送'
+require 'maps.hero.赤瞳.赤红之刺'
+require 'maps.hero.赤瞳.斩红跳砍'
+require 'maps.hero.赤瞳.妖刀村雨'
+require 'maps.hero.赤瞳.葬送'
 
 return ac.hero.create '赤瞳'
 {

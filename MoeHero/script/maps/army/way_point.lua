@@ -1,7 +1,7 @@
 
 local rect = require 'types.rect'
 local region = require 'types.region'
-local map = require 'map'
+local map = require 'maps.map'
 
 function map.initWayPoint()
 	--小兵进入拐弯点后向下个路径点移动

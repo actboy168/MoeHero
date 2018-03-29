@@ -1,7 +1,7 @@
 local shop = require 'types.shop'
 
-require 'map_shop.page'
-require 'map_shop.affix'
+require 'maps.map_shop.page'
+require 'maps.map_shop.affix'
 
 ac.game:event '玩家-注册英雄' (function(_, player)
 	local unit

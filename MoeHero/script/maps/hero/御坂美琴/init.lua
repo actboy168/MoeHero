@@ -1,8 +1,8 @@
 
-require 'hero.御坂美琴.电击使'
-require 'hero.御坂美琴.电磁牵引'
-require 'hero.御坂美琴.铁砂之剑'
-require 'hero.御坂美琴.超电磁炮'
+require 'maps.hero.御坂美琴.电击使'
+require 'maps.hero.御坂美琴.电磁牵引'
+require 'maps.hero.御坂美琴.铁砂之剑'
+require 'maps.hero.御坂美琴.超电磁炮'
 
 return ac.hero.create '御坂美琴'
 {

@@ -1,5 +1,5 @@
 
-local map = require 'map'
+local map = require 'maps.map'
 local runtime = require 'jass.runtime'
 local hero = require 'types.hero'
 local japi = require 'jass.japi'
@@ -42,7 +42,7 @@ function map.load_heroes()
 	for _, hero_data in ipairs(hero.hero_list) do
 		local name, file = hero_data[1], hero_data[2]
 		hero.hero_list[name] = hero_data
-		local hero_data = select(2, xpcall(require, runtime.error_handle ,('hero.%s.init'):format(file)))
+		local hero_data = select(2, xpcall(require, runtime.error_handle ,('maps.hero.%s.init'):format(file)))
 		hero.hero_list[name].data = hero_data
 		hero_data.name = name
 		hero_data.file = file

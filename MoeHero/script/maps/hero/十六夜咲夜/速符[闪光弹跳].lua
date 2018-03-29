@@ -59,7 +59,7 @@ mt{
 	buff_count = {1, 5},
 }
 
-local create_knife = require 'hero.十六夜咲夜.光速[光速跳跃]'
+local create_knife = require 'maps.hero.十六夜咲夜.光速[光速跳跃]'
 
 local function cast_spell_q(hero, target, skill, damage, do_damage)
 end

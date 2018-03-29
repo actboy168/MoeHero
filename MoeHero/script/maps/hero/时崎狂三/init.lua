@@ -1,8 +1,8 @@
-require 'hero.时崎狂三.七之弹'
-require 'hero.时崎狂三.旋风射击'
-require 'hero.时崎狂三.四之弹'
-require 'hero.时崎狂三.食时之城'
-require 'hero.时崎狂三.八之弹'
+require 'maps.hero.时崎狂三.七之弹'
+require 'maps.hero.时崎狂三.旋风射击'
+require 'maps.hero.时崎狂三.四之弹'
+require 'maps.hero.时崎狂三.食时之城'
+require 'maps.hero.时崎狂三.八之弹'
 
 return ac.hero.create '时崎狂三'
 {

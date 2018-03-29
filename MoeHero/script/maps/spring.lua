@@ -23,11 +23,11 @@ local function spring_add(t)
 end
 
 function spring.init()
-	spring_add(require 'spring.river')
-	spring_add(require 'spring.wave')
-	spring_add(require 'spring.box')
+	spring_add(require 'maps.spring.river')
+	spring_add(require 'maps.spring.wave')
+	spring_add(require 'maps.spring.box')
 
-	require 'spring.buff'
+	require 'maps.spring.buff'
 
 	--每7分钟开始一次地图事件
 	ac.game:event '游戏-开始' (function(trg)

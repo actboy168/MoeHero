@@ -1,7 +1,7 @@
-require 'hero.索隆.龙卷风'
-require 'hero.索隆.二刀流居合罗生门'
-require 'hero.索隆.鬼泣九刀流'
-require 'hero.索隆.阿修罗穿威'
+require 'maps.hero.索隆.龙卷风'
+require 'maps.hero.索隆.二刀流居合罗生门'
+require 'maps.hero.索隆.鬼泣九刀流'
+require 'maps.hero.索隆.阿修罗穿威'
 
 return ac.hero.create '索隆'
 {

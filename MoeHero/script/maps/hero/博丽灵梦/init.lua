@@ -1,8 +1,8 @@
-require 'hero.博丽灵梦.追踪御礼'
-require 'hero.博丽灵梦.四方神域礼'
-require 'hero.博丽灵梦.刹那亚空穴'
-require 'hero.博丽灵梦.灵符[梦想封印]'
-require 'hero.博丽灵梦.直排御礼'
+require 'maps.hero.博丽灵梦.追踪御礼'
+require 'maps.hero.博丽灵梦.四方神域礼'
+require 'maps.hero.博丽灵梦.刹那亚空穴'
+require 'maps.hero.博丽灵梦.灵符[梦想封印]'
+require 'maps.hero.博丽灵梦.直排御礼'
 
 return ac.hero.create '博丽灵梦'
 {

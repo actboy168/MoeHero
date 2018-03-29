@@ -48,7 +48,7 @@ mt{
 	buff_damage_rate = {24, 40},
 }
 
-local create_knife = require 'hero.十六夜咲夜.光速[光速跳跃]'
+local create_knife = require 'maps.hero.十六夜咲夜.光速[光速跳跃]'
 
 function mt:on_cast_channel()
 	local hero = self.owner

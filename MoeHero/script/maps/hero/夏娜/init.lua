@@ -1,7 +1,7 @@
-require 'hero.夏娜.真红'
-require 'hero.夏娜.飞焰'
-require 'hero.夏娜.天罚'
-require 'hero.夏娜.断罪'
+require 'maps.hero.夏娜.真红'
+require 'maps.hero.夏娜.飞焰'
+require 'maps.hero.夏娜.天罚'
+require 'maps.hero.夏娜.断罪'
 
 return ac.hero.create '夏娜'
 {

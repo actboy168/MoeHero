@@ -1,12 +1,12 @@
-require 'creeps.大火元素'
-require 'creeps.大地穴蜘蛛'
-require 'creeps.大狗熊'
-require 'creeps.幽灵'
-require 'creeps.大树精'
-require 'creeps.大土灵'
-require 'creeps.巨龙'
+require 'maps.creeps.大火元素'
+require 'maps.creeps.大地穴蜘蛛'
+require 'maps.creeps.大狗熊'
+require 'maps.creeps.幽灵'
+require 'maps.creeps.大树精'
+require 'maps.creeps.大土灵'
+require 'maps.creeps.巨龙'
 
-local creeps = require 'creeps'
+local creeps = require 'maps.creeps'
 local table = table
 local rect = require 'types.rect'
 

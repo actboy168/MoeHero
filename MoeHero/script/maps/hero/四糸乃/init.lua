@@ -1,7 +1,7 @@
-require 'hero.亚丝娜.星屑泪光'
-require 'hero.亚丝娜.狂暴补师'
-require 'hero.亚丝娜.闪光穿刺'
-require 'hero.亚丝娜.圣母圣咏'
+require 'maps.hero.亚丝娜.星屑泪光'
+require 'maps.hero.亚丝娜.狂暴补师'
+require 'maps.hero.亚丝娜.闪光穿刺'
+require 'maps.hero.亚丝娜.圣母圣咏'
 
 return ac.hero.create '四糸乃'
 {

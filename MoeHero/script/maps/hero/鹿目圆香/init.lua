@@ -1,8 +1,8 @@
 
-require 'hero.鹿目圆香.净化箭矢'
-require 'hero.鹿目圆香.虹之雨'
-require 'hero.鹿目圆香.奇迹祈愿'
-require 'hero.鹿目圆香.圆环之理'
+require 'maps.hero.鹿目圆香.净化箭矢'
+require 'maps.hero.鹿目圆香.虹之雨'
+require 'maps.hero.鹿目圆香.奇迹祈愿'
+require 'maps.hero.鹿目圆香.圆环之理'
 
 return ac.hero.create '鹿目圆香'
 {

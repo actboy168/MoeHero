@@ -1,8 +1,8 @@
-require 'hero.缇娜.震撼弹'
-require 'hero.缇娜.爆裂弹'
-require 'hero.缇娜.战术姿态'
-require 'hero.缇娜.仙费尔德'
-require 'hero.缇娜.猫头鹰因子'
+require 'maps.hero.缇娜.震撼弹'
+require 'maps.hero.缇娜.爆裂弹'
+require 'maps.hero.缇娜.战术姿态'
+require 'maps.hero.缇娜.仙费尔德'
+require 'maps.hero.缇娜.猫头鹰因子'
 
 return ac.hero.create '缇娜'
 {

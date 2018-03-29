@@ -1,7 +1,7 @@
-require 'hero.漩涡鸣人.螺旋丸'
-require 'hero.漩涡鸣人.多重影分身'
-require 'hero.漩涡鸣人.鸣人连弹'
-require 'hero.漩涡鸣人.风遁螺旋手里剑'
+require 'maps.hero.漩涡鸣人.螺旋丸'
+require 'maps.hero.漩涡鸣人.多重影分身'
+require 'maps.hero.漩涡鸣人.鸣人连弹'
+require 'maps.hero.漩涡鸣人.风遁螺旋手里剑'
 
 return ac.hero.create '漩涡鸣人'
 {

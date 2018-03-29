@@ -1,4 +1,4 @@
-local spring = require 'spring'
+local spring = require 'maps.spring'
 local hero = require 'types.hero'
 local player = require 'ac.player'
 local jass = require 'jass.common'

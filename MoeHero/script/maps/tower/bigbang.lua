@@ -1,4 +1,4 @@
-local towers = require 'tower.init_tower'
+local towers = require 'maps.tower.init_tower'
 local player = require 'ac.player'
 
 local function create_jiecao(hero, source, team, where)

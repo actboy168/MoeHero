@@ -1,4 +1,4 @@
-local create_jiecao = require 'tower.bigbang'
+local create_jiecao = require 'maps.tower.bigbang'
 local mt = ac.skill['巨龙血统']
 {
 	--全属性提升(%)

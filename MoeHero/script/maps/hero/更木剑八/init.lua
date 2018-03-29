@@ -1,7 +1,7 @@
-require 'hero.更木剑八.双手剑道'
-require 'hero.更木剑八.灵压解放'
-require 'hero.更木剑八.狂战'
-require 'hero.更木剑八.始解[吞噬吧野晒]'
+require 'maps.hero.更木剑八.双手剑道'
+require 'maps.hero.更木剑八.灵压解放'
+require 'maps.hero.更木剑八.狂战'
+require 'maps.hero.更木剑八.始解[吞噬吧野晒]'
 
 return ac.hero.create '更木剑八'
 {

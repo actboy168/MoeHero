@@ -1,7 +1,7 @@
-require 'hero.岛风.93式酸素鱼雷'
-require 'hero.岛风.94式深水炸弹'
-require 'hero.岛风.连装炮酱'
-require 'hero.岛风.25毫米高射炮'
+require 'maps.hero.岛风.93式酸素鱼雷'
+require 'maps.hero.岛风.94式深水炸弹'
+require 'maps.hero.岛风.连装炮酱'
+require 'maps.hero.岛风.25毫米高射炮'
 
 return ac.hero.create '岛风'
 {

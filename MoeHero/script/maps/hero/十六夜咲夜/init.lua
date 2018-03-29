@@ -1,9 +1,9 @@
-require 'hero.十六夜咲夜.速符[闪光弹跳]'
-require 'hero.十六夜咲夜.银符[完美女仆]'
-require 'hero.十六夜咲夜.幻符[杀人玩偶]'
-require 'hero.十六夜咲夜.[小夜的世界]'
-require 'hero.十六夜咲夜.光速[光速跳跃]'
-require 'hero.十六夜咲夜.LastWord[收缩的世界]'
+require 'maps.hero.十六夜咲夜.速符[闪光弹跳]'
+require 'maps.hero.十六夜咲夜.银符[完美女仆]'
+require 'maps.hero.十六夜咲夜.幻符[杀人玩偶]'
+require 'maps.hero.十六夜咲夜.[小夜的世界]'
+require 'maps.hero.十六夜咲夜.光速[光速跳跃]'
+require 'maps.hero.十六夜咲夜.LastWord[收缩的世界]'
 
 return ac.hero.create '十六夜咲夜'
 {

@@ -1,8 +1,8 @@
 
 local rect = require 'types.rect'
 local player = require 'ac.player'
-local map = require 'map'
-local spring = require 'spring'
+local map = require 'maps.map'
+local spring = require 'maps.spring'
 
 local self = {}
 
@@ -48,7 +48,7 @@ end
 
 function self.createWave()
 	local units_mark = {}
-	local river = require('spring').river
+	local river = require('maps.spring').river
 	--删掉旧的宝箱
 	if map.box then
 		map.box:remove()

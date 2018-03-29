@@ -1,8 +1,8 @@
 
-require 'hero.五河琴里.炎斧回旋'
-require 'hero.五河琴里.破焰炸裂'
-require 'hero.五河琴里.不灭之焰'
-require 'hero.五河琴里.炎魔狂暴'
+require 'maps.hero.五河琴里.炎斧回旋'
+require 'maps.hero.五河琴里.破焰炸裂'
+require 'maps.hero.五河琴里.不灭之焰'
+require 'maps.hero.五河琴里.炎魔狂暴'
 
 return ac.hero.create '五河琴里'
 {

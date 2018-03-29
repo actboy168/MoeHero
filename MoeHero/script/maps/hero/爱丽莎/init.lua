@@ -1,8 +1,8 @@
-require 'hero.爱丽莎.剑技-胧月'
-require 'hero.爱丽莎.剑技-升天阵'
-require 'hero.爱丽莎.剑技-幻影突刺'
-require 'hero.爱丽莎.剑技-樱花残月'
-require 'hero.爱丽莎.血技-不动明王阵'
+require 'maps.hero.爱丽莎.剑技-胧月'
+require 'maps.hero.爱丽莎.剑技-升天阵'
+require 'maps.hero.爱丽莎.剑技-幻影突刺'
+require 'maps.hero.爱丽莎.剑技-樱花残月'
+require 'maps.hero.爱丽莎.血技-不动明王阵'
 
 return ac.hero.create '爱丽莎'
 {

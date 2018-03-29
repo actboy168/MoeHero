@@ -1,8 +1,8 @@
 
-require 'hero.立华奏.音速穿刺'
-require 'hero.立华奏.波形延迟'
-require 'hero.立华奏.扭曲力场'
-require 'hero.立华奏.谐波叠加'
+require 'maps.hero.立华奏.音速穿刺'
+require 'maps.hero.立华奏.波形延迟'
+require 'maps.hero.立华奏.扭曲力场'
+require 'maps.hero.立华奏.谐波叠加'
 
 return ac.hero.create '立华奏'
 {

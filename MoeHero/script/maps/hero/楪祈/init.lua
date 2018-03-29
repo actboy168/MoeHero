@@ -1,8 +1,8 @@
 
-require 'hero.楪祈.快速射击'
-require 'hero.楪祈.光学迷彩'
-require 'hero.楪祈.虚空赋予'
-require 'hero.楪祈.净化之歌'
+require 'maps.hero.楪祈.快速射击'
+require 'maps.hero.楪祈.光学迷彩'
+require 'maps.hero.楪祈.虚空赋予'
+require 'maps.hero.楪祈.净化之歌'
 
 return ac.hero.create '楪祈'
 {

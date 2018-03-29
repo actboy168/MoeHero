@@ -1,8 +1,8 @@
-require 'hero.黑雪姬.死亡穿刺'
-require 'hero.黑雪姬.黑之睡莲'
-require 'hero.黑雪姬.死亡旋转'
-require 'hero.黑雪姬.绝对切断'
-require 'hero.黑雪姬.假想体'
+require 'maps.hero.黑雪姬.死亡穿刺'
+require 'maps.hero.黑雪姬.黑之睡莲'
+require 'maps.hero.黑雪姬.死亡旋转'
+require 'maps.hero.黑雪姬.绝对切断'
+require 'maps.hero.黑雪姬.假想体'
 
 return ac.hero.create '黑雪姬'
 {

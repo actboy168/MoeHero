@@ -1,7 +1,7 @@
 
 local multiboard = require 'types.multiboard'
 local player = require 'ac.player'
-local rewin = require 'rule.rewin'
+local rewin = require 'maps.rule.rewin'
 local hot_fix = require 'types.hot_fix'
 
 if type(hot_fix) ~= 'table' then

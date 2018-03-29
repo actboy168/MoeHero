@@ -1,8 +1,8 @@
 
-require 'hero.桐人.格挡突进'
-require 'hero.桐人.旋击挑斩'
-require 'hero.桐人.二刀流'
-require 'hero.桐人.星爆气流斩'
+require 'maps.hero.桐人.格挡突进'
+require 'maps.hero.桐人.旋击挑斩'
+require 'maps.hero.桐人.二刀流'
+require 'maps.hero.桐人.星爆气流斩'
 
 return ac.hero.create '桐人'
 {

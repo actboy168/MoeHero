@@ -1,12 +1,12 @@
 
-require 'hero.金木研.JinMuYan_1'
-require 'hero.金木研.JinMuYan_2'
-require 'hero.金木研.JinMuYan_2_Sub'
-require 'hero.金木研.JinMuYan_3'
-require 'hero.金木研.JinMuYan_4'
+require 'maps.hero.金木研.JinMuYan_1'
+require 'maps.hero.金木研.JinMuYan_2'
+require 'maps.hero.金木研.JinMuYan_2_Sub'
+require 'maps.hero.金木研.JinMuYan_3'
+require 'maps.hero.金木研.JinMuYan_4'
 
-require 'hero.金木研.JinMuYan_2_Buff'
-require 'hero.金木研.JinMuYan_3_Buff'
+require 'maps.hero.金木研.JinMuYan_2_Buff'
+require 'maps.hero.金木研.JinMuYan_3_Buff'
 
 return ac.hero.create '金木研'
 {

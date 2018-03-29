@@ -6,7 +6,6 @@ end
 
 local function main()
 	print 'hello loli!'
-	base.add_lua_path 'maps'
 	--print ('package.path = ', package.path)
 
 	require 'war3.id'
@@ -80,7 +79,7 @@ local function main()
 	require 'test.init'
 	
 	--游戏
-	local map = require 'map'
+	local map = require 'maps.map'
 
 	--保存预设单位
 	unit.saveDefaultUnits()

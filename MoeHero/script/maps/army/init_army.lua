@@ -1,5 +1,5 @@
 
-local map = require 'map'
+local map = require 'maps.map'
 
 map.units = {}
 

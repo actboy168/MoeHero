@@ -1,7 +1,7 @@
 local jass = require 'jass.common'
 local heror = require 'types.hero'
 local unit = require 'types.unit'
-local rewin = require 'rule.rewin'
+local rewin = require 'maps.rule.rewin'
 local self = {};
 
 

@@ -1,7 +1,7 @@
-require 'hero.丹特丽安.妖精之书'
-require 'hero.丹特丽安.雷神之书'
-require 'hero.丹特丽安.冥界之书'
-require 'hero.丹特丽安.明日之诗'
+require 'maps.hero.丹特丽安.妖精之书'
+require 'maps.hero.丹特丽安.雷神之书'
+require 'maps.hero.丹特丽安.冥界之书'
+require 'maps.hero.丹特丽安.明日之诗'
 
 return ac.hero.create '丹特丽安'
 {

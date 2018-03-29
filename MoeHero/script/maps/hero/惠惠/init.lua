@@ -1,7 +1,7 @@
-require 'hero.惠惠.爆裂魔法'
-require 'hero.惠惠.练习爆裂魔法'
-require 'hero.惠惠.适合剧情展开的结界'
-require 'hero.惠惠.强化爆裂魔法'
+require 'maps.hero.惠惠.爆裂魔法'
+require 'maps.hero.惠惠.练习爆裂魔法'
+require 'maps.hero.惠惠.适合剧情展开的结界'
+require 'maps.hero.惠惠.强化爆裂魔法'
 
 return ac.hero.create '惠惠'
 {

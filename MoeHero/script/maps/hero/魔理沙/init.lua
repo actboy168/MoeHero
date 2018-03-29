@@ -1,9 +1,9 @@
-require 'hero.魔理沙.黑魔[黑洞边缘]'
-require 'hero.魔理沙.仪符[太阳仪]'
-require 'hero.魔理沙.星符[第二宇宙速度]'
-require 'hero.魔理沙.魔炮[究极火花]'
-require 'hero.魔理沙.魔符[星屑幻想]'
-require 'hero.魔理沙.LastWord[掠日彗星]'
+require 'maps.hero.魔理沙.黑魔[黑洞边缘]'
+require 'maps.hero.魔理沙.仪符[太阳仪]'
+require 'maps.hero.魔理沙.星符[第二宇宙速度]'
+require 'maps.hero.魔理沙.魔炮[究极火花]'
+require 'maps.hero.魔理沙.魔符[星屑幻想]'
+require 'maps.hero.魔理沙.LastWord[掠日彗星]'
 
 return ac.hero.create '魔理沙'
 {

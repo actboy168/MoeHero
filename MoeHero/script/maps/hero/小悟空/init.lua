@@ -1,7 +1,7 @@
-require 'hero.小悟空.龟派气功'
-require 'hero.小悟空.如意棒'
-require 'hero.小悟空.筋斗云'
-require 'hero.小悟空.狂暴'
+require 'maps.hero.小悟空.龟派气功'
+require 'maps.hero.小悟空.如意棒'
+require 'maps.hero.小悟空.筋斗云'
+require 'maps.hero.小悟空.狂暴'
 
 return ac.hero.create '小悟空'
 {

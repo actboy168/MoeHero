@@ -1,9 +1,9 @@
 
-local map = require 'map'
+local map = require 'maps.map'
 
-require 'army.init_army'
-require 'army.create_army'
-require 'army.way_point'
+require 'maps.army.init_army'
+require 'maps.army.create_army'
+require 'maps.army.way_point'
 
 local self = {}
 

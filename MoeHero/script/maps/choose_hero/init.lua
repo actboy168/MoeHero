@@ -1,5 +1,5 @@
 local player = require 'ac.player'
-local map = require 'map'
+local map = require 'maps.map'
 local fogmodifier = require 'types.fogmodifier'
 local hero = require 'types.hero'
 local game = require 'types.game'
@@ -9,7 +9,7 @@ local slk = require 'jass.slk'
 local rect = require 'types.rect'
 local multiboard = require 'types.multiboard'
 
-require 'choose_hero.skills'
+require 'maps.choose_hero.skills'
 
 local hero_types = {}
 local cent = rect.j_rect('choose_hero'):get_point()

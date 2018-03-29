@@ -1,6 +1,6 @@
 
 local rect = require 'types.rect'
-local map = require 'map'
+local map = require 'maps.map'
 local region = require 'types.region'
 local slk = require 'jass.slk'
 local jass = require 'jass.common'

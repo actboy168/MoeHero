@@ -1,5 +1,5 @@
 local player = require 'ac.player'
-local map = require 'map'
+local map = require 'maps.map'
 local mover = require 'types.mover'
 local jass = require 'jass.common'
 

@@ -1,8 +1,8 @@
-require 'hero.阿尔托莉亚.风王结界'
-require 'hero.阿尔托莉亚.骑士王连'
-require 'hero.阿尔托莉亚.直觉'
-require 'hero.阿尔托莉亚.誓约胜利之剑'
-require 'hero.阿尔托莉亚.风王结界-解放'
+require 'maps.hero.阿尔托莉亚.风王结界'
+require 'maps.hero.阿尔托莉亚.骑士王连'
+require 'maps.hero.阿尔托莉亚.直觉'
+require 'maps.hero.阿尔托莉亚.誓约胜利之剑'
+require 'maps.hero.阿尔托莉亚.风王结界-解放'
 
 return ac.hero.create '阿尔托莉亚'
 {

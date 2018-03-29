@@ -1,7 +1,7 @@
-require 'hero.夜刀神十香.暴虐斩'
-require 'hero.夜刀神十香.暴虐舞'
-require 'hero.夜刀神十香.空间震'
-require 'hero.夜刀神十香.终焉之剑'
+require 'maps.hero.夜刀神十香.暴虐斩'
+require 'maps.hero.夜刀神十香.暴虐舞'
+require 'maps.hero.夜刀神十香.空间震'
+require 'maps.hero.夜刀神十香.终焉之剑'
 
 return ac.hero.create '夜刀神十香'
 {

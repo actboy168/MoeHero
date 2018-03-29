@@ -1,6 +1,6 @@
 
 local player = require 'ac.player'
-local map = require 'map'
+local map = require 'maps.map'
 
 --开始刷兵
 function map.createArmy()

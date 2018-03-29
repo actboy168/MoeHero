@@ -1,8 +1,8 @@
-require 'hero.夜夜.忘却水月'
-require 'hero.夜夜.月影红莲'
-require 'hero.夜夜.乱舞夜樱'
-require 'hero.夜夜.楸木太刀影'
-require 'hero.夜夜.旋转吧！雪月花'
+require 'maps.hero.夜夜.忘却水月'
+require 'maps.hero.夜夜.月影红莲'
+require 'maps.hero.夜夜.乱舞夜樱'
+require 'maps.hero.夜夜.楸木太刀影'
+require 'maps.hero.夜夜.旋转吧！雪月花'
 
 return ac.hero.create '夜夜'
 {

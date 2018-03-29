@@ -1,5 +1,5 @@
 
-local response = require 'response'
+local response = require 'maps.response'
 local hero = require 'types.hero'
 local jass = require 'jass.common'
 

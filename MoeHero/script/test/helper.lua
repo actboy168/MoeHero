@@ -62,19 +62,19 @@ function helper:reload()
 	log.info('---- Reloading start ----')
 
 	local reload_finish = reload_skill_buff()
-	local map = require 'map'
+	local map = require 'maps.map'
 
 	helper_reload(function()
 		require 'ac.buff.init'
 		require 'ac.template_skill'
-		require 'hero.upgrade'
-		require 'smart_cast.init'
+		require 'maps.hero.upgrade'
+		require 'maps.smart_cast.init'
 		map.load_heroes()
 		item.clear_list()
 		affix.clear_list()
-		require 'map_item._init'
-		require 'map_shop.page'
-		require 'map_shop.affix'
+		require 'maps.map_item._init'
+		require 'maps.map_shop.page'
+		require 'maps.map_shop.affix'
 	end)
 
 	reload_finish()
@@ -181,7 +181,7 @@ end
 
 --创建全图视野
 function helper:icu()
-	fogmodifier.create(self:get_owner(), require('map').rects['全地图'])
+	fogmodifier.create(self:get_owner(), require('maps.map').rects['全地图'])
 end
 
 --移动英雄
@@ -211,12 +211,12 @@ end
 
 --创建瀑布
 function helper:wave()
-	require('spring').start()
+	require('maps.spring').start()
 end
 
 --创建宝箱
 function helper:box()
-	require('spring').createBox()
+	require('maps.spring').createBox()
 end
 
 --满级
@@ -345,7 +345,7 @@ function helper:never_dead(flag)
 end
 
 function helper:creep()
-	local creeps = require 'creeps'
+	local creeps = require 'maps.creeps'
 	for _, data in ipairs(creeps.group) do
 		data[3] = 0
 		data[4] = 0
