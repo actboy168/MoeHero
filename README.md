@@ -5,14 +5,13 @@
 ## 依赖项目
 
 * [ydwe](https://github.com/actboy168/YDWE)
-* [w3x2lni](https://github.com/syj2010syj/w3x2lni)
+* [w3x2lni](https://github.com/sumneko/w3x2lni)
 * [lni](https://github.com/actboy168/lni)
-* [Model_Encrypt](https://github.com/syj2010syj/Model_Encrypt)
 
 ## 作者
 
 * [actboy168](https://github.com/actboy168/)
-* [最萌小汐](https://github.com/syj2010syj/)
+* [最萌小汐](https://github.com/sumneko/)
 * 幻雷
 * 一文字鲲
 * 德堪
