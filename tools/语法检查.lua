@@ -29,7 +29,7 @@ local function compilation(path)
 end
 
 local root = fs.path(arg[1])
-local script = root / 'script'
+local script = root / 'scripts'
 local watch = arg[2] == '--watch'
 
 if not watch then

@@ -44,13 +44,13 @@ function mt:on_complete_data(w2l)
     if w2l.config.mode == 'obj' then
         local file_save = w2l.file_save
         function w2l:file_save(type, name, buf)
-            if type == 'script' then
+            if type == 'scripts' then
                 return
             end
             return file_save(self, type, name, buf)
         end
 
-        w2l:file_save('map', 'lua/currentpath.lua', currentpath:format((input / 'script'):string()):gsub('\\', '\\\\'))
+        w2l:file_save('map', 'lua/currentpath.lua', currentpath:format((input / 'scripts'):string()):gsub('\\', '\\\\'))
         inject_jass(w2l, 'war3map.j')
         inject_jass(w2l, 'scripts/war3map.j')
     end
