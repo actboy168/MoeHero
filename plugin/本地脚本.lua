@@ -44,7 +44,7 @@ function mt:on_complete_data(w2l)
     if w2l.config.mode == 'obj' then
         local file_save = w2l.file_save
         function w2l:file_save(type, name, buf)
-            if type == 'scripts' then
+            if type == 'scripts' and name ~= 'blizzard.j' and name ~= 'common.j' then
                 return
             end
             return file_save(self, type, name, buf)
