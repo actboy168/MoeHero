@@ -1,5 +1,12 @@
 local mt = {}
 
+mt.info = {
+    name = '本地脚本',
+    version = 1.0,
+    author = '最萌小汐',
+    description = '让obj格式的地图使用本地的lua脚本。'
+}
+
 local currentpath = [[
 package.path = package.path .. ';%s\?.lua'
 ]]

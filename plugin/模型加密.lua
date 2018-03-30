@@ -1,3 +1,12 @@
+local mt = {}
+
+mt.info = {
+    name = '模型加密',
+    version = 1.0,
+    author = '最萌小汐',
+    description = '将slk格式地图使用的模型进行简单加密。'
+}
+
 local w2l
 
 local function encrypt_name(name)
@@ -220,8 +229,6 @@ local function encrypt_others()
 	encrypt_slk 'units\\weather.slk'
 	encrypt_txt 'units\\wowtrailercaptions.txt'
 end
-
-local mt = {}
 
 function mt:on_complete_data(w2l_)
 	w2l = w2l_
