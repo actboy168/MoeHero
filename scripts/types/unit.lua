@@ -483,7 +483,7 @@ end
 		--	默认值
 		function mt:isMelee(default)
 			if default then
-				local art = self.missile_art or (self.weapon and self.weapon['弹道模型']) or self:get_slk 'Missileart'
+				local art = self.missile_art or (self.weapon and self.weapon['弹道模型']) or self:get_slk 'Missileart_1'
 				return not art or art == '' or art == '.mdl' or art == '.mdx'
 			else
                 if self.melee == nil then
@@ -1393,8 +1393,8 @@ function mt:range_attack_start(data)
 	local target = data.target
 	local size = self:get_size()
 	local start = self:get_launch_point()
-	local speed = self.missile_speed or (self.weapon and self.weapon['弹道速度']) or self:get_slk('Missilespeed', 0)
-	local arc = self.weapon and self.weapon['弹道弧度'] or self:get_slk('Missilearc', 0)
+	local speed = self.missile_speed or (self.weapon and self.weapon['弹道速度']) or self:get_slk('Missilespeed_1', 0)
+	local arc = self.weapon and self.weapon['弹道弧度'] or self:get_slk('Missilearc_1', 0)
 	local mover_data = ac.mover.target
 	{
 		source = self,
@@ -1402,7 +1402,7 @@ function mt:range_attack_start(data)
 		target = target,
 		path = true,
 		speed = speed,
-		model = self.missile_art or (self.weapon and self.weapon['弹道模型']) or self:get_slk 'Missileart',
+		model = self.missile_art or (self.weapon and self.weapon['弹道模型']) or self:get_slk 'Missileart_1',
 		height = self:get_point() * target:get_point() * arc,
 		damage = data.damage,
 		size = size,
