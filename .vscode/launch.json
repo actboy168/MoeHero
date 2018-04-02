@@ -11,8 +11,8 @@
             "preLaunchTask": "运行",
             "sourceMaps": [
                 [
-                    "script\\",
-                    "${workspaceRoot}\\script\\"
+                    "scripts\\",
+                    "${workspaceRoot}\\scripts\\"
                 ],
                 [
                     "lua\\",
