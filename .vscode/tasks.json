@@ -1,34 +1,32 @@
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
-    "version": "0.1.0",
-    "command": "\"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
-    "isShellCommand": true,
-    "showOutput": "always",
-    "echoCommand": false,
-    "suppressTaskName": true,
+    "version": "2.0.0",
+    "type": "shell",
     "tasks": [
         {
-            "taskName": "运行",
+            "label": "运行",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
             "args": [
                 ".\\tools\\运行.lua",
                 "${workspaceRoot}"
             ]
         },
         {
-            "taskName": "配置",
+            "label": "配置",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
             "args": [
                 ".\\tools\\配置.lua",
                 "${workspaceRoot}"
             ]
         },
         {
-            "taskName": "语法检查",
+            "label": "语法检查",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
             "args": [
                 ".\\tools\\语法检查.lua",
                 "${workspaceRoot}"
             ],
-            "showOutput": "silent",
             "problemMatcher": {
                 "owner": "lua",
                 "fileLocation": [
@@ -41,11 +39,11 @@
                     "line": 2,
                     "message": 3
                 }
-            },
-            "isBuildCommand": true
+            }
         },
         {
-            "taskName": "Obj",
+            "label": "Obj",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
             "args": [
                 ".\\tools\\打包地图.lua",
                 "${workspaceRoot}",
@@ -53,7 +51,8 @@
             ]
         },
         {
-            "taskName": "Lni",
+            "label": "Lni",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
             "args": [
                 ".\\tools\\打包地图.lua",
                 "${workspaceRoot}",
@@ -61,7 +60,8 @@
             ]
         },
         {
-            "taskName": "Slk",
+            "label": "Slk",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
             "args": [
                 ".\\tools\\打包地图.lua",
                 "${workspaceRoot}",
@@ -69,13 +69,13 @@
             ]
         },
         {
-            "taskName": "🔍",
+            "label": "🔍",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
             "args": [
                 ".\\tools\\语法检查.lua",
                 "${workspaceRoot}",
                 "--watch"
             ],
-            "showOutput": "silent",
             "isBackground": true,
             "problemMatcher": {
                 "owner": "lua",
