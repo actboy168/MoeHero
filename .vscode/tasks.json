@@ -6,7 +6,7 @@
     "tasks": [
         {
             "label": "运行",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe\"",
             "args": [
                 ".\\tools\\运行.lua",
                 "${workspaceRoot}"
@@ -14,7 +14,7 @@
         },
         {
             "label": "配置",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe\"",
             "args": [
                 ".\\tools\\配置.lua",
                 "${workspaceRoot}"
@@ -22,7 +22,7 @@
         },
         {
             "label": "语法检查",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe\"",
             "args": [
                 ".\\tools\\语法检查.lua",
                 "${workspaceRoot}"
@@ -43,34 +43,49 @@
         },
         {
             "label": "Obj",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/w2l.exe\"",
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
             "args": [
-                ".\\tools\\打包地图.lua",
-                "${workspaceRoot}",
-                "obj"
+                "obj",
+                "${workspaceRoot}"
             ]
         },
         {
             "label": "Lni",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/w2l.exe\"",
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
             "args": [
-                ".\\tools\\打包地图.lua",
-                "${workspaceRoot}",
-                "lni"
+                "lni",
+                "${workspaceRoot}"
             ]
         },
         {
             "label": "Slk",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/w2l.exe\"",
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
             "args": [
-                ".\\tools\\打包地图.lua",
-                "${workspaceRoot}",
-                "slk"
+                "slk",
+                "${workspaceRoot}"
             ]
         },
         {
             "label": "🔍",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w2l-worker.exe\"",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe\"",
             "args": [
                 ".\\tools\\语法检查.lua",
                 "${workspaceRoot}",

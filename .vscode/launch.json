@@ -33,7 +33,7 @@
                 "PATH" : "${workspaceRoot}\\tools\\w3x2lni\\bin\\"
             },
             "sourceCoding": "utf8",
-            "console": "utf8",
+            "consoleCoding": "utf8",
             "arg": [
                 "${workspaceRoot}",
                 "obj"
