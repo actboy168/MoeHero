@@ -40,7 +40,7 @@ local function reduce_jass(w2l, name)
     w2l:file_save('map', name, table.concat(bufs))
 end
 
-function mt:on_complete_data(w2l)
+function mt:on_full(w2l)
     if w2l.config.mode == 'obj' then
         local file_save = w2l.file_save
         function w2l:file_save(type, name, buf)

@@ -7,7 +7,7 @@ mt.info = {
     description = '没有资源目录时，将模型替换为步兵。'
 }
 
-function mt:on_complete_data(w2l)
+function mt:on_full(w2l)
     if w2l.input_mode == 'lni' and (w2l.config.mode == 'obj' or w2l.config.mode == 'slk') then
         if fs.exists(input / 'resource') then
             return

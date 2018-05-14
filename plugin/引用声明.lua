@@ -59,7 +59,7 @@ for x = 0, 1 do
     end
 end
 
-function mt:on_mark_object()
+function mt:on_mark()
     return list
 end
 

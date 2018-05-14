@@ -230,7 +230,7 @@ local function encrypt_others()
 	encrypt_txt 'units\\wowtrailercaptions.txt'
 end
 
-function mt:on_complete_data(w2l_)
+function mt:on_full(w2l_)
 	w2l = w2l_
 	if w2l.config.mode ~= 'slk' then
 		return
