@@ -30,8 +30,7 @@
             "problemMatcher": {
                 "owner": "lua",
                 "fileLocation": [
-                    "relative",
-                    "${workspaceRoot}"
+                    "absolute"
                 ],
                 "pattern": {
                     "regexp": "^(.*):(\\d+):\\s+(.*)$",
@@ -98,8 +97,7 @@
             "problemMatcher": {
                 "owner": "lua",
                 "fileLocation": [
-                    "relative",
-                    "${workspaceRoot}"
+                    "absolute"
                 ],
                 "pattern": {
                     "regexp": "^(.*):(\\d+):\\s+(.*)$",
