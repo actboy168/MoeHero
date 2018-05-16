@@ -31,7 +31,7 @@ function mt:on_full(w2l)
     if w2l.config.mode == 'lni' then
         local file_save = w2l.file_save
         function w2l:file_save(type, name, buf)
-            if type == 'resource' then
+            if type == 'resource' or type == 'sound' then
                 return
             end
             file_save(self, type, name, buf)
