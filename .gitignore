@@ -4,4 +4,3 @@
 /tools/rsa/ppk
 /*.w3x
 !/.w3x
-/log.txt
