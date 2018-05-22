@@ -21,8 +21,8 @@
 
 * YDWE，请使用最新的版本，并且确保你已经用YDWE关联了w3x文件。
 * VSCode，构建支持。
-* **非必选** VSCode插件`lua-debug`，提供调试地图的功能。
-* **非必选** VSCode插件`status-bar-tasks`，task会出现在左下方状态栏，适合不想输入指令的人。
+* **非必选** VSCode插件`actboy168.lua-debug`，提供调试地图的功能。
+* **非必选** VSCode插件`actboy168.tasks`，task会出现在左下方状态栏，适合不想输入指令的人。
 
 ## 编译&运行
 
