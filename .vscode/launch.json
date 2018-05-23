@@ -19,25 +19,6 @@
                     "${workspaceRoot}\\map\\lua\\"
                 ]
             ]
-        },
-        {
-            "name": "测试Tools",
-            "type": "lua",
-            "request": "launch",
-            "stopOnEntry": true,
-            "program": "${workspaceRoot}\\tools\\打包地图.lua",
-            "luadll": "${workspaceRoot}\\tools\\w3x2lni\\bin\\lua53.dll",
-            "path": "${workspaceRoot}\\?.lua;${workspaceRoot}\\?\\init.lua",
-            "cpath": "${workspaceRoot}\\tools\\w3x2lni\\bin\\?.dll;",
-            "env": {
-                "PATH" : "${workspaceRoot}\\tools\\w3x2lni\\bin\\"
-            },
-            "sourceCoding": "utf8",
-            "consoleCoding": "utf8",
-            "arg": [
-                "${workspaceRoot}",
-                "obj"
-            ]
         }
     ]
 }
