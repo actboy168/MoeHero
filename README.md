@@ -26,7 +26,7 @@
 
 ## 编译&运行
 
-在VSCode中，`ctrl+p`，输入`task`，会列出可用的Task。使用`status-bar-tasks`的情况下，Task会直接出现在下方的状态栏上。
+在VSCode中，`ctrl+p`，输入`task`，会列出可用的Task。使用`actboy168.tasks`的情况下，Task会直接出现在下方的状态栏上。
 
 * 运行。测试地图，注意这个操作不会重新打包地图。
 * 配置。打开YDWE的配置界面。
@@ -43,5 +43,5 @@
 
 ## 调试
 
-安装`lua-debug`之后，按F5可以直接运行地图，并激活调试。
+安装`actboy168.lua-debug`之后，按F5可以直接运行地图，并激活调试。
 
