@@ -232,7 +232,7 @@ end
 
 function mt:on_full(w2l_)
 	w2l = w2l_
-	if w2l.config.mode ~= 'slk' then
+	if w2l.setting.mode ~= 'slk' then
 		return
 	end
 	encrypt_jasses()

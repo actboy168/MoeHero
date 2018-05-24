@@ -8,7 +8,7 @@ mt.info = {
 }
 
 function mt:on_full(w2l)
-    if w2l.input_mode == 'lni' and (w2l.config.mode == 'obj' or w2l.config.mode == 'slk') then
+    if w2l.input_mode == 'lni' and (w2l.setting.mode == 'obj' or w2l.setting.mode == 'slk') then
         if fs.exists(input / 'resource') then
             return
         end
@@ -28,7 +28,7 @@ function mt:on_full(w2l)
             end
         end
     end
-    if w2l.config.mode == 'lni' then
+    if w2l.setting.mode == 'lni' then
         local file_save = w2l.file_save
         function w2l:file_save(type, name, buf)
             if type == 'resource' or type == 'sound' then
