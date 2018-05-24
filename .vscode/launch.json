@@ -2,13 +2,31 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "测试地图",
+            "name": "Launch",
             "type": "lua",
             "request": "attach",
             "stopOnEntry": false,
             "ip": "127.0.0.1",
             "port": 4278,
             "preLaunchTask": "运行",
+            "sourceMaps": [
+                [
+                    "scripts\\",
+                    "${workspaceRoot}\\scripts\\"
+                ],
+                [
+                    "lua\\",
+                    "${workspaceRoot}\\map\\lua\\"
+                ]
+            ]
+        },
+        {
+            "name": "Attach",
+            "type": "lua",
+            "request": "attach",
+            "stopOnEntry": true,
+            "sourceCoding": "utf8",
+            "processName": "war3.exe",
             "sourceMaps": [
                 [
                     "scripts\\",
