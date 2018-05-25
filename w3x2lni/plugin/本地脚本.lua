@@ -50,7 +50,7 @@ function mt:on_full(w2l)
             return file_save(self, type, name, buf)
         end
 
-        w2l:file_save('map', 'lua/currentpath.lua', currentpath:format((input / 'scripts'):string()):gsub('\\', '\\\\'))
+        w2l:file_save('map', 'lua/currentpath.lua', currentpath:format((w2l.setting.input / 'scripts'):string()):gsub('\\', '\\\\'))
         inject_jass(w2l, 'war3map.j')
         inject_jass(w2l, 'scripts/war3map.j')
     end
