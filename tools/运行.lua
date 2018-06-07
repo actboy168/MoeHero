@@ -1,4 +1,5 @@
 require 'filesystem'
+local registry = require 'registry'
 local ydwe = require 'tools.ydwe'
 local process = require 'process'
 if not ydwe then
@@ -22,7 +23,7 @@ if not fs.exists(root / 'MoeHero.w3x') then
     print('地图不存在', root / 'MoeHero.w3x')
     return
 end
-local command = (registry.current_user() / [[SOFTWARE\Classes\YDWEMap\shell\run_war3\command]])['']
+local command = (registry.open [[HKEY_CURRENT_USER\SOFTWARE\Classes\YDWEMap\shell\run_war3\command]])['']
 command = command:gsub("%%1", (root / 'MoeHero.w3x'):string())
 if get_debugger() then
     command = command .. ' -debugger 4278'
