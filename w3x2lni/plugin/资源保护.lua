@@ -9,7 +9,6 @@ mt.info = {
 
 function mt:on_full(w2l)
     if w2l.input_mode == 'lni' and (w2l.setting.mode == 'obj' or w2l.setting.mode == 'slk') then
-        local fs = require 'fs'
         if fs.exists(w2l.setting.input / 'resource') then
             return
         end
