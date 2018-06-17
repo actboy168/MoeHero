@@ -26,7 +26,7 @@ end
 local command = (registry.open [[HKEY_CURRENT_USER\SOFTWARE\Classes\YDWEMap\shell\run_war3\command]])['']
 command = command:gsub("%%1", (root / 'MoeHero.w3x'):string())
 if get_debugger() then
-    command = command .. ' -debugger 4278'
+    --command = command .. ' -debugger 4278'
 end
 print(command)
 local p = process()
