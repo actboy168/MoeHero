@@ -27,7 +27,8 @@ mt{
 	cost = {90, 70},
 
 	--施法距离
-	range = 700,
+	range = 9999,
+	distance = 700,
 
 	--目标类型
 	target_type = ac.skill.TARGET_TYPE_POINT,
@@ -53,6 +54,9 @@ local create_knife = require 'maps.hero.十六夜咲夜.光速[光速跳跃]'
 function mt:on_cast_channel()
 	local hero = self.owner
 	local target = self.target
+	local angle = hero:get_point() / target
+	local distance = math.min(hero:get_point() * target, self.distance)
+	local target = hero:get_point() - { angle, distance }
 	local speed = self.speed
 	local damage = self.damage + self.damage_plus
 	local mark = {}
