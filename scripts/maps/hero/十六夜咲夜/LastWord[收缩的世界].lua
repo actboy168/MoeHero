@@ -218,7 +218,7 @@ function mt:on_add()
 	hero:add_restriction '硬直'
 	self.skills = {}
 	for i = 1, 4 do
-		local skl = hero:find_skill(i)
+		local skl = hero:find_skill(i, '英雄')
 		if skl then
 			skl:disable()
 			table.insert(self.skills, skl)

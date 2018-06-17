@@ -32,7 +32,7 @@ function mt:on_add()
 	self.trg = hero:event '造成伤害' (function(trg, damage)
 		local stack = 0
 		for i = 1, 4 do
-			local skl = hero:find_skill(i)
+			local skl = hero:find_skill(i, '英雄')
 			if skl and (skl:is_cooling() or skl.passive) then
 				stack = stack + self.value
 			end
@@ -42,7 +42,7 @@ function mt:on_add()
 	self.timer = hero:loop(500, function()
 		local stack = 0
 		for i = 1, 4 do
-			local skl = hero:find_skill(i)
+			local skl = hero:find_skill(i, '英雄')
 			if skl and (skl:is_cooling() or skl.passive) then
 				stack = stack + self.value
 			end

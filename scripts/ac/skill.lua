@@ -1802,11 +1802,12 @@ end
 --	[技能类型]
 --	[是否包含未学习的英雄技能]
 --	@技能对象
-function unit.__index:find_skill(name, type, ignore_level)
+function unit.__index:find_skill(name, skl_type, ignore_level)
 	if not self.skills then
 		return nil
 	end
-	if not type then
+	if not skl_type then
+		assert(type(name) == 'string', '按槽位号查找技能必须指定类型')
 		for type in pairs(self.skills) do
 			local skill = self:find_skill(name, type, ignore_level)
 			if skill then
@@ -1815,10 +1816,10 @@ function unit.__index:find_skill(name, type, ignore_level)
 		end
 		return nil
 	end
-	if not self.skills[type] then
+	if not self.skills[skl_type] then
 		return nil
 	end
-	for i, skill in pairs(self.skills[type]) do
+	for i, skill in pairs(self.skills[skl_type]) do
 		if name == i or name == skill.name then
 			if ignore_level or skill:get_level() > 0 then 
 				return skill

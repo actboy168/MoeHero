@@ -43,7 +43,7 @@ function mt:on_add()
 		end
 		local cool = cool * self.cool_down / 100
 		for i = 1, 4 do
-			local skl = hero:find_skill(i)
+			local skl = hero:find_skill(i, '英雄')
 			if skl and skl:get_cd() > 0 and skl:get_name() ~= skill:get_name() then
 				skl:set_cd(skl:get_cd() - cool)
 			end

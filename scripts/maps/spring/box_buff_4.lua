@@ -41,7 +41,7 @@ function buff:on_add()
 		damage:div(1-self.damage/100.0)
 	end)
 	
-	local skl = hero:find_skill(1)
+	local skl = hero:find_skill(1, '英雄')
 	if skl then
 		self.skl = skl
 		skl:set_option('passive', true)

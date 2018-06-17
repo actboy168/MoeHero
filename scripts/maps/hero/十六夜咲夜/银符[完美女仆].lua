@@ -144,7 +144,7 @@ function mt:on_cast_stop()
 	hero:remove_restriction '阿卡林'
 	if self.has_r then
 		for i = 1, 3 do
-			local skl = hero:find_skill(i)
+			local skl = hero:find_skill(i, '英雄')
 			if skl and skl:is_cooling() then
 				skl:set_cd(0)
 			end

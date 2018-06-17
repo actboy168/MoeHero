@@ -50,7 +50,7 @@ function mt:on_add()
 		--找到所有正在冷却的技能
 		local skills = {}
 		for i = 1, 4 do
-			local skl = hero:find_skill(i)
+			local skl = hero:find_skill(i, '英雄')
 			if skl and skl:get_cd() > 0 then
 				table.insert(skills, skl)
 			end
