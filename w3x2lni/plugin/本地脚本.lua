@@ -52,7 +52,7 @@ function mt:on_full(w2l)
 
         w2l:file_save('map', 'lua\\currentpath.lua', currentpath:format((w2l.setting.input / 'scripts'):string()):gsub('\\', '\\\\'))
         inject_jass(w2l, 'war3map.j')
-        inject_jass(w2l, 'scripts/war3map.j')
+        inject_jass(w2l, 'scripts\\war3map.j')
     end
     
     if w2l.setting.mode == 'lni' then
