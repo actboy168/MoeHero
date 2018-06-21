@@ -40,7 +40,11 @@ local function reduce_jass(w2l, name)
 end
 
 function mt:on_full(w2l)
-    if w2l.setting.mode == 'obj' then
+    if w2l.setting.mode == 'lni' or w2l.setting.remove_we_only then
+        w2l:file_remove('map', 'lua\\currentpath.lua')
+        reduce_jass(w2l, 'war3map.j')
+        reduce_jass(w2l, 'scripts\\war3map.j')
+    else
         local file_save = w2l.file_save
         function w2l:file_save(type, name, buf)
             if type == 'scripts' and name ~= 'blizzard.j' and name ~= 'common.j' then
@@ -58,12 +62,6 @@ function mt:on_full(w2l)
         if buf then
             w2l:file_save('map', 'scripts\\war3map.j', buf)
         end
-    end
-    
-    if w2l.setting.mode == 'lni' then
-        w2l:file_remove('map', 'lua\\currentpath.lua')
-        reduce_jass(w2l, 'war3map.j')
-        reduce_jass(w2l, 'scripts\\war3map.j')
     end
 end
 
