@@ -53,14 +53,16 @@ function mt:on_full(w2l)
             return file_save(self, type, name, buf)
         end
 
-        w2l:file_save('map', 'lua\\currentpath.lua', currentpath:format((w2l.setting.input / 'scripts'):string()):gsub('\\', '\\\\'))
-        local buf = inject_jass(w2l, w2l:file_load('map', 'war3map.j'))
-        if buf then
-            w2l:file_save('map', 'war3map.j', buf)
-        end
-        local buf = inject_jass(w2l, w2l:file_load('map', 'scripts\\war3map.j'))
-        if buf then
-            w2l:file_save('map', 'scripts\\war3map.j', buf)
+        if not w2l:file_load('map', 'lua\\currentpath.lua') then
+            w2l:file_save('map', 'lua\\currentpath.lua', currentpath:format((w2l.setting.input / 'scripts'):string()):gsub('\\', '\\\\'))
+            local buf = inject_jass(w2l, w2l:file_load('map', 'war3map.j'))
+            if buf then
+                w2l:file_save('map', 'war3map.j', buf)
+            end
+            local buf = inject_jass(w2l, w2l:file_load('map', 'scripts\\war3map.j'))
+            if buf then
+                w2l:file_save('map', 'scripts\\war3map.j', buf)
+            end
         end
     end
 end
