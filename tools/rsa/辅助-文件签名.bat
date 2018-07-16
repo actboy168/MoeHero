@@ -1,3 +1,4 @@
 @echo off
-"%~dp0..\bin\lua.exe" "%~dp0rsa.lua" %1
+chcp 65001
+"%~dp0..\w3x2lni\bin\w3x2lni-lua.exe" "%~dp0rsa.lua" %1
 pause

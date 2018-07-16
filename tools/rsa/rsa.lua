@@ -1,15 +1,14 @@
 (function()
 	local exepath = package.cpath:sub(1, package.cpath:find(';')-6)
-	package.path = package.path .. ';' .. exepath .. '..\\?.lua'
+	package.path = package.path .. ';' .. exepath .. '..\\..\\?.lua'
 end)()
 
 require 'filesystem'
 
-local uni = require 'unicode'
 local bignum = require 'rsa.bignum'
 local _sha1 = require 'rsa.sha1'
 
-local rootpath = fs.get(fs.DIR_EXE):remove_filename():remove_filename():remove_filename()
+local rootpath = fs.get(fs.DIR_EXE):parent_path():parent_path():parent_path()
 local rsa_dir = rootpath / 'tools' / 'rsa'
 
 local function load_public(str)
@@ -81,7 +80,7 @@ function rsa:check_sign(content, sign)
 end
 
 function io_load(path)
-    local f = io.open(uni.u2a(path:string()), 'rb')
+    local f = io.open(path:string(), 'rb')
     if f then
         local content = f:read 'a'
         f:close()
@@ -90,21 +89,11 @@ function io_load(path)
 end
 
 function io_save(path, content)
-    local f = io.open(uni.u2a(path:string()), 'wb')
+    local f = io.open(path:string(), 'wb')
     if f then
         f:write()
         f:close()
     end
-end
-
-local std_print = print
-function print(...)
-    local tbl = {...}
-    local n = select('#', ...)
-    for i = 1, n do
-        tbl[i] = uni.u2a(tostring(tbl[i]))
-    end
-    return std_print(table.concat(tbl, '\t'))
 end
 
 local function main()
@@ -126,7 +115,7 @@ local function main()
 
     rsa:init(e, n, d)
 
-    local filepath = fs.path(uni.a2u(arg[1]))
+    local filepath = fs.path(arg[1])
     local m = io_load(filepath)
     if not m then
         print('文件读取失败', filepath:string())
