@@ -9,7 +9,7 @@ local bignum = require 'rsa.bignum'
 local _sha1 = require 'rsa.sha1'
 
 local rootpath = fs.get(fs.DIR_EXE):parent_path():parent_path():parent_path()
-local rsa_dir = rootpath / 'tools' / 'rsa'
+local rsa_dir = rootpath / 'rsa'
 
 local function load_public(str)
     local tbl = {}
