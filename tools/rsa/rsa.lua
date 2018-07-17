@@ -91,7 +91,7 @@ end
 function io_save(path, content)
     local f = io.open(path:string(), 'wb')
     if f then
-        f:write()
+        f:write(content)
         f:close()
     end
 end
