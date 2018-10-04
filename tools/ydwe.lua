@@ -9,6 +9,6 @@ end
 local suc, r = pcall(main)
 if not suc or not r then
     print('需要YDWE关联w3x文件')
-    return
+    return false
 end
 return r
