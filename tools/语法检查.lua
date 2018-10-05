@@ -39,14 +39,17 @@ if not watch then
     return
 end
 
--- TODO: 使用`ReadDirectoryChangesW`之类的API实现
+local fw = require 'filewatch'
 local ffi = require 'ffi'
 ffi.cdef[[
     void Sleep(unsigned long dwMilliseconds);
 ]]
 
 local last = ''
-while true do
+local watch = assert(fw.add(script:string(), 'fdts'))
+local guard = assert(fw.add(root:string(), 'd'))
+
+local function notifychage()
     local res, succeed, failed = compilation(script)
     if last ~= res then
         last = res
@@ -56,5 +59,34 @@ while true do
         end
         print('[Watch] Complete.')
     end
-    ffi.C.Sleep(1000)
+end
+
+notifychage()
+
+while true do
+    local change = false
+    while true do
+        local id, type, path = fw.select()
+        if id then
+            if id == watch then
+                change = true
+            elseif id == guard and path == name then
+                if watch and (type == 'delete' or type == 'rename from') then
+                    fw.remove(watch)
+                    watch = nil
+                    change = false
+                elseif not watch and (type == 'create' or type == 'rename to') then
+                    watch = assert(fw.add(script:string(), 'fdts'))
+                    change = false
+                end
+            end
+        else
+            break
+        end
+    end
+    if change then
+        change = false
+        notifychage()
+    end
+    ffi.C.Sleep(200)
 end

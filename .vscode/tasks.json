@@ -87,7 +87,7 @@
         },
         {
             "label": "🔍",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe\"",
+            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe\" -e \"package.cpath=package.cpath..';'..[[${workspaceRoot}/tools/?.dll]]\"",
             "args": [
                 ".\\tools\\语法检查.lua",
                 "${workspaceRoot}",
