@@ -372,8 +372,6 @@ function mt:add()
 			if result then
 				table.insert(list, i, self)
 				--如果刚好把原来的buff挤出有效区,则禁用他
-				--这里多添加了个target，导致没有正确找到最高生效层数
-				--if self.target.cover_max == i then
 				if self.cover_max == i then
 					this_buff:disable()
 				end
