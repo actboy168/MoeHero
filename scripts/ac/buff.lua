@@ -372,7 +372,7 @@ function mt:add()
 			if result then
 				table.insert(list, i, self)
 				--如果刚好把原来的buff挤出有效区,则禁用他
-				if self.target.cover_max == i then
+				if self.cover_max == i then
 					this_buff:disable()
 				end
 				--如果自己不在有效区内,则禁用
