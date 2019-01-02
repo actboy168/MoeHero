@@ -3,12 +3,12 @@
 	package.path = package.path .. ';' .. exepath .. '..\\..\\?.lua'
 end)()
 
-require 'filesystem'
+local fs = require 'bee.filesystem'
 
 local bignum = require 'rsa.bignum'
 local _sha1 = require 'rsa.sha1'
 
-local rootpath = fs.get(fs.DIR_EXE):parent_path():parent_path():parent_path()
+local rootpath = fs.path(package.cpath:sub(1, package.cpath:find(';')-6)):parent_path():parent_path():parent_path()
 local rsa_dir = rootpath / 'rsa'
 
 local function load_public(str)
@@ -157,6 +157,3 @@ local function main()
 end
 
 main()
-
-
-

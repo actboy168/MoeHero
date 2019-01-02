@@ -4,9 +4,17 @@ function print(...)
 	std_print(('[%.3f]'):format(os.clock()), ...)
 end
 
+local function tryDebugger()
+	local dbg = require 'debugger'
+	dbg:io 'listen:127.0.0.1:4279'
+	dbg:start()
+	print('Debugger startup, listen port: 4279')
+end
+
 local function main()
 	print 'hello loli!'
 	--print ('package.path = ', package.path)
+	pcall(tryDebugger)
 
 	require 'war3.id'
 	require 'war3.api'

@@ -5,9 +5,9 @@
             "name": "Launch",
             "type": "lua",
             "request": "attach",
-            "stopOnEntry": false,
+            "stopOnEntry": true,
             "ip": "127.0.0.1",
-            "port": 4278,
+            "port": 4279,
             "preLaunchTask": "运行",
             "sourceMaps": [
                 [
@@ -25,8 +25,8 @@
             "type": "lua",
             "request": "attach",
             "stopOnEntry": true,
-            "sourceCoding": "utf8",
-            "processName": "war3.exe",
+            "ip": "127.0.0.1",
+            "port": 4279,
             "sourceMaps": [
                 [
                     "scripts\\",
