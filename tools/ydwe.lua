@@ -1,5 +1,5 @@
-require 'filesystem'
-local registry = require 'registry'
+local fs = require 'bee.filesystem'
+local registry = require 'bee.registry'
 
 local function main()
     local command = (registry.open [[HKEY_CURRENT_USER\SOFTWARE\Classes\YDWEMap\shell\run_war3\command]])['']

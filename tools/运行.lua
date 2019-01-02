@@ -1,7 +1,7 @@
-require 'filesystem'
-local registry = require 'registry'
+local fs = require 'bee.filesystem'
+local registry = require 'bee.registry'
 local ydwe = require 'tools.ydwe'
-local process = require 'process'
+local subprocess = require 'bee.subprocess'
 if not ydwe then
     return
 end
@@ -23,14 +23,14 @@ if not fs.exists(root / 'MoeHero.w3x') then
     print('地图不存在', root / 'MoeHero.w3x')
     return
 end
-local command = (registry.open [[HKEY_CURRENT_USER\SOFTWARE\Classes\YDWEMap\shell\run_war3\command]])['']
-command = command:gsub("%%1", (root / 'MoeHero.w3x'):string())
 if get_debugger() then
     --command = command .. ' -debugger 4278'
 end
-print(command)
-local p = process()
-if p:create(nil, command, nil) then
+local p = subprocess.spawn {
+    ydwe / 'ydwe.exe',
+    '-war3',
+    '-loadfile', root / 'MoeHero.w3x',
+}
+if p then
     p:close()
 end
-
