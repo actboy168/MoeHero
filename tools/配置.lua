@@ -4,9 +4,6 @@ if not ydwe then
     return
 end
 print('YDWE:', ydwe:string())
-local p = subprocess.spawn {
+subprocess.spawn {
     ydwe / 'bin' / 'ydweconfig.exe'
 }
-if p then
-    p:close()
-end

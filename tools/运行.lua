@@ -26,11 +26,8 @@ end
 if get_debugger() then
     --command = command .. ' -debugger 4278'
 end
-local p = subprocess.spawn {
+subprocess.spawn {
     ydwe / 'ydwe.exe',
     '-war3',
     '-loadfile', root / 'MoeHero.w3x',
 }
-if p then
-    p:close()
-end
