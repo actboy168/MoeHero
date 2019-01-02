@@ -35,9 +35,20 @@ function runtime.error_handle(msg)
 	base.error_handle(msg)
 end
 
+local function tryDebugger()
+	local dbg = require 'debugger'
+	dbg:io 'listen:127.0.0.1:4279'
+	dbg:start()
+	print('Debugger startup, listen port: 4279')
+end
+
 --测试版本和发布版本的脚本路径
 if base.release then
 	package.path = package.path .. [[;Poi\]] .. base.version .. [[\?.lua;scripts\?.lua]]
+end
+
+if not base.release then
+	pcall(tryDebugger)
 end
 
 --初始化本地脚本
