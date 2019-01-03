@@ -1,0 +1,3 @@
+{
+    "Lua.diagnostics.globals": ["ac", "fs", "base", "war3"]
+}
