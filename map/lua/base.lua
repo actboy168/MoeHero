@@ -23,9 +23,6 @@ runtime.handle_level = 0
 --关闭等待
 runtime.sleep = false
 
---调试器端口
-runtime.debugger = 4279
-
 function base.error_handle(msg)
 	print("---------------------------------------")
 	print(tostring(msg) .. "\n")
@@ -38,12 +35,6 @@ function runtime.error_handle(msg)
 	base.error_handle(msg)
 end
 
-local function tryDebugger()
-	local dbg = require 'debugger'
-	dbg:io 'listen:127.0.0.1:4279'
-	dbg:start()
-	print('Debugger startup, listen port: 4279')
-end
 
 --测试版本和发布版本的脚本路径
 if base.release then
@@ -51,7 +42,8 @@ if base.release then
 end
 
 if not base.release then
-	pcall(tryDebugger)
+	--调试器端口
+	runtime.debugger = 4279
 end
 
 --初始化本地脚本
