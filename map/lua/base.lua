@@ -23,6 +23,9 @@ runtime.handle_level = 0
 --关闭等待
 runtime.sleep = false
 
+--调试器端口
+runtime.debugger = 4279
+
 function base.error_handle(msg)
 	print("---------------------------------------")
 	print(tostring(msg) .. "\n")
