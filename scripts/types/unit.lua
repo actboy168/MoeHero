@@ -282,6 +282,7 @@ end
 		unit.all_units[self.handle] = nil
 
 		unit.removed_units[self] = self
+		unit.removed_handles[self.handle] = true
 		dbg.handle_unref(self.handle)
 	end
 
@@ -1202,6 +1203,9 @@ local function init_unit(handle, p)
 	if handle == 0 then
 		return nil
 	end
+	if unit.removed_handles[handle] then
+		return nil
+	end
 	local u = setmetatable({}, unit)
 	dbg.gchash(u, handle)
 	u.gchash = handle
@@ -1298,6 +1302,7 @@ function player.__index:create_unit(id, where, face)
 	local handle = jass.CreateUnit(self.handle, j_id, x, y, face or 0)
 	dbg.handle_ref(handle)
 	ignore_flag = false
+	unit.removed_handles[handle] = nil
 	local u = unit.init_unit(handle, self)
 
 	return u
@@ -1326,6 +1331,7 @@ function player.__index:create_dummy(id, where, face)
 	local handle = jass.CreateUnit(owner.handle, j_id, x, y, face or 0)
 	dbg.handle_ref(handle)
 	ignore_flag = false
+	unit.removed_handles[handle] = nil
 	local u = unit.init_unit(handle, self)
 	u._is_dummy = true
 	u._dummy_point = ac.point(x, y)
@@ -1344,7 +1350,9 @@ function unit.j_unit(handle)
 	end
 	local u = unit.all_units[handle]
 	if not u then
-		if not ignore_flag then
+		if ignore_flag then
+			unit.removed_handles[handle] = nil
+		else
 			log.warn('没有被脚本控制的单位!', handle, base.id2string(jass.GetUnitTypeId(handle)), jass.GetUnitName(handle))
 		end
 		u = unit.init_unit(handle)
@@ -1879,6 +1887,7 @@ end
 function unit.init()
 	--全局单位索引
 	unit.all_units = {}
+	unit.removed_handles = {}
 	unit.removed_units = setmetatable({}, { __mode = 'kv' })
 
 	--注册单位的jass事件
