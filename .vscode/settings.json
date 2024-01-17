@@ -1,4 +1,9 @@
 {
     "Lua.diagnostics.globals": ["ac", "fs", "base", "war3"],
-    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe"
+    "terminal.integrated.profiles.windows": {
+        "cmd": {
+            "path": "C:\\Windows\\System32\\cmd.exe"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "cmd",
 }
